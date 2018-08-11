@@ -17,16 +17,21 @@ onready var levelMenu_Obj
 func _process(delta):
 	if index == 0:
 		#load MainMenu
-		add_child(mainMenu)
-		remove_child(levelMenu)
+		_loadMenu(mainMenu, levelMenu)
+	elif index == 1:
+		#load LevelMenu
+		_loadMenu(levelMenu, mainMenu)
+
+
+func _loadMenu(menu_load, menu_remove):
+	add_child(menu_load)
+	remove_child(menu_remove)
+	if menu_load == mainMenu:
 		mainMenu_Obj = $MainMenu
 		index = mainMenu_Obj.index
 		if mainMenu_Obj.index == 1:
 			mainMenu_Obj.index = 0
-	elif index == 1:
-		#load LevelMenu
-		add_child(levelMenu)
-		remove_child(mainMenu)
+	elif menu_load == levelMenu:
 		levelMenu_Obj = $LevelMenu
 		index = levelMenu_Obj.index
 		if levelMenu_Obj.index == 0:

@@ -9,8 +9,8 @@
 [ext_resource path="res://Menu/Images/Buttons/T_MenuButton_hover.png" type="Texture" id=7]
 [ext_resource path="res://Menu/Fonts/LoveYaLikeASister.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://Menu/Images/Buttons/T_Button_Back_1.png" type="Texture" id=9]
-[ext_resource path="res://Menu/Images/Buttons/T_Button_Back_2.png" type="Texture" id=10]
-[ext_resource path="res://Menu/Images/Buttons/T_Button_Back_3.png" type="Texture" id=11]
+[ext_resource path="res://Menu/Images/Buttons/T_Button_Back_3.png" type="Texture" id=10]
+[ext_resource path="res://Menu/Images/Buttons/T_Button_Back_2.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -21,7 +21,7 @@ use_filter = false
 font_data = ExtResource( 8 )
 _sections_unfolded = [ "Resource", "Settings" ]
 
-[node name="LevelMenu" type="Node"]
+[node name="LevelMenu" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -136,6 +136,7 @@ _sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_fonts", "cus
 [node name="Button_MiniGame02" type="TextureButton" parent="Control" index="1"]
 
 editor/display_folded = true
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -186,6 +187,7 @@ _sections_unfolded = [ "Margin", "custom_colors", "custom_fonts", "custom_styles
 [node name="Button_MiniGame03" type="TextureButton" parent="Control" index="2"]
 
 editor/display_folded = true
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -208,7 +210,7 @@ group = null
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
 texture_hover = ExtResource( 7 )
-_sections_unfolded = [ "Rect", "Textures" ]
+_sections_unfolded = [ "Rect", "Textures", "Visibility" ]
 
 [node name="Label_Quit" type="Label" parent="Control/Button_MiniGame03" index="0"]
 
