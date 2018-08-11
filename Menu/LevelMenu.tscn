@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Menu/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Menu/LevelMenu.gd" type="Script" id=1]
 [ext_resource path="res://Menu/Images/Backgrounds/game_menu_bg.png" type="Texture" id=2]
 [ext_resource path="res://Menu/Images/Backgrounds/T_GameMenu_MG.png" type="Texture" id=3]
 [ext_resource path="res://Menu/Images/Backgrounds/game_menu_fg.png" type="Texture" id=4]
@@ -8,6 +8,9 @@
 [ext_resource path="res://Menu/Images/Buttons/T_MenuButton_clicked.png" type="Texture" id=6]
 [ext_resource path="res://Menu/Images/Buttons/T_MenuButton_hover.png" type="Texture" id=7]
 [ext_resource path="res://Menu/Fonts/LoveYaLikeASister.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Menu/Images/Buttons/T_Button_Back_1.png" type="Texture" id=9]
+[ext_resource path="res://Menu/Images/Buttons/T_Button_Back_2.png" type="Texture" id=10]
+[ext_resource path="res://Menu/Images/Buttons/T_Button_Back_3.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -18,7 +21,7 @@ use_filter = false
 font_data = ExtResource( 8 )
 _sections_unfolded = [ "Resource", "Settings" ]
 
-[node name="MainMenu" type="Node" index="0"]
+[node name="LevelMenu" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -67,7 +70,6 @@ _sections_unfolded = [ "Offset", "Z Index" ]
 
 [node name="Control" type="Control" parent="." index="4"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -81,7 +83,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="Button_LevelMenu" type="TextureButton" parent="Control" index="0"]
+[node name="Button_MiniGame01" type="TextureButton" parent="Control" index="0"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -108,7 +110,7 @@ texture_pressed = ExtResource( 6 )
 texture_hover = ExtResource( 7 )
 _sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect" ]
 
-[node name="Label_LevelMenu" type="Label" parent="Control/Button_LevelMenu" index="0"]
+[node name="Label_LevelMenu" type="Label" parent="Control/Button_MiniGame01" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -123,7 +125,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
-text = "Level Menu"
+text = "Garbage Patrol"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -131,7 +133,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_fonts", "custom_styles" ]
 
-[node name="Button_Score" type="TextureButton" parent="Control" index="1"]
+[node name="Button_MiniGame02" type="TextureButton" parent="Control" index="1"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -156,9 +158,9 @@ group = null
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
 texture_hover = ExtResource( 7 )
-_sections_unfolded = [ "Margin", "Rect", "Textures" ]
+_sections_unfolded = [ "Margin", "Rect", "Textures", "Visibility" ]
 
-[node name="Label_Score" type="Label" parent="Control/Button_Score" index="0"]
+[node name="Label_Score" type="Label" parent="Control/Button_MiniGame02" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -173,7 +175,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
-text = "Score"
+text = "MiniGame02"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -181,7 +183,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Margin", "custom_colors", "custom_fonts", "custom_styles" ]
 
-[node name="Button_Quit" type="TextureButton" parent="Control" index="2"]
+[node name="Button_MiniGame03" type="TextureButton" parent="Control" index="2"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -208,7 +210,7 @@ texture_pressed = ExtResource( 6 )
 texture_hover = ExtResource( 7 )
 _sections_unfolded = [ "Rect", "Textures" ]
 
-[node name="Label_Quit" type="Label" parent="Control/Button_Quit" index="0"]
+[node name="Label_Quit" type="Label" parent="Control/Button_MiniGame03" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -223,7 +225,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
-text = "Quit"
+text = "MiniGame03"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -231,10 +233,33 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Margin", "custom_colors", "custom_fonts", "custom_styles" ]
 
-[connection signal="pressed" from="Control/Button_LevelMenu" to="." method="_on_Button_LevelMenu_pressed"]
+[node name="Button_Back" type="TextureButton" parent="Control" index="3"]
 
-[connection signal="pressed" from="Control/Button_Score" to="." method="_on_Button_Score_pressed"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 376.0
+margin_top = 85.0
+margin_right = 636.0
+margin_bottom = 225.0
+rect_scale = Vector2( 0.4, 0.4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 11 )
+_sections_unfolded = [ "Rect", "Textures" ]
 
-[connection signal="pressed" from="Control/Button_Quit" to="." method="_on_Button_Quit_pressed"]
+[connection signal="pressed" from="Control/Button_Back" to="." method="_on_Button_Back_pressed"]
 
 
