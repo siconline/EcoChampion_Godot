@@ -1,5 +1,7 @@
 extends Node
 
+#clear Controller childs
+var clean = true
 #Index Level
 var index = 0
 
@@ -20,33 +22,20 @@ var localMenu = scene_resource03.instance()
 onready var localMenu_Obj
 	
 func _process(delta):
-	if index == 0:
+	if index == 0 && clean == true:
 		#load MainMenu
 		_loadMenu(mainMenu, levelMenu, levelMenu)
-	elif index == 1:
+	elif index == 1 && clean == true:
 		#load LevelMenu
 		_loadMenu(levelMenu, mainMenu, localMenu)
-	elif index == 2:
-		#load LevelMenu
+	elif index == 2 && clean == true:
+		#load LocalMenu
 		_loadMenu(localMenu, levelMenu, levelMenu)
 
 
 func _loadMenu(menu_load, menu_remove1, menu_remove2):
-	add_child(menu_load)
 	remove_child(menu_remove1)
 	remove_child(menu_remove2)
-	if menu_load == mainMenu:
-		mainMenu_Obj = $MainMenu
-		index = mainMenu_Obj.index
-		if mainMenu_Obj.index == 1:
-			mainMenu_Obj.index = 0
-	elif menu_load == levelMenu:
-		levelMenu_Obj = $LevelMenu
-		index = levelMenu_Obj.index
-		if levelMenu_Obj.index == 0 || 2:
-			levelMenu_Obj.index = 1
-	elif menu_load == localMenu:
-		localMenu_Obj = $LocalMenu
-		index = localMenu_Obj.index
-		if localMenu_Obj.index == 1:
-			localMenu_Obj.index = 2
+	add_child(menu_load)
+	clean = false
+	

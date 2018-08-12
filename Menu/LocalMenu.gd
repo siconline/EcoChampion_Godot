@@ -1,11 +1,12 @@
 extends Node
 
-var index = 2
 onready var camera = $'CameraMenu'
+onready var controller = get_node("../../Controller")
 
 func _ready():
 	camera.current = true
 
 func _on_Button_Back_pressed():
-	index = 1
 	camera.current = false
+	controller.index = 1
+	controller.clean = true
