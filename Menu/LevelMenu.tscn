@@ -1,16 +1,17 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Menu/LevelMenu.gd" type="Script" id=1]
-[ext_resource path="res://Menu/Images/Backgrounds/game_menu_bg.png" type="Texture" id=2]
-[ext_resource path="res://Menu/Images/Backgrounds/T_GameMenu_MG.png" type="Texture" id=3]
-[ext_resource path="res://Menu/Images/Backgrounds/game_menu_fg.png" type="Texture" id=4]
-[ext_resource path="res://Menu/Images/Buttons/T_MenuButton.png" type="Texture" id=5]
-[ext_resource path="res://Menu/Images/Buttons/T_MenuButton_clicked.png" type="Texture" id=6]
-[ext_resource path="res://Menu/Images/Buttons/T_MenuButton_hover.png" type="Texture" id=7]
+[ext_resource path="res://Menu/Textures/Backgrounds/game_menu_bg.png" type="Texture" id=2]
+[ext_resource path="res://Menu/Textures/Backgrounds/T_GameMenu_MG.png" type="Texture" id=3]
+[ext_resource path="res://Menu/Textures/Backgrounds/game_menu_fg.png" type="Texture" id=4]
+[ext_resource path="res://Menu/Textures/Buttons/T_MenuButton.png" type="Texture" id=5]
+[ext_resource path="res://Menu/Textures/Buttons/T_MenuButton_clicked.png" type="Texture" id=6]
+[ext_resource path="res://Menu/Textures/Buttons/T_MenuButton_hover.png" type="Texture" id=7]
 [ext_resource path="res://Menu/Fonts/LoveYaLikeASister.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://Menu/Images/Buttons/T_Button_Back_1.png" type="Texture" id=9]
-[ext_resource path="res://Menu/Images/Buttons/T_Button_Back_3.png" type="Texture" id=10]
-[ext_resource path="res://Menu/Images/Buttons/T_Button_Back_2.png" type="Texture" id=11]
+[ext_resource path="res://Menu/Textures/Buttons/T_Button_Back_1.png" type="Texture" id=9]
+[ext_resource path="res://Menu/Textures/Buttons/T_Button_Back_3.png" type="Texture" id=10]
+[ext_resource path="res://Menu/Textures/Buttons/T_Button_Back_2.png" type="Texture" id=11]
+
 
 [sub_resource type="DynamicFont" id=1]
 

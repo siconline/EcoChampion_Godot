@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/T_MenuButton.png-e768e715798843950e7a6e1a37d81c5a.stex"
+path="res://.import/game_menu_fg.png-83d26215fbff75bf266b28297d6fcc04.stex"
 
 [deps]
 
-source_file="res://Menu/Images/Buttons/T_MenuButton.png"
-dest_files=[ "res://.import/T_MenuButton.png-e768e715798843950e7a6e1a37d81c5a.stex" ]
+source_file="res://Menu/Textures/Backgrounds/game_menu_fg.png"
+dest_files=[ "res://.import/game_menu_fg.png-83d26215fbff75bf266b28297d6fcc04.stex" ]
 
 [params]
 
