@@ -12,7 +12,6 @@
 [ext_resource path="res://Menu/Textures/Buttons/T_Button_Back_3.png" type="Texture" id=10]
 [ext_resource path="res://Menu/Textures/Buttons/T_Button_Back_2.png" type="Texture" id=11]
 
-
 [sub_resource type="DynamicFont" id=1]
 
 resource_local_to_scene = true
@@ -262,6 +261,8 @@ texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 10 )
 texture_hover = ExtResource( 11 )
 _sections_unfolded = [ "Rect", "Textures" ]
+
+[connection signal="pressed" from="Control/Button_MiniGame01" to="." method="_on_Button_MiniGame01_pressed"]
 
 [connection signal="pressed" from="Control/Button_Back" to="." method="_on_Button_Back_pressed"]
 

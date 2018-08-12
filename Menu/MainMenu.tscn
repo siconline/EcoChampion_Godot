@@ -9,7 +9,6 @@
 [ext_resource path="res://Menu/Textures/Buttons/T_MenuButton_hover.png" type="Texture" id=7]
 [ext_resource path="res://Menu/Fonts/LoveYaLikeASister.ttf" type="DynamicFontData" id=8]
 
-
 [sub_resource type="DynamicFont" id=1]
 
 resource_local_to_scene = true
