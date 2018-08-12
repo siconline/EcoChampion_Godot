@@ -267,6 +267,12 @@ texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 10 )
 _sections_unfolded = [ "Rect", "Textures" ]
 
+[connection signal="pressed" from="Control/Button_Germany" to="." method="_on_Button_Germany_pressed"]
+
+[connection signal="pressed" from="Control/Button_Marocco" to="." method="_on_Button_Marocco_pressed"]
+
+[connection signal="pressed" from="Control/Button_Argentina" to="." method="_on_Button_Argentina_pressed"]
+
 [connection signal="pressed" from="Control/Button_Back" to="." method="_on_Button_Back_pressed"]
 
 
