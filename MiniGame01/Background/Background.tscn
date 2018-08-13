@@ -18,7 +18,7 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="Foreground_Bottom" type="Sprite" parent="." index="2"]
 
-z_index = 1
+z_index = 2
 _sections_unfolded = [ "Z Index" ]
 
 

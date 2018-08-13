@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/T_CharacterRun_4.png-2820f97a81f41744828268a39790d19f.stex"
+path="res://.import/T_CharacterRun8.png-9cf416932ef7b671c818da3d9e6a7676.stex"
 
 [deps]
 
-source_file="res://MiniGame01/Player/Textures/Run/normal/T_CharacterRun_4.png"
-dest_files=[ "res://.import/T_CharacterRun_4.png-2820f97a81f41744828268a39790d19f.stex" ]
+source_file="res://MiniGame01/Player/Textures/Run/normal/T_CharacterRun8.png"
+dest_files=[ "res://.import/T_CharacterRun8.png-9cf416932ef7b671c818da3d9e6a7676.stex" ]
 
 [params]
 
