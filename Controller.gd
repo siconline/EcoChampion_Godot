@@ -8,30 +8,33 @@ var index = 0
 var local = 0
 
 #Index 0 = Main Menu
-var path01 = "res://Menu/MainMenu.tscn"
-var scene_resource01 = load(path01)
-var mainMenu = scene_resource01.instance()
-onready var mainMenu_Obj
+onready var path01 = preload("res://Menu/MainMenu.tscn")
+var mainMenu
 #Index 1 = Level Menu
-var path02 = "res://Menu/LevelMenu.tscn"
-var scene_resource02 = load(path02)
-var levelMenu = scene_resource02.instance()
-onready var levelMenu_Obj
+onready var path02 = preload("res://Menu/LevelMenu.tscn")
+var levelMenu
 #Index 2 = Localisation Menu
-var path03 = "res://Menu/LocalMenu.tscn"
-var scene_resource03 = load(path03)
-var localMenu = scene_resource03.instance()
-onready var localMenu_Obj
+onready var path03 = preload("res://Menu/LocalMenu.tscn")
+var localMenu
 #Index 3 = MiniGame01 Background
-var path04 = "res://MiniGame01/MiniGame01.tscn"
-var scene_resource04 = load(path04)
-var miniGame01 = scene_resource04.instance()
-onready var miniGame01_Obj
+onready var path04 = preload("res://MiniGame01/MiniGame01.tscn")
+var miniGame01
+#Index 4 = Pause Menu
+var path05 = preload("res://Menu/PauseMenu.tscn")
+var pauseMenu
+
+func _ready():
+	mainMenu = path01.instance()
+	levelMenu = path02.instance()
+	localMenu = path03.instance()
+	miniGame01 = path04.instance()
+	pauseMenu = path05.instance()
 	
 func _process(delta):
 	if index == 0 && clean == true:
 		#load MainMenu
-		_loadMenu(mainMenu, levelMenu, levelMenu)
+		_loadMenu(mainMenu, pauseMenu, levelMenu)
+		_closeMiniGame01(miniGame01)
 	elif index == 1 && clean == true:
 		#load LevelMenu
 		_loadMenu(levelMenu, mainMenu, localMenu)
@@ -42,6 +45,9 @@ func _process(delta):
 		#load MiniGame01 Background
 		miniGame01.local = local
 		_loadMiniGame01(miniGame01, localMenu)
+	elif index == 4 && clean == true:
+		#load LocalMenu
+		_loadMenu(pauseMenu, levelMenu, levelMenu)
 
 
 func _loadMenu(menu_load, menu_remove1, menu_remove2):
@@ -54,3 +60,5 @@ func _loadMiniGame01(game_load, remove_Obj):
 	remove_child(remove_Obj)
 	add_child(game_load)
 	clean = false
+func _closeMiniGame01(game_remove):
+	remove_child(game_remove)

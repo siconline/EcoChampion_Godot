@@ -29,6 +29,7 @@ func _physics_process(delta):
 	
 	move_and_collide(movement * delta)
 	
+	
 
 func _checkAnimation():
 	if movement.x == 0:
