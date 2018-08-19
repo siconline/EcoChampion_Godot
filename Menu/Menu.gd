@@ -1,5 +1,7 @@
 extends Control
 
+var available_Menu = true
+
 onready var button_LevelMenu = $Button_LevelMenu
 onready var button_Score = $Button_Score
 onready var button_QuitGame = $Button_QuitGame
@@ -12,6 +14,7 @@ onready var textureButton_BackLM = $TextureButton_BackLevelMenu
 onready var background = $Background
 onready var middleground = $Middleground
 onready var foreground = $Foreground
+
 
 func _ready():
 	_loadMainMenu()
