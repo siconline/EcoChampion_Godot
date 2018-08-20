@@ -8,7 +8,7 @@ onready var button_Score = $Button_Score
 onready var button_QuitGame = $Button_QuitGame
 onready var button_GarbagePatrol = $Button_GarbagePatrol
 onready var button_Germany = $Button_Germany
-onready var button_Marocco = $Button_Marocco
+onready var button_Morocco = $Button_Morocco
 onready var button_Argentina = $Button_Argentina
 onready var textureButton_BackMM = $TextureButton_BackMainMenu
 onready var textureButton_BackLM = $TextureButton_BackLevelMenu
@@ -62,7 +62,7 @@ func _loadGarbagePatrol():
 	button_QuitGame.visible = false
 	button_GarbagePatrol.visible = false
 	button_Germany.visible = true
-	button_Marocco.visible = true
+	button_Morocco.visible = true
 	button_Argentina.visible = true
 	
 	textureButton_BackMM.visible = false
@@ -78,7 +78,7 @@ func _loadLevelMenu():
 	button_QuitGame.visible = false
 	button_GarbagePatrol.visible = true
 	button_Germany.visible = false
-	button_Marocco.visible = false
+	button_Morocco.visible = false
 	button_Argentina.visible = false
 	
 	textureButton_BackMM.visible = true
@@ -94,11 +94,8 @@ func _loadMainMenu():
 	button_QuitGame.visible = true
 	button_GarbagePatrol.visible = false
 	button_Germany.visible = false
-	button_Marocco.visible = false
+	button_Morocco.visible = false
 	button_Argentina.visible = false
 	
 	textureButton_BackMM.visible = false
 	textureButton_BackLM.visible = false
-
-
-

@@ -131,10 +131,6 @@ _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Transform" ]
 
 [node name="Hud" parent="." index="2" instance=ExtResource( 7 )]
 
-margin_left = -840.0
-margin_top = 152.0
-margin_right = -800.0
-margin_bottom = 192.0
 _sections_unfolded = [ "Rect" ]
 
 

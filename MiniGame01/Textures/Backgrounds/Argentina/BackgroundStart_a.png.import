@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ForegroundMiddl2Bottom_d.png-059399ac3d595e2f3636d3827941cb30.stex"
+path="res://.import/BackgroundStart_a.png-a35d8dc45e5b0b94965e19f5eaee1101.stex"
 
 [deps]
 
-source_file="res://MiniGame01/Textures/Backgrounds/Germany/ForegroundMiddl2Bottom_d.png"
-dest_files=[ "res://.import/ForegroundMiddl2Bottom_d.png-059399ac3d595e2f3636d3827941cb30.stex" ]
+source_file="res://MiniGame01/Textures/Backgrounds/Argentina/BackgroundStart_a.png"
+dest_files=[ "res://.import/BackgroundStart_a.png-a35d8dc45e5b0b94965e19f5eaee1101.stex" ]
 
 [params]
 

@@ -8,8 +8,10 @@ func _ready():
 	menu.camera.current = true
 
 func _process(delta):
-	# load the Theme by index and which button is pressed on menu
+	# load the Theme by index and which buttons are pressed on menu
 	_loadTheme(menu.button_Germany.pressed, 0)
+	_loadTheme(menu.button_Morocco.pressed, 1)
+	_loadTheme(menu.button_Argentina.pressed, 2)
 
 func _loadTheme(button, index):
 	if button:
@@ -18,4 +20,3 @@ func _loadTheme(button, index):
 		miniGame01.visible = true
 		miniGame01.localisation = index
 		miniGame01.camera.current = true
-		

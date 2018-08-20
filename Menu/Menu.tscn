@@ -342,7 +342,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Button_Marocco" type="TextureButton" parent="." index="9"]
+[node name="Button_Morocco" type="TextureButton" parent="." index="9"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -370,7 +370,7 @@ texture_pressed = ExtResource( 10 )
 texture_hover = ExtResource( 10 )
 _sections_unfolded = [ "Margin", "Rect" ]
 
-[node name="Label1" type="Label" parent="Button_Marocco" index="0"]
+[node name="Label1" type="Label" parent="Button_Morocco" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -388,7 +388,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Marocco"
+text = "Morocco"
 align = 1
 valign = 1
 percent_visible = 1.0
