@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://MiniGame01/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://MiniGame01/Player/Textures/T_CharacterRun8.png" type="Texture" id=2]
 [ext_resource path="res://MiniGame01/Player/Animations/Idle.tres" type="Animation" id=3]
 [ext_resource path="res://MiniGame01/Player/Animations/Run.tres" type="Animation" id=4]
+[ext_resource path="res://MiniGame01/Textures/PickUps/T_Paper_Newspaper.png" type="Texture" id=5]
+[ext_resource path="res://MiniGame01/Textures/PickUps/T_Plastic_Bottle.png" type="Texture" id=6]
+[ext_resource path="res://MiniGame01/Player/Textures/T_barrow_front.png" type="Texture" id=7]
+[ext_resource path="res://MiniGame01/Player/Textures/T_barrow_front_upgrade_space.png" type="Texture" id=8]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -13,18 +17,20 @@ height = 39.9809
 
 [node name="Player" type="KinematicBody2D"]
 
+z_index = -2
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
 hframes = 7
-_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
@@ -41,5 +47,69 @@ anims/Idle = ExtResource( 3 )
 anims/Run = ExtResource( 4 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
+
+[node name="PickUps" type="Node2D" parent="." index="3"]
+
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[node name="PickUp1" type="Sprite" parent="PickUps" index="0"]
+
+position = Vector2( 20, 30 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PickUp2" type="Sprite" parent="PickUps" index="1"]
+
+position = Vector2( 30, 30 )
+rotation = -0.349066
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="PickUp3" type="Sprite" parent="PickUps" index="2"]
+
+position = Vector2( 40, 30 )
+rotation = 1.5708
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PickUp4" type="Sprite" parent="PickUps" index="3"]
+
+position = Vector2( 50, 30 )
+rotation = 1.0472
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PickUp5" type="Sprite" parent="PickUps" index="4"]
+
+position = Vector2( 60, 30 )
+rotation = 0.174533
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PickUp6" type="Sprite" parent="PickUps" index="5"]
+
+position = Vector2( 70, 30 )
+rotation = -0.349066
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Barrow_Front_Normal" type="Sprite" parent="." index="4"]
+
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Barrow_Front_Upgrade" type="Sprite" parent="." index="5"]
+
+visible = false
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 

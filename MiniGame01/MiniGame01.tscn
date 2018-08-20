@@ -100,7 +100,6 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 position = Vector2( -300, 0 )
-z_index = -2
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="3"]
@@ -131,6 +130,6 @@ _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Transform" ]
 
 [node name="Hud" parent="." index="2" instance=ExtResource( 7 )]
 
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Grow Direction", "Hint", "Margin", "Rect" ]
 
 
