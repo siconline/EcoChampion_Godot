@@ -2,6 +2,7 @@ extends Control
 
 var available_Menu = true
 
+onready var camera = $Camera2D
 onready var button_LevelMenu = $Button_LevelMenu
 onready var button_Score = $Button_Score
 onready var button_QuitGame = $Button_QuitGame
