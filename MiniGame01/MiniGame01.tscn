@@ -55,7 +55,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="Foreground_Start_Bottom" type="Sprite" parent="Grounds" index="5"]
 
 texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Foreground_Middle1_Top" type="Sprite" parent="Grounds" index="6"]
 
@@ -68,7 +68,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 position = Vector2( 1920, 0 )
 texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Foreground_Middle2_Top" type="Sprite" parent="Grounds" index="8"]
 
@@ -81,7 +81,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 position = Vector2( 3840, 0 )
 texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Foreground_End_Top" type="Sprite" parent="Grounds" index="10"]
 
@@ -94,12 +94,12 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 position = Vector2( 5760, 0 )
 texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Player" parent="." index="1" instance=ExtResource( 6 )]
 
-editor/display_folded = true
 position = Vector2( -300, 0 )
+z_index = -1
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="3"]
@@ -128,8 +128,8 @@ editor_draw_limits = true
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Transform" ]
 
-[node name="Hud" parent="." index="2" instance=ExtResource( 7 )]
+[node name="Hud" parent="Player" index="7" instance=ExtResource( 7 )]
 
-_sections_unfolded = [ "Grow Direction", "Hint", "Margin", "Rect" ]
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Rect" ]
 
 
