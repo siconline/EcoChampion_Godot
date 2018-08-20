@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://MiniGame01/MiniGame01.gd" type="Script" id=1]
 [ext_resource path="res://MiniGame01/Grounds.gd" type="Script" id=2]
 [ext_resource path="res://MiniGame01/Textures/Backgrounds/Germany/BackgroundStart_d.png" type="Texture" id=3]
 [ext_resource path="res://MiniGame01/Textures/Backgrounds/Germany/ForegroundStartTop_d.png" type="Texture" id=4]
 [ext_resource path="res://MiniGame01/Textures/Backgrounds/Germany/ForegroundStartBottom_d.png" type="Texture" id=5]
-[ext_resource path="res://MiniGame01/Player/Player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://MiniGame01/Hud/Hud.tscn" type="PackedScene" id=7]
+[ext_resource path="res://MiniGame01/Textures/PickUps/T_Plastic_Bottle.png" type="Texture" id=6]
+[ext_resource path="res://MiniGame01/Player/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://MiniGame01/Hud/Hud.tscn" type="PackedScene" id=8]
 
 [node name="MiniGame01" type="Node2D" index="0"]
 
@@ -96,8 +97,35 @@ position = Vector2( 5760, 0 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Player" parent="." index="1" instance=ExtResource( 6 )]
+[node name="PickUps" type="Node2D" parent="." index="1"]
 
+z_index = -2
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="PickUp1" type="Sprite" parent="PickUps" index="0"]
+
+position = Vector2( 358.249, -305.3 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="PickUp2" type="Sprite" parent="PickUps" index="1"]
+
+position = Vector2( 627.347, 179.077 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="PickUp3" type="Sprite" parent="PickUps" index="2"]
+
+position = Vector2( 1052.24, -149.506 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Player" parent="." index="2" instance=ExtResource( 7 )]
+
+editor/display_folded = true
 position = Vector2( -300, 0 )
 z_index = -1
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -128,7 +156,7 @@ editor_draw_limits = true
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Transform" ]
 
-[node name="Hud" parent="Player" index="7" instance=ExtResource( 7 )]
+[node name="Hud" parent="Player" index="7" instance=ExtResource( 8 )]
 
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Rect" ]
 

@@ -26,14 +26,14 @@ func _process(delta):
 
 #------Own Methods------#
 func _hudControll(delta):
-	print(player.position.y)
+	print(delta)
 	#limt right left for hud
 	if player.position.x < 0:
-		hud.rect_position.x += player.speed * delta - (player.position.x + hud.rect_position.x)
+		hud.rect_position.x += player.speed * 0.001 - (player.position.x + hud.rect_position.x)
 	elif player.position.x > 0 && player.position.x < 1920*3:
 		hud.rect_position.x = 0
 	elif player.position.x > 1920*3:
-		hud.rect_position.x -= player.speed * delta + (hud.rect_position.x + (player.position.x) - 1920*3)
+		hud.rect_position.x -= player.speed * 0.001 + (hud.rect_position.x + (player.position.x) - 1920*3)
 	#set hud y position by player step
 	if player.position.y == -175:
 		hud.rect_position.y = 175
