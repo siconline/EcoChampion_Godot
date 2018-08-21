@@ -18,7 +18,9 @@ onready var foreground = $Foreground
 
 
 func _ready():
+	get_tree().set_pause(false)
 	_loadMainMenu()
+	
 	
 
 #func _process(delta):

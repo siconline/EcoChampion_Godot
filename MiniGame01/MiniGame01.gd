@@ -4,7 +4,7 @@ var localisation = 0
 onready var grounds = $Grounds
 onready var player = $Player
 onready var camera = $Player/Camera2D
-onready var hud = $Player/Hud
+onready var hud = $Player/Node2D/Hud
 
 func _ready():
 	# Called when the node is added to the scene for the first time.

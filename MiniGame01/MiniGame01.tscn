@@ -36,14 +36,14 @@ custom_solver_bias = 0.0
 extents = Vector2( 74, 45 )
 _sections_unfolded = [ "Resource" ]
 
-[node name="MiniGame01" type="Node2D" index="0"]
+[node name="MiniGame01" type="Node2D"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
 
 [node name="Grounds" type="Node2D" parent="." index="0"]
 
 editor/display_folded = true
-z_index = -1
 script = ExtResource( 2 )
 _sections_unfolded = [ "Z Index" ]
 
@@ -538,10 +538,12 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Obstacles" type="Node2D" parent="." index="2"]
 
+editor/display_folded = true
 script = ExtResource( 8 )
 
 [node name="Obstacle1" type="Area2D" parent="Obstacles" index="0"]
 
+editor/display_folded = true
 position = Vector2( 950, 0 )
 z_index = -2
 input_pickable = true
@@ -551,7 +553,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle1" index="0"]
 
@@ -561,12 +563,12 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="Obstacles/Obstacle1" index="1"]
 
-z_index = -1
 texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Obstacle2" type="Area2D" parent="Obstacles" index="1"]
 
+editor/display_folded = true
 position = Vector2( 1250, 0 )
 z_index = -2
 input_pickable = true
@@ -582,17 +584,17 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 position = Vector2( -8.5, 25 )
 shape = SubResource( 3 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="Obstacles/Obstacle2" index="1"]
 
 scale = Vector2( 0.55, 0.55 )
-z_index = -1
 texture = ExtResource( 10 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Obstacle3" type="Area2D" parent="Obstacles" index="2"]
 
+editor/display_folded = true
 position = Vector2( 1550, 0 )
 z_index = -2
 input_pickable = true
@@ -613,7 +615,292 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="Sprite" type="Sprite" parent="Obstacles/Obstacle3" index="1"]
 
 position = Vector2( 0, 50 )
-z_index = -1
+texture = ExtResource( 11 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Obstacle4" type="Area2D" parent="Obstacles" index="3"]
+
+editor/display_folded = true
+position = Vector2( 1850, 0 )
+z_index = -2
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle4" index="0"]
+
+position = Vector2( -2.7, 9 )
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Sprite" type="Sprite" parent="Obstacles/Obstacle4" index="1"]
+
+position = Vector2( 0, 50 )
+texture = ExtResource( 11 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Obstacle5" type="Area2D" parent="Obstacles" index="4"]
+
+editor/display_folded = true
+position = Vector2( 2150, 0 )
+z_index = -2
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle5" index="0"]
+
+position = Vector2( -2.7, 9 )
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Sprite" type="Sprite" parent="Obstacles/Obstacle5" index="1"]
+
+position = Vector2( 0, 50 )
+texture = ExtResource( 11 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Obstacle6" type="Area2D" parent="Obstacles" index="5"]
+
+editor/display_folded = true
+position = Vector2( 2450, 0 )
+z_index = -2
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle6" index="0"]
+
+position = Vector2( -2.7, 9 )
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Sprite" type="Sprite" parent="Obstacles/Obstacle6" index="1"]
+
+position = Vector2( 0, 50 )
+texture = ExtResource( 11 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Obstacle7" type="Area2D" parent="Obstacles" index="6"]
+
+editor/display_folded = true
+position = Vector2( 2750, 0 )
+z_index = -2
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle7" index="0"]
+
+position = Vector2( -2.7, 9 )
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Sprite" type="Sprite" parent="Obstacles/Obstacle7" index="1"]
+
+position = Vector2( 0, 50 )
+texture = ExtResource( 11 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Obstacle8" type="Area2D" parent="Obstacles" index="7"]
+
+editor/display_folded = true
+position = Vector2( 3050, 0 )
+z_index = -2
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle8" index="0"]
+
+position = Vector2( -2.7, 9 )
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Sprite" type="Sprite" parent="Obstacles/Obstacle8" index="1"]
+
+position = Vector2( 0, 50 )
+texture = ExtResource( 11 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Obstacle9" type="Area2D" parent="Obstacles" index="8"]
+
+editor/display_folded = true
+position = Vector2( 3350, 0 )
+z_index = -2
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle9" index="0"]
+
+position = Vector2( -2.7, 9 )
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Sprite" type="Sprite" parent="Obstacles/Obstacle9" index="1"]
+
+position = Vector2( 0, 50 )
+texture = ExtResource( 11 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Obstacle10" type="Area2D" parent="Obstacles" index="9"]
+
+editor/display_folded = true
+position = Vector2( 3650, 0 )
+z_index = -2
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle10" index="0"]
+
+position = Vector2( -2.7, 9 )
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Sprite" type="Sprite" parent="Obstacles/Obstacle10" index="1"]
+
+position = Vector2( 0, 50 )
+texture = ExtResource( 11 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Obstacle11" type="Area2D" parent="Obstacles" index="10"]
+
+editor/display_folded = true
+position = Vector2( 3950, 0 )
+z_index = -2
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle11" index="0"]
+
+position = Vector2( -2.7, 9 )
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Sprite" type="Sprite" parent="Obstacles/Obstacle11" index="1"]
+
+position = Vector2( 0, 50 )
+texture = ExtResource( 11 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Obstacle12" type="Area2D" parent="Obstacles" index="11"]
+
+editor/display_folded = true
+position = Vector2( 4250, 0 )
+z_index = -2
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle12" index="0"]
+
+position = Vector2( -2.7, 9 )
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Sprite" type="Sprite" parent="Obstacles/Obstacle12" index="1"]
+
+position = Vector2( 0, 50 )
+texture = ExtResource( 11 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Obstacle13" type="Area2D" parent="Obstacles" index="12"]
+
+editor/display_folded = true
+position = Vector2( 4550, 0 )
+z_index = -2
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle13" index="0"]
+
+position = Vector2( -2.7, 9 )
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Sprite" type="Sprite" parent="Obstacles/Obstacle13" index="1"]
+
+position = Vector2( 0, 50 )
+texture = ExtResource( 11 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Obstacle14" type="Area2D" parent="Obstacles" index="13"]
+
+editor/display_folded = true
+position = Vector2( 4850, 0 )
+z_index = -2
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle14" index="0"]
+
+position = Vector2( -2.7, 9 )
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Sprite" type="Sprite" parent="Obstacles/Obstacle14" index="1"]
+
+position = Vector2( 0, 50 )
 texture = ExtResource( 11 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
@@ -649,9 +936,15 @@ editor_draw_limits = true
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Transform" ]
 
-[node name="Hud" parent="Player" index="7" instance=ExtResource( 13 )]
+[node name="Node2D" type="Node2D" parent="Player" index="7"]
 
-_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Rect" ]
+z_index = 1
+_sections_unfolded = [ "Z Index" ]
+
+[node name="Hud" parent="Player/Node2D" index="0" instance=ExtResource( 13 )]
+
+pause_mode = 2
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Pause", "Rect" ]
 
 [connection signal="body_entered" from="PickUps/PickUp1" to="PickUps" method="_on_PickUp1_body_entered"]
 
@@ -682,5 +975,61 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Rect" ]
 [connection signal="body_entered" from="PickUps/PickUp14" to="PickUps" method="_on_PickUp14_body_entered"]
 
 [connection signal="body_entered" from="PickUps/PickUp15" to="PickUps" method="_on_PickUp15_body_entered"]
+
+[connection signal="body_entered" from="Obstacles/Obstacle1" to="Obstacles" method="_on_Obstacle1_body_entered"]
+
+[connection signal="body_exited" from="Obstacles/Obstacle1" to="Obstacles" method="_on_Obstacle1_body_exited"]
+
+[connection signal="body_entered" from="Obstacles/Obstacle2" to="Obstacles" method="_on_Obstacle2_body_entered"]
+
+[connection signal="body_exited" from="Obstacles/Obstacle2" to="Obstacles" method="_on_Obstacle2_body_exited"]
+
+[connection signal="body_entered" from="Obstacles/Obstacle3" to="Obstacles" method="_on_Obstacle3_body_entered"]
+
+[connection signal="body_exited" from="Obstacles/Obstacle3" to="Obstacles" method="_on_Obstacle3_body_exited"]
+
+[connection signal="body_entered" from="Obstacles/Obstacle4" to="Obstacles" method="_on_Obstacle4_body_entered"]
+
+[connection signal="body_exited" from="Obstacles/Obstacle4" to="Obstacles" method="_on_Obstacle4_body_exited"]
+
+[connection signal="body_entered" from="Obstacles/Obstacle5" to="Obstacles" method="_on_Obstacle5_body_entered"]
+
+[connection signal="body_exited" from="Obstacles/Obstacle5" to="Obstacles" method="_on_Obstacle5_body_exited"]
+
+[connection signal="body_entered" from="Obstacles/Obstacle6" to="Obstacles" method="_on_Obstacle6_body_entered"]
+
+[connection signal="body_exited" from="Obstacles/Obstacle6" to="Obstacles" method="_on_Obstacle6_body_exited"]
+
+[connection signal="body_entered" from="Obstacles/Obstacle7" to="Obstacles" method="_on_Obstacle7_body_entered"]
+
+[connection signal="body_exited" from="Obstacles/Obstacle7" to="Obstacles" method="_on_Obstacle7_body_exited"]
+
+[connection signal="body_entered" from="Obstacles/Obstacle8" to="Obstacles" method="_on_Obstacle8_body_entered"]
+
+[connection signal="body_exited" from="Obstacles/Obstacle8" to="Obstacles" method="_on_Obstacle8_body_exited"]
+
+[connection signal="body_entered" from="Obstacles/Obstacle9" to="Obstacles" method="_on_Obstacle9_body_entered"]
+
+[connection signal="body_exited" from="Obstacles/Obstacle9" to="Obstacles" method="_on_Obstacle9_body_exited"]
+
+[connection signal="body_entered" from="Obstacles/Obstacle10" to="Obstacles" method="_on_Obstacle10_body_entered"]
+
+[connection signal="body_exited" from="Obstacles/Obstacle10" to="Obstacles" method="_on_Obstacle10_body_exited"]
+
+[connection signal="body_entered" from="Obstacles/Obstacle11" to="Obstacles" method="_on_Obstacle11_body_entered"]
+
+[connection signal="body_exited" from="Obstacles/Obstacle11" to="Obstacles" method="_on_Obstacle11_body_exited"]
+
+[connection signal="body_entered" from="Obstacles/Obstacle12" to="Obstacles" method="_on_Obstacle12_body_entered"]
+
+[connection signal="body_exited" from="Obstacles/Obstacle12" to="Obstacles" method="_on_Obstacle12_body_exited"]
+
+[connection signal="body_entered" from="Obstacles/Obstacle13" to="Obstacles" method="_on_Obstacle13_body_entered"]
+
+[connection signal="body_exited" from="Obstacles/Obstacle13" to="Obstacles" method="_on_Obstacle13_body_exited"]
+
+[connection signal="body_entered" from="Obstacles/Obstacle14" to="Obstacles" method="_on_Obstacle14_body_entered"]
+
+[connection signal="body_exited" from="Obstacles/Obstacle14" to="Obstacles" method="_on_Obstacle14_body_exited"]
 
 

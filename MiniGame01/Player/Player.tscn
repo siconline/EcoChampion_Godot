@@ -12,9 +12,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 102.437, 62.6319 )
+extents = Vector2( 75.4472, 54.8973 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 z_index = -2
 input_pickable = false
@@ -34,10 +34,10 @@ _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 13.5199, 36.3101 )
+position = Vector2( 0, 42.4572 )
 z_index = -1
 shape = SubResource( 1 )
-_sections_unfolded = [ "Z Index" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
 
@@ -62,7 +62,7 @@ position = Vector2( 20, 30 )
 scale = Vector2( 0.1, 0.1 )
 z_index = -1
 texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="PickUp2" type="Sprite" parent="PickUps" index="1"]
 

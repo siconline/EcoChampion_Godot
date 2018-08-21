@@ -3,6 +3,7 @@ extends Node
 onready var menu = $Menu
 onready var miniGame01 = $MiniGame01
 onready var obstacles = $MiniGame01/Obstacles
+onready var player = $MiniGame01/Player
 
 func _ready():
 	miniGame01.camera.current = false
@@ -22,3 +23,4 @@ func _loadTheme(button, index):
 		miniGame01.localisation = index
 		miniGame01.camera.current = true
 		obstacles.setValue = true
+		player.speed = 500
