@@ -57,6 +57,7 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="PickUp1" type="Sprite" parent="PickUps" index="0"]
 
+visible = false
 position = Vector2( 20, 30 )
 scale = Vector2( 0.1, 0.1 )
 z_index = -1
@@ -65,6 +66,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PickUp2" type="Sprite" parent="PickUps" index="1"]
 
+visible = false
 position = Vector2( 30, 30 )
 rotation = -0.349066
 scale = Vector2( 0.1, 0.1 )
@@ -74,6 +76,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="PickUp3" type="Sprite" parent="PickUps" index="2"]
 
+visible = false
 position = Vector2( 40, 30 )
 rotation = 1.5708
 scale = Vector2( 0.1, 0.1 )
@@ -83,6 +86,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="PickUp4" type="Sprite" parent="PickUps" index="3"]
 
+visible = false
 position = Vector2( 50, 30 )
 rotation = 1.0472
 scale = Vector2( 0.1, 0.1 )
@@ -92,6 +96,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="PickUp5" type="Sprite" parent="PickUps" index="4"]
 
+visible = false
 position = Vector2( 60, 30 )
 rotation = 0.174533
 scale = Vector2( 0.1, 0.1 )
@@ -101,6 +106,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="PickUp6" type="Sprite" parent="PickUps" index="5"]
 
+visible = false
 position = Vector2( 70, 30 )
 rotation = -0.349066
 scale = Vector2( 0.1, 0.1 )

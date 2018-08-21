@@ -13,7 +13,7 @@ func _ready():
 
 # check localisation index of countries an load Theme
 func _process(delta):
-	_hudControll(delta)
+	_hudControll()
 	
 	# load the current theme by index
 	if localisation == 0:
@@ -25,8 +25,7 @@ func _process(delta):
 
 
 #------Own Methods------#
-func _hudControll(delta):
-	print(delta)
+func _hudControll():
 	#limt right left for hud
 	if player.position.x < 0:
 		hud.rect_position.x += player.speed * 0.001 - (player.position.x + hud.rect_position.x)
