@@ -9,11 +9,10 @@
 [ext_resource path="res://MiniGame01/Player/Textures/T_barrow_front.png" type="Texture" id=7]
 [ext_resource path="res://MiniGame01/Player/Textures/T_barrow_front_upgrade_space.png" type="Texture" id=8]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 58.963
-height = 39.9809
+extents = Vector2( 102.437, 62.6319 )
 
 [node name="Player" type="KinematicBody2D"]
 
@@ -35,6 +34,7 @@ _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+position = Vector2( 13.5199, 36.3101 )
 z_index = -1
 shape = SubResource( 1 )
 _sections_unfolded = [ "Z Index" ]

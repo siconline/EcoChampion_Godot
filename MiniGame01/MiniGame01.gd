@@ -34,13 +34,29 @@ func _hudControll():
 	elif player.position.x > 1920*3:
 		hud.rect_position.x -= player.speed * 0.001 + (hud.rect_position.x + (player.position.x) - 1920*3)
 	#set hud y position by player step
-	if player.position.y == -175:
-		hud.rect_position.y = 175
-	elif player.position.y == -175 * 2:
+	if player.position.y == -175 * 2:
 		hud.rect_position.y = 175 * 2
+	elif player.position.y == -175:
+		hud.rect_position.y = 175
 	elif player.position.y == 0:
 		hud.rect_position.y = 0
 	elif player.position.y == 175:
 		hud.rect_position.y = -175
 	elif player.position.y == 175 * 2:
 		hud.rect_position.y = -175 * 2
+	
+	#player position correction
+	if player.position.y > -175 * 2 && player.position.y < -175 - 87.5:
+		player.position.y = -350
+	elif player.position.y > -175 && player.position.y < 0 - 87.5:
+		player.position.y = -175
+		
+	elif player.position.y > -87.5 && player.position.y < 0:
+		player.position.y = 0
+	elif player.position.y < 87.5 && player.position.y > 0:
+		player.position.y = 0
+		
+	elif player.position.y < 175 * 2 && player.position.y > 175 + 87.5:
+		player.position.y = 350
+	elif player.position.y < 175 && player.position.y > 0 + 87.5:
+		player.position.y = 175
