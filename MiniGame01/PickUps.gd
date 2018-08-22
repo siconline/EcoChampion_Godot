@@ -14,6 +14,9 @@ var randomItem
 #Variables for Methods Area Overlapping
 var counterPickUps = 0
 var maxItems = 3
+#PickUp Typ 0 = Plastic 1 = Paper 2 = Metal
+var pickUpTyp = []
+var pickUpTypBarrow = []
 
 func _ready():
 	randomize()
@@ -63,13 +66,14 @@ func _on_PickUp15_body_entered(body):
 #----Own Methods----#
 func _randomPickUpPos():
 	for obj in pickUps:
-		randomPos  = randi()%4
+		randomPos  = randi()%5
 		obj.position.y = positions[randomPos]
 
 func _randomPickUpTexture():
 	for obj in pickUpsSprite:
-		randomItem = randi()%2
+		randomItem = randi()%3
 		obj.texture = textures[randomItem]
+		pickUpTyp.append(randomItem)
 
 func _controllItemsBarrow(index):
 	if counterPickUps < maxItems:
@@ -80,6 +84,7 @@ func _controllItemsBarrow(index):
 				player.get(obj).texture = pickUpsSprite[index].texture
 				pickUps[index].visible = false
 				pickUpsCollision[index].disabled = true
+				pickUpTypBarrow.append(pickUpTyp[index])
 		counterPickUps += 1
 
 

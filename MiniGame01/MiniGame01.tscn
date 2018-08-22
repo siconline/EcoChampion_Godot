@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://MiniGame01/MiniGame01.gd" type="Script" id=1]
 [ext_resource path="res://MiniGame01/Grounds.gd" type="Script" id=2]
@@ -13,6 +13,13 @@
 [ext_resource path="res://MiniGame01/Textures/Obstacles/T_Schlagloch.png" type="Texture" id=11]
 [ext_resource path="res://MiniGame01/Player/Player.tscn" type="PackedScene" id=12]
 [ext_resource path="res://MiniGame01/Hud/Hud.tscn" type="PackedScene" id=13]
+[ext_resource path="res://MiniGame01/Facilities.gd" type="Script" id=14]
+[ext_resource path="res://MiniGame01/Textures/Facilities/t3_hinten_d.png" type="Texture" id=15]
+[ext_resource path="res://MiniGame01/Textures/Facilities/t3_vorne.png" type="Texture" id=16]
+[ext_resource path="res://MiniGame01/Textures/Facilities/t1_hinten_d.png" type="Texture" id=17]
+[ext_resource path="res://MiniGame01/Textures/Facilities/t1_vorne.png" type="Texture" id=18]
+[ext_resource path="res://MiniGame01/Textures/Facilities/t2_hinten_d.png" type="Texture" id=19]
+[ext_resource path="res://MiniGame01/Textures/Facilities/t2_vorne.png" type="Texture" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -35,6 +42,11 @@ extents = Vector2( 22, 81 )
 custom_solver_bias = 0.0
 extents = Vector2( 74, 45 )
 _sections_unfolded = [ "Resource" ]
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 78.0835, 167.739 )
 
 [node name="MiniGame01" type="Node2D"]
 
@@ -906,6 +918,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Player" parent="." index="3" instance=ExtResource( 12 )]
 
+editor/display_folded = true
 position = Vector2( -300, 0 )
 z_index = -1
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -945,6 +958,112 @@ _sections_unfolded = [ "Z Index" ]
 
 pause_mode = 2
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Pause", "Rect" ]
+
+[node name="Facilities" type="Node2D" parent="." index="4"]
+
+script = ExtResource( 14 )
+
+[node name="Plastic" type="StaticBody2D" parent="Facilities" index="0"]
+
+editor/display_folded = true
+position = Vector2( 6500, -350 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Facilities/Plastic" index="0"]
+
+position = Vector2( -27.3101, 19.5071 )
+shape = SubResource( 5 )
+
+[node name="Behind" type="Sprite" parent="Facilities/Plastic" index="1"]
+
+position = Vector2( 34.0376, 13.9717 )
+scale = Vector2( 0.35, 0.35 )
+z_index = -3
+texture = ExtResource( 15 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Front" type="Sprite" parent="Facilities/Plastic" index="2"]
+
+position = Vector2( 0, 50 )
+scale = Vector2( 0.35, 0.35 )
+z_index = -1
+texture = ExtResource( 16 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Paper" type="StaticBody2D" parent="Facilities" index="1"]
+
+editor/display_folded = true
+position = Vector2( 6500, 0 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Facilities/Paper" index="0"]
+
+position = Vector2( -27.3101, 19.5071 )
+shape = SubResource( 5 )
+
+[node name="Behind" type="Sprite" parent="Facilities/Paper" index="1"]
+
+position = Vector2( 34.0376, 13.9717 )
+scale = Vector2( 0.35, 0.35 )
+z_index = -3
+texture = ExtResource( 17 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Front" type="Sprite" parent="Facilities/Paper" index="2"]
+
+position = Vector2( 0, 50 )
+scale = Vector2( 0.35, 0.35 )
+z_index = -1
+texture = ExtResource( 18 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Metal" type="StaticBody2D" parent="Facilities" index="2"]
+
+editor/display_folded = true
+position = Vector2( 6500, 350 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Facilities/Metal" index="0"]
+
+position = Vector2( -27.3101, 19.5071 )
+shape = SubResource( 5 )
+
+[node name="Behind" type="Sprite" parent="Facilities/Metal" index="1"]
+
+position = Vector2( 34.0376, 13.9717 )
+scale = Vector2( 0.35, 0.35 )
+z_index = -3
+texture = ExtResource( 19 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Front" type="Sprite" parent="Facilities/Metal" index="2"]
+
+position = Vector2( 0, 50 )
+scale = Vector2( 0.35, 0.35 )
+z_index = -1
+texture = ExtResource( 20 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [connection signal="body_entered" from="PickUps/PickUp1" to="PickUps" method="_on_PickUp1_body_entered"]
 

@@ -23,4 +23,5 @@ func _loadTheme(button, index):
 		miniGame01.localisation = index
 		miniGame01.camera.current = true
 		obstacles.setValue = true
-		player.speed = 500
+		player.speed = player.maxSpeed
+		player.animPlayer.stop(true)
