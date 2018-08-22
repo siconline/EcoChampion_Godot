@@ -17,6 +17,7 @@ onready var pickUp4 = $PickUps/PickUp4
 onready var pickUp5 = $PickUps/PickUp5
 onready var pickUp6 = $PickUps/PickUp6
 onready var animPlayer = $AnimationPlayer
+onready var hud = $Node2D/Hud
 
 # pickUp positions
 var posPickUps = 20
@@ -96,6 +97,9 @@ func _physics_process(delta):
 		if sprite.flip_h == false:
 			# reset the position Pickups on barrow
 			posPickUps = -20
+	elif Input.is_action_just_pressed("ui_cancel"):
+		hud.pausemenu.visible = true
+		get_tree().set_pause(true)
 	
 	var collision_info = move_and_collide(movement * delta)
 	

@@ -48,7 +48,7 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 78.0835, 167.739 )
 
-[node name="MiniGame01" type="Node2D"]
+[node name="MiniGame01" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
@@ -918,7 +918,6 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Player" parent="." index="3" instance=ExtResource( 12 )]
 
-editor/display_folded = true
 position = Vector2( -300, 0 )
 z_index = -1
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -961,6 +960,7 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Pause", "Re
 
 [node name="Facilities" type="Node2D" parent="." index="4"]
 
+editor/display_folded = true
 script = ExtResource( 14 )
 
 [node name="Plastic" type="StaticBody2D" parent="Facilities" index="0"]
