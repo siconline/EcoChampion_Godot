@@ -48,7 +48,7 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 78.0835, 167.739 )
 
-[node name="MiniGame01" type="Node2D" index="0"]
+[node name="MiniGame01" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
@@ -965,7 +965,6 @@ script = ExtResource( 14 )
 
 [node name="Plastic" type="StaticBody2D" parent="Facilities" index="0"]
 
-editor/display_folded = true
 position = Vector2( 6500, -350 )
 input_pickable = false
 collision_layer = 1

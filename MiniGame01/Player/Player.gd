@@ -18,6 +18,7 @@ onready var pickUp5 = $PickUps/PickUp5
 onready var pickUp6 = $PickUps/PickUp6
 onready var animPlayer = $AnimationPlayer
 onready var hud = $Node2D/Hud
+onready var clock = $Node2D/Hud/Clock/Clock_Timer
 
 # pickUp positions
 var posPickUps = 20
@@ -100,6 +101,7 @@ func _physics_process(delta):
 	elif Input.is_action_just_pressed("ui_cancel"):
 		hud.pausemenu.visible = true
 		get_tree().set_pause(true)
+		clock.set_paused(true)
 	
 	var collision_info = move_and_collide(movement * delta)
 	
@@ -140,6 +142,12 @@ func collideObstacleDamage(pickUpIndex, pickUpName):
 		#----check the item on weelbarrow----#
 		if pickUps.pickUpTypBarrow[pickUps.pickUpTypBarrow.size()-1] == pickUpIndex:
 			print(pickUpName)
+			if pickUpName == "Plastic":
+				hud.scoreCount += 100
+			elif pickUpName == "Metal":
+				hud.scoreCount += 50
+			else:
+				hud.scoreCount += 25
 		else:
 			if pickUpIndex == 9 && pickUpName == "Value":
 				pass

@@ -1,20 +1,31 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://MiniGame01/Hud/Hud.gd" type="Script" id=1]
-[ext_resource path="res://MiniGame01/Hud/Textures/Button/pause_button_1.png" type="Texture" id=2]
-[ext_resource path="res://MiniGame01/Hud/Textures/Button/pause_button_2.png" type="Texture" id=3]
-[ext_resource path="res://Fonts/LoveYaLikeASister.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://MiniGame01/Hud/Textures/Menu/pause_rahmen_holz.png" type="Texture" id=5]
+[ext_resource path="res://MiniGame01/Textures/Backgrounds/Argentina/BackgroundEnd_a.png" type="Texture" id=2]
+[ext_resource path="res://MiniGame01/Hud/Textures/Button/pause_button_1.png" type="Texture" id=3]
+[ext_resource path="res://MiniGame01/Hud/Textures/Button/pause_button_2.png" type="Texture" id=4]
+[ext_resource path="res://Fonts/LoveYaLikeASister.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://MiniGame01/Hud/Textures/Menu/pause_rahmen_holz.png" type="Texture" id=6]
+[ext_resource path="res://MiniGame01/Hud/Clock.gd" type="Script" id=7]
+[ext_resource path="res://MiniGame01/Hud/Textures/Coins/ecocoin_1.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 250
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Hud" type="Control"]
+[sub_resource type="DynamicFont" id=2]
+
+size = 50
+use_mipmaps = false
+use_filter = true
+font_data = ExtResource( 5 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="Hud" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -30,7 +41,13 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
 
-[node name="Button_Pause" type="TextureButton" parent="." index="0"]
+[node name="windowsize" type="Sprite" parent="." index="0"]
+
+visible = false
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Button_Pause" type="TextureButton" parent="." index="1"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -53,9 +70,9 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 3 )
-texture_hover = ExtResource( 3 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
 _sections_unfolded = [ "Rect", "Textures" ]
 
 [node name="Label1" type="Label" parent="Button_Pause" index="0"]
@@ -81,12 +98,12 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Pausemenu" type="Sprite" parent="." index="1"]
+[node name="Pausemenu" type="Sprite" parent="." index="2"]
 
 editor/display_folded = true
 visible = false
 scale = Vector2( 0.85, 0.85 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Button_Continue" type="TextureButton" parent="Pausemenu" index="0"]
@@ -111,9 +128,9 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 3 )
-texture_hover = ExtResource( 3 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
 _sections_unfolded = [ "Rect", "Textures" ]
 
 [node name="Label1" type="Label" parent="Pausemenu/Button_Continue" index="0"]
@@ -161,9 +178,9 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 3 )
-texture_hover = ExtResource( 3 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
 _sections_unfolded = [ "Rect", "Textures" ]
 
 [node name="Label1" type="Label" parent="Pausemenu/Button_MainMenu" index="0"]
@@ -211,9 +228,9 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 3 )
-texture_hover = ExtResource( 3 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
 _sections_unfolded = [ "Rect", "Textures" ]
 
 [node name="Label1" type="Label" parent="Pausemenu/Button_Quit" index="0"]
@@ -239,6 +256,117 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
+[node name="Clock" type="Node2D" parent="." index="3"]
+
+position = Vector2( 0, -549 )
+script = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Clock_Timer" type="Timer" parent="Clock" index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="Clock_Minute" type="Label" parent="Clock" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -43.0
+margin_right = -15.0
+margin_bottom = 63.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "custom_fonts" ]
+
+[node name="Clock_" type="Label" parent="Clock" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -13.0
+margin_right = 15.0
+margin_bottom = 63.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = ":"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "custom_fonts" ]
+
+[node name="Clock_Second" type="Label" parent="Clock" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_right = 44.0
+margin_bottom = 63.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "custom_fonts" ]
+
+[node name="Score_Count" type="Label" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 757.0
+margin_top = -550.0
+margin_right = 869.0
+margin_bottom = -487.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "custom_fonts" ]
+
+[node name="Score_Texture" type="Sprite" parent="." index="5"]
+
+position = Vector2( 706.135, -520 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Transform" ]
+
 [connection signal="pressed" from="Button_Pause" to="." method="_on_Button_Pause_pressed"]
 
 [connection signal="pressed" from="Pausemenu/Button_Continue" to="." method="_on_Button_Continue_pressed"]
@@ -246,5 +374,7 @@ _sections_unfolded = [ "Rect", "custom_fonts" ]
 [connection signal="pressed" from="Pausemenu/Button_MainMenu" to="." method="_on_Button_MainMenu_pressed"]
 
 [connection signal="pressed" from="Pausemenu/Button_Quit" to="." method="_on_Button_Quit_pressed"]
+
+[connection signal="timeout" from="Clock/Clock_Timer" to="Clock" method="_on_Clock_Timer_timeout"]
 
 
