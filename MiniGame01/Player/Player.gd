@@ -113,7 +113,7 @@ func _physics_process(delta):
 	
 	#----Check Collision on Facilities----#
 	if collision_info:
-		if Input.is_action_just_pressed("ui_accept"):
+		if Input.is_action_just_pressed("ui_accept") || Input.is_action_just_pressed("ui_mouse"):
 			if plasticPlayer.is_playing():
 				plasticWasteSprite.visible = true
 			else:
