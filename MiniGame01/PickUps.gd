@@ -13,7 +13,7 @@ var randomPos
 var randomItem
 #Variables for Methods Area Overlapping
 var counterPickUps = 0
-var maxItems = 3
+var maxItems = 6
 #PickUp Typ 0 = Plastic 1 = Paper 2 = Metal
 var pickUpTyp = []
 var pickUpTypBarrow = []

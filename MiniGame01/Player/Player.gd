@@ -19,6 +19,12 @@ onready var pickUp6 = $PickUps/PickUp6
 onready var animPlayer = $AnimationPlayer
 onready var hud = $Node2D/Hud
 onready var clock = $Node2D/Hud/Clock/Clock_Timer
+onready var plasticPlayer = get_node("../Facilities/Plastic/DropPlayer")
+onready var paperPlayer = get_node("../Facilities/Paper/DropPlayer")
+onready var metalPlayer = get_node("../Facilities/Metal/DropPlayer")
+onready var plasticWasteSprite = get_node("../Facilities/Plastic/WasteAnim")
+onready var paperWasteSprite = get_node("../Facilities/Paper/WasteAnim")
+onready var metalWasteSprite = get_node("../Facilities/Metal/WasteAnim")
 
 # pickUp positions
 var posPickUps = 20
@@ -108,15 +114,27 @@ func _physics_process(delta):
 	#----Check Collision on Facilities----#
 	if collision_info:
 		if Input.is_action_just_pressed("ui_accept"):
-			if collision_info.collider.name == "Plastic":
-				if position.y == -350:
-					collideObstacleDamage(0, collision_info.collider.name)
-			elif collision_info.collider.name == "Paper":
-				if position.y == 0:
-					collideObstacleDamage(1, collision_info.collider.name)
-			elif collision_info.collider.name == "Metal":
-				if position.y == 350:
-					collideObstacleDamage(2, collision_info.collider.name)
+			if plasticPlayer.is_playing():
+				plasticWasteSprite.visible = true
+			else:
+				plasticWasteSprite.visible = false
+				if collision_info.collider.name == "Plastic":
+					if position.y == -350:
+						collideObstacleDamage(0, collision_info.collider.name)
+			if paperPlayer.is_playing():
+				paperWasteSprite.visible = true
+			else:
+				paperWasteSprite.visible = false
+				if collision_info.collider.name == "Paper":
+					if position.y == 0:
+						collideObstacleDamage(1, collision_info.collider.name)
+			if metalPlayer.is_playing():
+				metalWasteSprite.visible = true
+			else:
+				metalWasteSprite.visible = false
+				if collision_info.collider.name == "Metal":
+					if position.y == 350:
+						collideObstacleDamage(2, collision_info.collider.name)
 		
 		if facilityCollControll == true:
 			speed = 100
@@ -143,15 +161,24 @@ func collideObstacleDamage(pickUpIndex, pickUpName):
 		if pickUps.pickUpTypBarrow[pickUps.pickUpTypBarrow.size()-1] == pickUpIndex:
 			print(pickUpName)
 			if pickUpName == "Plastic":
+				plasticPlayer.play("Waste_IN")
 				hud.scoreCount += 100
 			elif pickUpName == "Metal":
+				metalPlayer.play("Waste_IN")
 				hud.scoreCount += 50
 			else:
+				paperPlayer.play("Waste_IN")
 				hud.scoreCount += 25
 		else:
 			if pickUpIndex == 9 && pickUpName == "Value":
 				pass
 			else:
+				if position.y == -350:
+					plasticPlayer.play("Waste_OUT")
+				elif position.y == 0:
+					paperPlayer.play("Waste_OUT")
+				elif position.y == 350:
+					metalPlayer.play("Waste_OUT")
 				print('Wrong Item')
 		#----remove the last pickup----#
 		pickUps.counterPickUps -= 1
