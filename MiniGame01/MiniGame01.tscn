@@ -1,59 +1,66 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://MiniGame01/MiniGame01.gd" type="Script" id=1]
 [ext_resource path="res://MiniGame01/Grounds.gd" type="Script" id=2]
 [ext_resource path="res://MiniGame01/Textures/Backgrounds/Germany/BackgroundStart_d.png" type="Texture" id=3]
 [ext_resource path="res://MiniGame01/Textures/Backgrounds/Germany/ForegroundStartTop_d.png" type="Texture" id=4]
 [ext_resource path="res://MiniGame01/Textures/Backgrounds/Germany/ForegroundStartBottom_d.png" type="Texture" id=5]
-[ext_resource path="res://MiniGame01/PickUps.gd" type="Script" id=6]
-[ext_resource path="res://MiniGame01/Textures/PickUps/T_Plastic_Bottle.png" type="Texture" id=7]
-[ext_resource path="res://MiniGame01/Obstacles.gd" type="Script" id=8]
-[ext_resource path="res://MiniGame01/Textures/Obstacles/T_fels1_a.png" type="Texture" id=9]
-[ext_resource path="res://MiniGame01/Textures/Obstacles/T_Baum.png" type="Texture" id=10]
-[ext_resource path="res://MiniGame01/Textures/Obstacles/T_Schlagloch.png" type="Texture" id=11]
-[ext_resource path="res://MiniGame01/Player/Player.tscn" type="PackedScene" id=12]
-[ext_resource path="res://MiniGame01/Hud/Hud.tscn" type="PackedScene" id=13]
-[ext_resource path="res://MiniGame01/Facilities.gd" type="Script" id=14]
-[ext_resource path="res://MiniGame01/Animations/Waste_IN.tres" type="Animation" id=15]
-[ext_resource path="res://MiniGame01/Animations/Waste_OUT.tres" type="Animation" id=16]
-[ext_resource path="res://MiniGame01/Textures/Facilities/t3_hinten_d.png" type="Texture" id=17]
-[ext_resource path="res://MiniGame01/Textures/PickUps/T_Paper_Newspaper.png" type="Texture" id=18]
-[ext_resource path="res://MiniGame01/Textures/Facilities/t3_vorne.png" type="Texture" id=19]
-[ext_resource path="res://MiniGame01/Textures/Facilities/t1_hinten_d.png" type="Texture" id=20]
-[ext_resource path="res://MiniGame01/Textures/Facilities/t1_vorne.png" type="Texture" id=21]
-[ext_resource path="res://MiniGame01/Textures/Facilities/t2_hinten_d.png" type="Texture" id=22]
-[ext_resource path="res://MiniGame01/Textures/Facilities/t2_vorne.png" type="Texture" id=23]
+[ext_resource path="res://MiniGame01/PowerUps.gd" type="Script" id=6]
+[ext_resource path="res://MiniGame01/Textures/PickUps/item_boost.png" type="Texture" id=7]
+[ext_resource path="res://MiniGame01/PickUps.gd" type="Script" id=8]
+[ext_resource path="res://MiniGame01/Textures/PickUps/T_Plastic_Bottle.png" type="Texture" id=9]
+[ext_resource path="res://MiniGame01/Obstacles.gd" type="Script" id=10]
+[ext_resource path="res://MiniGame01/Textures/Obstacles/T_fels1_a.png" type="Texture" id=11]
+[ext_resource path="res://MiniGame01/Textures/Obstacles/T_Baum.png" type="Texture" id=12]
+[ext_resource path="res://MiniGame01/Textures/Obstacles/T_Schlagloch.png" type="Texture" id=13]
+[ext_resource path="res://MiniGame01/Player/Player.tscn" type="PackedScene" id=14]
+[ext_resource path="res://MiniGame01/Hud/Hud.tscn" type="PackedScene" id=15]
+[ext_resource path="res://MiniGame01/Facilities.gd" type="Script" id=16]
+[ext_resource path="res://MiniGame01/Animations/Waste_IN.tres" type="Animation" id=17]
+[ext_resource path="res://MiniGame01/Animations/Waste_OUT.tres" type="Animation" id=18]
+[ext_resource path="res://MiniGame01/Textures/Facilities/t3_hinten_d.png" type="Texture" id=19]
+[ext_resource path="res://MiniGame01/Textures/PickUps/T_Paper_Newspaper.png" type="Texture" id=20]
+[ext_resource path="res://MiniGame01/Textures/Facilities/t3_vorne.png" type="Texture" id=21]
+[ext_resource path="res://MiniGame01/Textures/Facilities/t1_hinten_d.png" type="Texture" id=22]
+[ext_resource path="res://MiniGame01/Textures/Facilities/t1_vorne.png" type="Texture" id=23]
+[ext_resource path="res://MiniGame01/Textures/Facilities/t2_hinten_d.png" type="Texture" id=24]
+[ext_resource path="res://MiniGame01/Textures/Facilities/t2_vorne.png" type="Texture" id=25]
+[ext_resource path="res://MiniGame01/NPC/Npc.tscn" type="PackedScene" id=26]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 117.149, 296.078 )
+extents = Vector2( 10, 10 )
 
 [sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 117.149, 296.078 )
+
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 111, 47 )
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 22, 81 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 74, 45 )
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 78.0835, 167.739 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 
-resource_name = "Waste_IN"
 length = 1.0
 loop = false
 step = 0.1
@@ -80,85 +87,10 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, 180.0, 360.0 ]
-}
-
-[sub_resource type="Animation" id=7]
-
-resource_name = "Waste_OUT"
-length = 3.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("WasteAnim:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6, 1, 1.4, 1.6, 1.7, 2, 3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 0, 0 ),
-"update": 0,
-"values": [ Vector2( -131.582, 48.5298 ), Vector2( -83.0562, -105.975 ), Vector2( -17.6367, -122.404 ), Vector2( 0, 50 ), Vector2( 0, 72.9349 ), Vector2( -115.042, -217.868 ), Vector2( -296.42, -230.226 ), Vector2( -560.876, 107.337 ), Vector2( -560.876, 107.337 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("WasteAnim:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.5, 1, 1.4, 2, 3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0, 180.0, 360.0, 360.0, -360.0, -360.0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("WasteAnim:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 2, 2.2, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=8]
 
-resource_name = "Waste_IN"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("WasteAnim:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( -131.582, 48.5298 ), Vector2( -83.0562, -105.975 ), Vector2( -17.6367, -122.404 ), Vector2( 0, 50 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("WasteAnim:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0, 180.0, 360.0 ]
-}
-
-[sub_resource type="Animation" id=9]
-
-resource_name = "Waste_OUT"
 length = 3.0
 loop = false
 step = 0.1
@@ -199,7 +131,79 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="MiniGame01" type="Node2D"]
+[sub_resource type="Animation" id=9]
+
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("WasteAnim:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -131.582, 48.5298 ), Vector2( -83.0562, -105.975 ), Vector2( -17.6367, -122.404 ), Vector2( 0, 50 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("WasteAnim:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 180.0, 360.0 ]
+}
+
+[sub_resource type="Animation" id=10]
+
+length = 3.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("WasteAnim:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 1, 1.4, 1.6, 1.7, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 0, 0 ),
+"update": 0,
+"values": [ Vector2( -131.582, 48.5298 ), Vector2( -83.0562, -105.975 ), Vector2( -17.6367, -122.404 ), Vector2( 0, 50 ), Vector2( 0, 72.9349 ), Vector2( -115.042, -217.868 ), Vector2( -296.42, -230.226 ), Vector2( -560.876, 107.337 ), Vector2( -560.876, 107.337 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("WasteAnim:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5, 1, 1.4, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 180.0, 360.0, 360.0, -360.0, -360.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("WasteAnim:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2, 2.2, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="MiniGame01" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
@@ -287,16 +291,42 @@ position = Vector2( 5760, 0 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="PickUps" type="Node2D" parent="." index="1"]
+[node name="PowerUps" type="Node2D" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 800, 0 )
+script = ExtResource( 6 )
+
+[node name="PowerUp1" type="Area2D" parent="PowerUps" index="0"]
+
+position = Vector2( -290.064, 1.80205 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PowerUps/PowerUp1" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="PowerUps/PowerUp1" index="1"]
+
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PickUps" type="Node2D" parent="." index="2"]
 
 editor/display_folded = true
 z_index = -2
-script = ExtResource( 6 )
+script = ExtResource( 8 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PickUp1" type="Area2D" parent="PickUps" index="0"]
 
-editor/display_folded = true
 position = Vector2( 800, 0 )
 z_index = -1
 input_pickable = true
@@ -312,18 +342,17 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 scale = Vector2( 0.15, 0.15 )
 z_index = -1
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="PickUps/PickUp1" index="1"]
 
 scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PickUp2" type="Area2D" parent="PickUps" index="1"]
 
-editor/display_folded = true
 position = Vector2( 1100, 0 )
 z_index = -1
 input_pickable = true
@@ -339,13 +368,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 scale = Vector2( 0.15, 0.15 )
 z_index = -1
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="PickUps/PickUp2" index="1"]
 
 scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PickUp3" type="Area2D" parent="PickUps" index="2"]
@@ -366,13 +395,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 scale = Vector2( 0.15, 0.15 )
 z_index = -1
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="PickUps/PickUp3" index="1"]
 
 scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PickUp4" type="Area2D" parent="PickUps" index="3"]
@@ -393,13 +422,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 scale = Vector2( 0.15, 0.15 )
 z_index = -1
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="PickUps/PickUp4" index="1"]
 
 scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PickUp5" type="Area2D" parent="PickUps" index="4"]
@@ -420,13 +449,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 scale = Vector2( 0.15, 0.15 )
 z_index = -1
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="PickUps/PickUp5" index="1"]
 
 scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PickUp6" type="Area2D" parent="PickUps" index="5"]
@@ -447,13 +476,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 scale = Vector2( 0.15, 0.15 )
 z_index = -1
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="PickUps/PickUp6" index="1"]
 
 scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PickUp7" type="Area2D" parent="PickUps" index="6"]
@@ -474,13 +503,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 scale = Vector2( 0.15, 0.15 )
 z_index = -1
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="PickUps/PickUp7" index="1"]
 
 scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PickUp8" type="Area2D" parent="PickUps" index="7"]
@@ -501,13 +530,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 scale = Vector2( 0.15, 0.15 )
 z_index = -1
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="PickUps/PickUp8" index="1"]
 
 scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PickUp9" type="Area2D" parent="PickUps" index="8"]
@@ -528,13 +557,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 scale = Vector2( 0.15, 0.15 )
 z_index = -1
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="PickUps/PickUp9" index="1"]
 
 scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PickUp10" type="Area2D" parent="PickUps" index="9"]
@@ -555,13 +584,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 scale = Vector2( 0.15, 0.15 )
 z_index = -1
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="PickUps/PickUp10" index="1"]
 
 scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PickUp11" type="Area2D" parent="PickUps" index="10"]
@@ -582,13 +611,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 scale = Vector2( 0.15, 0.15 )
 z_index = -1
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="PickUps/PickUp11" index="1"]
 
 scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PickUp12" type="Area2D" parent="PickUps" index="11"]
@@ -609,13 +638,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 scale = Vector2( 0.15, 0.15 )
 z_index = -1
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="PickUps/PickUp12" index="1"]
 
 scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PickUp13" type="Area2D" parent="PickUps" index="12"]
@@ -636,13 +665,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 scale = Vector2( 0.15, 0.15 )
 z_index = -1
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="PickUps/PickUp13" index="1"]
 
 scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PickUp14" type="Area2D" parent="PickUps" index="13"]
@@ -663,13 +692,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 scale = Vector2( 0.15, 0.15 )
 z_index = -1
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="PickUps/PickUp14" index="1"]
 
 scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PickUp15" type="Area2D" parent="PickUps" index="14"]
@@ -690,23 +719,22 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 scale = Vector2( 0.15, 0.15 )
 z_index = -1
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="PickUps/PickUp15" index="1"]
 
 scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Obstacles" type="Node2D" parent="." index="2"]
+[node name="Obstacles" type="Node2D" parent="." index="3"]
 
 editor/display_folded = true
-script = ExtResource( 8 )
+script = ExtResource( 10 )
 
 [node name="Obstacle1" type="Area2D" parent="Obstacles" index="0"]
 
-editor/display_folded = true
 position = Vector2( 950, 0 )
 z_index = -2
 input_pickable = true
@@ -721,12 +749,12 @@ _sections_unfolded = [ "Z Index" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle1" index="0"]
 
 position = Vector2( 1.5, 56 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="Obstacles/Obstacle1" index="1"]
 
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Obstacle2" type="Area2D" parent="Obstacles" index="1"]
@@ -746,13 +774,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle2" index="0"]
 
 position = Vector2( -8.5, 25 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="Obstacles/Obstacle2" index="1"]
 
 scale = Vector2( 0.55, 0.55 )
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Obstacle3" type="Area2D" parent="Obstacles" index="2"]
@@ -772,13 +800,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle3" index="0"]
 
 position = Vector2( -2.7, 9 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="Obstacles/Obstacle3" index="1"]
 
 position = Vector2( 0, 50 )
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Obstacle4" type="Area2D" parent="Obstacles" index="3"]
@@ -798,13 +826,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle4" index="0"]
 
 position = Vector2( -2.7, 9 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="Obstacles/Obstacle4" index="1"]
 
 position = Vector2( 0, 50 )
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Obstacle5" type="Area2D" parent="Obstacles" index="4"]
@@ -824,13 +852,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle5" index="0"]
 
 position = Vector2( -2.7, 9 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="Obstacles/Obstacle5" index="1"]
 
 position = Vector2( 0, 50 )
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Obstacle6" type="Area2D" parent="Obstacles" index="5"]
@@ -850,13 +878,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle6" index="0"]
 
 position = Vector2( -2.7, 9 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="Obstacles/Obstacle6" index="1"]
 
 position = Vector2( 0, 50 )
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Obstacle7" type="Area2D" parent="Obstacles" index="6"]
@@ -876,13 +904,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle7" index="0"]
 
 position = Vector2( -2.7, 9 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="Obstacles/Obstacle7" index="1"]
 
 position = Vector2( 0, 50 )
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Obstacle8" type="Area2D" parent="Obstacles" index="7"]
@@ -902,13 +930,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle8" index="0"]
 
 position = Vector2( -2.7, 9 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="Obstacles/Obstacle8" index="1"]
 
 position = Vector2( 0, 50 )
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Obstacle9" type="Area2D" parent="Obstacles" index="8"]
@@ -928,13 +956,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle9" index="0"]
 
 position = Vector2( -2.7, 9 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="Obstacles/Obstacle9" index="1"]
 
 position = Vector2( 0, 50 )
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Obstacle10" type="Area2D" parent="Obstacles" index="9"]
@@ -954,13 +982,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle10" index="0"]
 
 position = Vector2( -2.7, 9 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="Obstacles/Obstacle10" index="1"]
 
 position = Vector2( 0, 50 )
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Obstacle11" type="Area2D" parent="Obstacles" index="10"]
@@ -980,13 +1008,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle11" index="0"]
 
 position = Vector2( -2.7, 9 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="Obstacles/Obstacle11" index="1"]
 
 position = Vector2( 0, 50 )
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Obstacle12" type="Area2D" parent="Obstacles" index="11"]
@@ -1006,13 +1034,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle12" index="0"]
 
 position = Vector2( -2.7, 9 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="Obstacles/Obstacle12" index="1"]
 
 position = Vector2( 0, 50 )
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Obstacle13" type="Area2D" parent="Obstacles" index="12"]
@@ -1032,13 +1060,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle13" index="0"]
 
 position = Vector2( -2.7, 9 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="Obstacles/Obstacle13" index="1"]
 
 position = Vector2( 0, 50 )
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Obstacle14" type="Area2D" parent="Obstacles" index="13"]
@@ -1058,19 +1086,18 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle14" index="0"]
 
 position = Vector2( -2.7, 9 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="Obstacles/Obstacle14" index="1"]
 
 position = Vector2( 0, 50 )
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Player" parent="." index="3" instance=ExtResource( 12 )]
+[node name="Player" parent="." index="4" instance=ExtResource( 14 )]
 
 editor/display_folded = true
-position = Vector2( -300, 0 )
 z_index = -1
 _sections_unfolded = [ "Transform", "Z Index" ]
 
@@ -1105,14 +1132,15 @@ _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Transform" ]
 z_index = 1
 _sections_unfolded = [ "Z Index" ]
 
-[node name="Hud" parent="Player/Node2D" index="0" instance=ExtResource( 13 )]
+[node name="Hud" parent="Player/Node2D" index="0" instance=ExtResource( 15 )]
 
 pause_mode = 2
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Pause", "Rect" ]
 
-[node name="Facilities" type="Node2D" parent="." index="4"]
+[node name="Facilities" type="Node2D" parent="." index="5"]
 
-script = ExtResource( 14 )
+editor/display_folded = true
+script = ExtResource( 16 )
 
 [node name="Plastic" type="StaticBody2D" parent="Facilities" index="0"]
 
@@ -1133,22 +1161,22 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Waste_IN = ExtResource( 15 )
-anims/Waste_OUT = ExtResource( 16 )
+anims/Waste_IN = ExtResource( 17 )
+anims/Waste_OUT = ExtResource( 18 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Facilities/Plastic" index="1"]
 
 position = Vector2( -27.3101, 19.5071 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="Behind" type="Sprite" parent="Facilities/Plastic" index="2"]
 
 position = Vector2( 34.0376, 13.9717 )
 scale = Vector2( 0.35, 0.35 )
 z_index = -3
-texture = ExtResource( 17 )
+texture = ExtResource( 19 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="WasteAnim" type="Sprite" parent="Facilities/Plastic" index="3"]
@@ -1157,7 +1185,7 @@ visible = false
 position = Vector2( -131.582, 48.5298 )
 scale = Vector2( 0.1, 0.1 )
 z_index = -1
-texture = ExtResource( 18 )
+texture = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Front" type="Sprite" parent="Facilities/Plastic" index="4"]
@@ -1165,7 +1193,7 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 position = Vector2( 0, 50 )
 scale = Vector2( 0.35, 0.35 )
 z_index = -1
-texture = ExtResource( 19 )
+texture = ExtResource( 21 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Paper" type="StaticBody2D" parent="Facilities" index="1"]
@@ -1183,7 +1211,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Facilities/Paper" index="0"]
 
 position = Vector2( -27.3101, 19.5071 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="DropPlayer" type="AnimationPlayer" parent="Facilities/Paper" index="1"]
 
@@ -1192,8 +1220,8 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Waste_IN = SubResource( 6 )
-anims/Waste_OUT = SubResource( 7 )
+anims/Waste_IN = SubResource( 7 )
+anims/Waste_OUT = SubResource( 8 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
@@ -1202,7 +1230,7 @@ _sections_unfolded = [ "Playback Options" ]
 position = Vector2( 34.0376, 13.9717 )
 scale = Vector2( 0.35, 0.35 )
 z_index = -3
-texture = ExtResource( 20 )
+texture = ExtResource( 22 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="WasteAnim" type="Sprite" parent="Facilities/Paper" index="3"]
@@ -1211,7 +1239,7 @@ visible = false
 position = Vector2( -131.582, -301.47 )
 scale = Vector2( 0.1, 0.1 )
 z_index = -1
-texture = ExtResource( 18 )
+texture = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Front" type="Sprite" parent="Facilities/Paper" index="4"]
@@ -1219,7 +1247,7 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 position = Vector2( 0, 50 )
 scale = Vector2( 0.35, 0.35 )
 z_index = -1
-texture = ExtResource( 21 )
+texture = ExtResource( 23 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Metal" type="StaticBody2D" parent="Facilities" index="2"]
@@ -1241,22 +1269,22 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Waste_IN = SubResource( 8 )
-anims/Waste_OUT = SubResource( 9 )
+anims/Waste_IN = SubResource( 9 )
+anims/Waste_OUT = SubResource( 10 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Facilities/Metal" index="1"]
 
 position = Vector2( -27.3101, 19.5071 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="Behind" type="Sprite" parent="Facilities/Metal" index="2"]
 
 position = Vector2( 34.0376, 13.9717 )
 scale = Vector2( 0.35, 0.35 )
 z_index = -3
-texture = ExtResource( 22 )
+texture = ExtResource( 24 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="WasteAnim" type="Sprite" parent="Facilities/Metal" index="3"]
@@ -1265,7 +1293,7 @@ visible = false
 position = Vector2( -131.582, -651.47 )
 scale = Vector2( 0.1, 0.1 )
 z_index = -1
-texture = ExtResource( 18 )
+texture = ExtResource( 20 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Front" type="Sprite" parent="Facilities/Metal" index="4"]
@@ -1273,8 +1301,13 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 position = Vector2( 0, 50 )
 scale = Vector2( 0.35, 0.35 )
 z_index = -1
-texture = ExtResource( 23 )
+texture = ExtResource( 25 )
 _sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Npc" parent="." index="6" instance=ExtResource( 26 )]
+
+position = Vector2( -350, 0 )
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="body_entered" from="PickUps/PickUp1" to="PickUps" method="_on_PickUp1_body_entered"]
 

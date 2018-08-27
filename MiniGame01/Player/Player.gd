@@ -43,7 +43,7 @@ func _physics_process(delta):
 		else:
 			animPlayer.play("Run")
 			#print('run')
-	elif speed == 100:
+	elif speed == 100 || speed == -100:
 		if animPlayer.is_playing():
 			pass
 			#print('is playing idle')
@@ -137,7 +137,10 @@ func _physics_process(delta):
 						collideObstacleDamage(2, collision_info.collider.name)
 		
 		if facilityCollControll == true:
-			speed = 100
+			if speed > 0:
+				speed = 100
+			else:
+				speed = -100
 			animPlayer.stop(true)
 			facilityCollControll = false
 
