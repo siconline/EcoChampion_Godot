@@ -2,7 +2,7 @@
 
 [ext_resource path="res://MiniGame01/NPC/Npc.gd" type="Script" id=1]
 [ext_resource path="res://MiniGame01/NPC/Animations/Idle.tres" type="Animation" id=2]
-[ext_resource path="res://MiniGame01/NPC/Textures/T_NPC_Idle_Animation.png" type="Texture" id=3]
+[ext_resource path="res://MiniGame01/NPC/Textures/T_NPC_Idle_Animation_verkl.png" type="Texture" id=3]
 [ext_resource path="res://MiniGame01/NPC/Textures/T_barrow3.png" type="Texture" id=4]
 [ext_resource path="res://MiniGame01/NPC/Textures/T_part2.png" type="Texture" id=5]
 [ext_resource path="res://MiniGame01/NPC/Textures/T_part1.png" type="Texture" id=6]
@@ -28,7 +28,7 @@ blend_times = [  ]
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.45, 0.45 )
 z_index = -1
 texture = ExtResource( 3 )
 hframes = 9
