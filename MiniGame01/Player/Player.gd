@@ -37,19 +37,18 @@ func _ready():
 func _physics_process(delta):
 	
 	if speed == maxSpeed || speed == -maxSpeed || speed == slowSpeed || speed == -slowSpeed:
-		if animPlayer.is_playing():
+		if animPlayer.get_current_animation() == "Run":
 			pass
 			#print('is playing run')
 		else:
 			animPlayer.play("Run")
 			#print('run')
+			#pass
 	elif speed == 100 || speed == -100:
-		if animPlayer.is_playing():
+		if animPlayer.get_current_animation() == "Idle":
 			pass
-			#print('is playing idle')
 		else:
 			animPlayer.play("Idle")
-			#print('idle')
 	
 	
 	
@@ -57,6 +56,11 @@ func _physics_process(delta):
 	#----Player controll----#
 	if Input.is_action_just_pressed("ui_right"):
 		speed = maxSpeed
+		#Set player position out of collision facility
+		if facilityCollControll == false:
+			position.x = position.x + 10
+		#Stop the current animPlayer animation
+		animPlayer.stop(true)
 		sprite.flip_h = false
 		barrow_Normal.flip_h = false
 		barrow_Upgrade.flip_h = false
@@ -67,6 +71,8 @@ func _physics_process(delta):
 			get(obj).flip_h = false
 			get(obj).position.x = posPickUps
 			posPickUps = posPickUps + 10
+		#---reset CONTROLL POINT----#
+		facilityCollControll = true
 	if Input.is_action_just_pressed("ui_left"):
 		speed = -maxSpeed
 		#Set player position out of collision facility
