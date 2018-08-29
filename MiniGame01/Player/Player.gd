@@ -36,6 +36,8 @@ func _ready():
 
 func _physics_process(delta):
 	
+	print(speed)
+	
 	if speed == maxSpeed || speed == -maxSpeed || speed == slowSpeed || speed == -slowSpeed:
 		if animPlayer.get_current_animation() == "Run":
 			pass
@@ -54,6 +56,28 @@ func _physics_process(delta):
 	
 	movement = Vector2(speed, 0)
 	#----Player controll----#
+	#Right INPUT
+	if Input.is_action_just_pressed("ui_mouse"):
+		if get_global_mouse_position().x > (position.x + 100):
+			speed = maxSpeed
+		#Set player position out of collision facility
+		if facilityCollControll == false:
+			position.x = position.x + 10
+		#Stop the current animPlayer animation
+		animPlayer.stop(true)
+		sprite.flip_h = false
+		barrow_Normal.flip_h = false
+		barrow_Upgrade.flip_h = false
+		posPickUps = 20
+		#give pickUps 1-6 position.x
+		for i in range(1, 7):
+			var obj = str("pickUp" , i)
+			get(obj).flip_h = false
+			get(obj).position.x = posPickUps
+			posPickUps = posPickUps + 10
+		#---reset CONTROLL POINT----#
+		facilityCollControll = true
+		
 	if Input.is_action_just_pressed("ui_right"):
 		speed = maxSpeed
 		#Set player position out of collision facility
@@ -73,6 +97,28 @@ func _physics_process(delta):
 			posPickUps = posPickUps + 10
 		#---reset CONTROLL POINT----#
 		facilityCollControll = true
+	#Left INPUT
+	if Input.is_action_just_pressed("ui_mouse"):
+		if get_global_mouse_position().x < (position.x - 100):
+			speed = -maxSpeed
+			#Set player position out of collision facility
+			if facilityCollControll == false:
+				position.x = position.x - 10
+			#Stop the current animPlayer animation
+			animPlayer.stop(true)
+			sprite.flip_h = true
+			barrow_Normal.flip_h = true
+			barrow_Upgrade.flip_h = true
+			posPickUps = -20
+			#give pickUps 1-6 position.x
+			for i in range(1, 7):
+				var obj = str("pickUp" , i)
+				get(obj).flip_h = false
+				get(obj).position.x = posPickUps
+				posPickUps = posPickUps - 10
+			#---reset CONTROLL POINT----#
+			facilityCollControll = true
+			
 	if Input.is_action_just_pressed("ui_left"):
 		speed = -maxSpeed
 		#Set player position out of collision facility
@@ -95,9 +141,17 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_up"):
 		if position.y > -175*2:
 			position.y -= 175
+	if Input.is_action_just_pressed("ui_mouse"):
+		if get_global_mouse_position().y < (position.y - 100):
+			if position.y > -175*2:
+				position.y -= 175
 	elif Input.is_action_just_pressed("ui_down"):
 		if position.y < 175*2:
 			position.y += 175
+	if Input.is_action_just_pressed("ui_mouse"):
+		if get_global_mouse_position().y > (position.y + 100):
+			if position.y < 175*2:
+				position.y += 175
 	elif Input.is_action_just_released("ui_up") || Input.is_action_just_released("ui_down"):
 		#movement = Vector2(0, 0)
 		#animPlayer.play("Idle")
@@ -119,7 +173,7 @@ func _physics_process(delta):
 	
 	#----Check Collision on Facilities----#
 	if collision_info:
-		if Input.is_action_just_pressed("ui_accept") || Input.is_action_just_pressed("ui_mouse"):
+		if Input.is_action_just_pressed("ui_accept"):
 			if plasticPlayer.is_playing():
 				plasticWasteSprite.visible = true
 			else:
@@ -141,6 +195,30 @@ func _physics_process(delta):
 				if collision_info.collider.name == "Metal":
 					if position.y == 350:
 						collideObstacleDamage(2, collision_info.collider.name)
+		#Mouse INPUT	
+		if Input.is_action_just_pressed("ui_mouse"):
+			if get_global_mouse_position().x > (position.x + 150):
+				if plasticPlayer.is_playing():
+					plasticWasteSprite.visible = true
+				else:
+					plasticWasteSprite.visible = false
+					if collision_info.collider.name == "Plastic":
+						if position.y == -350:
+							collideObstacleDamage(0, collision_info.collider.name)
+				if paperPlayer.is_playing():
+					paperWasteSprite.visible = true
+				else:
+					paperWasteSprite.visible = false
+					if collision_info.collider.name == "Paper":
+						if position.y == 0:
+							collideObstacleDamage(1, collision_info.collider.name)
+				if metalPlayer.is_playing():
+					metalWasteSprite.visible = true
+				else:
+					metalWasteSprite.visible = false
+					if collision_info.collider.name == "Metal":
+						if position.y == 350:
+							collideObstacleDamage(2, collision_info.collider.name)
 		
 		if facilityCollControll == true:
 			if speed > 0:
