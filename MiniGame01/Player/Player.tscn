@@ -55,6 +55,7 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="PowerUps" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
 position = Vector2( 111.519, -14.7707 )
 
 [node name="PowerUp1" type="Sprite" parent="PowerUps" index="0"]

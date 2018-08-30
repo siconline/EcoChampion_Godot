@@ -203,7 +203,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="MiniGame01" type="Node2D" index="0"]
+[node name="MiniGame01" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
@@ -1139,6 +1139,7 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Pause", "Re
 
 [node name="Facilities" type="Node2D" parent="." index="5"]
 
+editor/display_folded = true
 script = ExtResource( 16 )
 
 [node name="Plastic" type="StaticBody2D" parent="Facilities" index="0"]
