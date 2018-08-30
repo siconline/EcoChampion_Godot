@@ -53,85 +53,99 @@ func _on_Obstacle1_body_entered(body):
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
-		player.collideObstacleDamage(9, "Value")
+		#M003
+		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle2_body_entered(body):
 	if obstacleTyp[1] == 0:
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
-		player.collideObstacleDamage(9, "Value")
+		#M003
+		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle3_body_entered(body):
 	if obstacleTyp[2] == 0:
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
-		player.collideObstacleDamage(9, "Value")
+		#M003
+		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle4_body_entered(body):
 	if obstacleTyp[3] == 0:
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
-		player.collideObstacleDamage(9, "Value")
+		#M003
+		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle5_body_entered(body):
 	if obstacleTyp[4] == 0:
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
-		player.collideObstacleDamage(9, "Value")
+		#M003
+		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle6_body_entered(body):
 	if obstacleTyp[5] == 0:
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
-		player.collideObstacleDamage(9, "Value")
+		#M003
+		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle7_body_entered(body):
 	if obstacleTyp[6] == 0:
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
-		player.collideObstacleDamage(9, "Value")
+		#M003
+		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle8_body_entered(body):
 	if obstacleTyp[7] == 0:
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
-		player.collideObstacleDamage(9, "Value")
+		#M003
+		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle9_body_entered(body):
 	if obstacleTyp[8] == 0:
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
-		player.collideObstacleDamage(9, "Value")
+		#M003
+		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle10_body_entered(body):
 	if obstacleTyp[9] == 0:
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
-		player.collideObstacleDamage(9, "Value")
+		#M003
+		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle11_body_entered(body):
 	if obstacleTyp[10] == 0:
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
-		player.collideObstacleDamage(9, "Value")
+		#M003
+		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle12_body_entered(body):
 	if obstacleTyp[11] == 0:
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
-		player.collideObstacleDamage(9, "Value")
+		#M003
+		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle13_body_entered(body):
 	if obstacleTyp[12] == 0:
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
-		player.collideObstacleDamage(9, "Value")
+		#M003
+		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle14_body_entered(body):
 	if obstacleTyp[13] == 0:
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
-		player.collideObstacleDamage(9, "Value")
+		#M003
+		methods.collideObstacleDamage(9, "Value")
 #----AREAS2D--------------EXITED----------#
 func _on_Obstacle1_body_exited(body):
 	#M002

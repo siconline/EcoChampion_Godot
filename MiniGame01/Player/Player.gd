@@ -11,8 +11,6 @@ var posPickUps = 20
 onready var methods = get_node("../../Methods")
 
 onready var sprite = $Sprite
-onready var barrow_Normal = $Barrow_Front_Normal
-onready var barrow_Upgrade = $Barrow_Front_Upgrade
 onready var pickUps = get_node("../PickUps")
 onready var pickUp1 = $PickUps/PickUp1
 onready var pickUp2 = $PickUps/PickUp2
@@ -59,7 +57,7 @@ func _physics_process(delta):
 			methods.pressedMouseForDirection(false, true)
 	if Input.is_action_just_pressed("ui_right"):
 		#M001
-		methods.pressedMouseForDirection(false, true)	
+		methods.pressedMouseForDirection(false, true)
 	#LEFT INPUT
 	if Input.is_action_just_pressed("ui_mouse"):
 		if get_global_mouse_position().x < (position.x - 100):
@@ -104,6 +102,8 @@ func _physics_process(delta):
 	
 	#----Check Collision on Facilities----#
 	if collision_info:
+		#M004
+		methods.stopRunAndSetSpeed()
 		if Input.is_action_just_pressed("ui_accept"):
 			if plasticPlayer.is_playing():
 				plasticWasteSprite.visible = true
@@ -111,21 +111,24 @@ func _physics_process(delta):
 				plasticWasteSprite.visible = false
 				if collision_info.collider.name == "Plastic":
 					if position.y == -350:
-						collideObstacleDamage(0, collision_info.collider.name)
+						#M003
+						methods.collideObstacleDamage(0, collision_info.collider.name)
 			if paperPlayer.is_playing():
 				paperWasteSprite.visible = true
 			else:
 				paperWasteSprite.visible = false
 				if collision_info.collider.name == "Paper":
 					if position.y == 0:
-						collideObstacleDamage(1, collision_info.collider.name)
+						#M003
+						methods.collideObstacleDamage(1, collision_info.collider.name)
 			if metalPlayer.is_playing():
 				metalWasteSprite.visible = true
 			else:
 				metalWasteSprite.visible = false
 				if collision_info.collider.name == "Metal":
 					if position.y == 350:
-						collideObstacleDamage(2, collision_info.collider.name)
+						#M003
+						methods.collideObstacleDamage(2, collision_info.collider.name)
 		#Mouse INPUT	
 		if Input.is_action_just_pressed("ui_mouse"):
 			if get_global_mouse_position().x > (position.x + 150):
@@ -135,58 +138,21 @@ func _physics_process(delta):
 					plasticWasteSprite.visible = false
 					if collision_info.collider.name == "Plastic":
 						if position.y == -350:
-							collideObstacleDamage(0, collision_info.collider.name)
+							#M003
+							methods.collideObstacleDamage(0, collision_info.collider.name)
 				if paperPlayer.is_playing():
 					paperWasteSprite.visible = true
 				else:
 					paperWasteSprite.visible = false
 					if collision_info.collider.name == "Paper":
 						if position.y == 0:
-							collideObstacleDamage(1, collision_info.collider.name)
+							#M003
+							methods.collideObstacleDamage(1, collision_info.collider.name)
 				if metalPlayer.is_playing():
 					metalWasteSprite.visible = true
 				else:
 					metalWasteSprite.visible = false
 					if collision_info.collider.name == "Metal":
 						if position.y == 350:
-							collideObstacleDamage(2, collision_info.collider.name)
-		
-		if facilityCollControll == true:
-			if speed > 0:
-				speed = 100
-			else:
-				speed = -100
-			animPlayer.stop(true)
-			facilityCollControll = false
-
-#----Own Methods----#
-func collideObstacleDamage(pickUpIndex, pickUpName):
-	if pickUps.counterPickUps > 0:
-		var obj = str("pickUp", pickUps.counterPickUps)
-		get(obj).visible = false
-		#----check the item on weelbarrow----#
-		if pickUps.pickUpTypBarrow[pickUps.pickUpTypBarrow.size()-1] == pickUpIndex:
-			print(pickUpName)
-			if pickUpName == "Plastic":
-				plasticPlayer.play("Waste_IN")
-				hud.scoreCount += 100
-			elif pickUpName == "Metal":
-				metalPlayer.play("Waste_IN")
-				hud.scoreCount += 50
-			else:
-				paperPlayer.play("Waste_IN")
-				hud.scoreCount += 25
-		else:
-			if pickUpIndex == 9 && pickUpName == "Value":
-				pass
-			else:
-				if position.y == -350:
-					plasticPlayer.play("Waste_OUT")
-				elif position.y == 0:
-					paperPlayer.play("Waste_OUT")
-				elif position.y == 350:
-					metalPlayer.play("Waste_OUT")
-				print('Wrong Item')
-		#----remove the last pickup----#
-		pickUps.counterPickUps -= 1
-		pickUps.pickUpTypBarrow.remove(pickUps.pickUpTypBarrow.size()-1)
+							#M003
+							methods.collideObstacleDamage(2, collision_info.collider.name)

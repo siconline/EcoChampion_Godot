@@ -77,7 +77,6 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PickUps" type="Node2D" parent="." index="4"]
 
-editor/display_folded = true
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="PickUp1" type="Sprite" parent="PickUps" index="0"]
