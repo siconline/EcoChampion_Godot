@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://MiniGame01/Hud/Hud.gd" type="Script" id=1]
 [ext_resource path="res://MiniGame01/Textures/Backgrounds/Argentina/BackgroundEnd_a.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://MiniGame01/Hud/Textures/Menu/pause_rahmen_holz.png" type="Texture" id=6]
 [ext_resource path="res://MiniGame01/Hud/Clock.gd" type="Script" id=7]
 [ext_resource path="res://MiniGame01/Hud/Textures/Coins/ecocoin_1.png" type="Texture" id=8]
+[ext_resource path="res://MiniGame01/Hud/tutorial.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -258,6 +259,7 @@ _sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [node name="Clock" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
 position = Vector2( 0, -549 )
 script = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
@@ -366,6 +368,8 @@ position = Vector2( 706.135, -520 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 8 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="tutorial" parent="." index="6" instance=ExtResource( 9 )]
 
 [connection signal="pressed" from="Button_Pause" to="." method="_on_Button_Pause_pressed"]
 

@@ -16,7 +16,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 75.4472, 54.8973 )
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 z_index = -2
 input_pickable = false
@@ -77,6 +77,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PickUps" type="Node2D" parent="." index="4"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="PickUp1" type="Sprite" parent="PickUps" index="0"]

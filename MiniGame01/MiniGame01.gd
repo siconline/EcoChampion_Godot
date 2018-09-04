@@ -6,9 +6,9 @@ onready var player = $Player
 onready var camera = $Player/Camera2D
 onready var hud = $Player/Node2D/Hud
 
+var checkLevelPressedButton = false
+
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
 	pass
 
 # check localisation index of countries an load Theme
@@ -16,12 +16,15 @@ func _process(delta):
 	_hudControll()
 	
 	# load the current theme by index
-	if localisation == 0:
-		grounds.loadGermany()
-	elif localisation == 1:
-		grounds.loadMorocco()
-	elif localisation == 2:
-		grounds.loadArgentina()
+	if checkLevelPressedButton == true:
+		if localisation == 0:
+			grounds.loadGermany()
+		elif localisation == 1:
+			grounds.loadMorocco()
+		elif localisation == 2:
+			grounds.loadArgentina()
+		get_tree().set_pause(true)
+		checkLevelPressedButton = false
 
 
 #------Own Methods------#

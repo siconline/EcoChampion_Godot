@@ -1,0 +1,183 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://MiniGame01/Hud/tutorial.gd" type="Script" id=1]
+[ext_resource path="res://MiniGame01/Textures/Backgrounds/Argentina/BackgroundEnd_a.png" type="Texture" id=2]
+[ext_resource path="res://MiniGame01/Hud/Textures/Menu/T_TutorialFrame_1.png" type="Texture" id=3]
+[ext_resource path="res://MiniGame01/Hud/Textures/Tutorial_Backgrounds/T_Tutorial_Page1.png" type="Texture" id=4]
+[ext_resource path="res://MiniGame01/Hud/Textures/Tutorial_Backgrounds/T_Tutorial_Page2.png" type="Texture" id=5]
+[ext_resource path="res://MiniGame01/Hud/Textures/Tutorial_Backgrounds/T_Tutorial_Page3.png" type="Texture" id=6]
+[ext_resource path="res://MiniGame01/Hud/Textures/Tutorial_Backgrounds/T_Tutorial_Page4.png" type="Texture" id=7]
+[ext_resource path="res://MiniGame01/Hud/Textures/Tutorial_Backgrounds/T_Tutorial_Page5.png" type="Texture" id=8]
+[ext_resource path="res://MiniGame01/Hud/Textures/Button/button_hacken_1.png" type="Texture" id=9]
+[ext_resource path="res://MiniGame01/Hud/Textures/Button/button_hacken_2.png" type="Texture" id=10]
+[ext_resource path="res://MiniGame01/Hud/Textures/Button/button_weiter_1.png" type="Texture" id=11]
+[ext_resource path="res://MiniGame01/Hud/Textures/Button/button _weiter_2.png" type="Texture" id=12]
+[ext_resource path="res://MiniGame01/Hud/Textures/Button/button_zuruck..png" type="Texture" id=13]
+[ext_resource path="res://MiniGame01/Hud/Textures/Button/button_zuruck_gruen.png" type="Texture" id=14]
+
+[node name="tutorial" type="Control"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Camera2D" type="Camera2D" parent="." index="0"]
+
+visible = false
+anchor_mode = 1
+rotating = false
+current = false
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+
+[node name="testWindowSize" type="Sprite" parent="." index="1"]
+
+visible = false
+texture = ExtResource( 2 )
+
+[node name="backgrounds" type="Sprite" parent="." index="2"]
+
+editor/display_folded = true
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="background1" type="Sprite" parent="backgrounds" index="0"]
+
+visible = false
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="background2" type="Sprite" parent="backgrounds" index="1"]
+
+visible = false
+texture = ExtResource( 5 )
+
+[node name="background3" type="Sprite" parent="backgrounds" index="2"]
+
+visible = false
+texture = ExtResource( 6 )
+
+[node name="background4" type="Sprite" parent="backgrounds" index="3"]
+
+visible = false
+texture = ExtResource( 7 )
+
+[node name="background5" type="Sprite" parent="backgrounds" index="4"]
+
+visible = false
+texture = ExtResource( 8 )
+
+[node name="button_continue" type="TextureButton" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 275.0
+margin_top = 312.0
+margin_right = 959.0
+margin_bottom = 838.0
+rect_scale = Vector2( 0.25, 0.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 10 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="button_forward" type="TextureButton" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 312.0
+margin_right = 880.0
+margin_bottom = 838.0
+rect_scale = Vector2( 0.25, 0.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 12 )
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="button_backward" type="TextureButton" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -225.0
+margin_top = 312.0
+margin_right = 626.0
+margin_bottom = 838.0
+rect_scale = Vector2( 0.25, 0.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 14 )
+texture_hover = ExtResource( 14 )
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[connection signal="pressed" from="button_continue" to="." method="_on_button_continue_pressed"]
+
+[connection signal="pressed" from="button_forward" to="." method="_on_button_forward_pressed"]
+
+[connection signal="pressed" from="button_backward" to="." method="_on_button_backward_pressed"]
+
+
