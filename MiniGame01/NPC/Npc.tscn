@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://MiniGame01/NPC/Npc.gd" type="Script" id=1]
 [ext_resource path="res://MiniGame01/NPC/Animations/Idle.tres" type="Animation" id=2]
@@ -6,14 +6,87 @@
 [ext_resource path="res://MiniGame01/NPC/Textures/T_barrow3.png" type="Texture" id=4]
 [ext_resource path="res://MiniGame01/NPC/Textures/T_part2.png" type="Texture" id=5]
 [ext_resource path="res://MiniGame01/NPC/Textures/T_part1.png" type="Texture" id=6]
+[ext_resource path="res://MiniGame01/NPC/Textures/think_bubble_1.png" type="Texture" id=7]
+[ext_resource path="res://MiniGame01/NPC/Textures/think_bubble_2.png" type="Texture" id=8]
+[ext_resource path="res://MiniGame01/NPC/Textures/think_bubble_3.png" type="Texture" id=9]
+[ext_resource path="res://MiniGame01/Textures/PickUps/item_toolbox.png" type="Texture" id=10]
+[ext_resource path="res://MiniGame01/Textures/PickUps/item_boost.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 106.711, 905.029 )
 
+[sub_resource type="Animation" id=2]
+
+resource_name = "think_animation"
+length = 8.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("bubble1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 2.7, 3, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("bubble2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7, 2.7, 3.2, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("bubble3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 2.7, 3.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("item1:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.2, 2.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("item2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 3.7, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+
 [node name="Npc" type="Node2D"]
 
+editor/display_folded = true
 script = ExtResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
@@ -61,6 +134,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="5"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -72,5 +146,55 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
 
 shape = SubResource( 1 )
+
+[node name="thinkbubble" type="Node2D" parent="." index="6"]
+
+scale = Vector2( 0.25, 0.25 )
+z_index = -1
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="anim_thinkbubble" type="AnimationPlayer" parent="thinkbubble" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/think_animation = SubResource( 2 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[node name="bubble1" type="Sprite" parent="thinkbubble" index="1"]
+
+position = Vector2( 500.831, -784.488 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="bubble2" type="Sprite" parent="thinkbubble" index="2"]
+
+position = Vector2( 500.831, -784.488 )
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="bubble3" type="Sprite" parent="thinkbubble" index="3"]
+
+position = Vector2( 500.831, -784.488 )
+texture = ExtResource( 9 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="item1" type="Sprite" parent="thinkbubble" index="4"]
+
+visible = false
+position = Vector2( 520.831, -880.488 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 10 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="item2" type="Sprite" parent="thinkbubble" index="5"]
+
+position = Vector2( 600.831, -992.488 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 11 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 

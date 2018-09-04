@@ -1,6 +1,7 @@
 extends Node2D
 
 onready var animPlayer = $AnimationPlayer
+onready var animThinkbubble = $thinkbubble/anim_thinkbubble
 
 func _ready():
 	animPlayer.play("Idle")

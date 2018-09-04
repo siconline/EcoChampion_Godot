@@ -174,10 +174,19 @@ texture_pressed = ExtResource( 14 )
 texture_hover = ExtResource( 14 )
 _sections_unfolded = [ "Rect", "Textures" ]
 
+[node name="Timer" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 4.0
+one_shot = true
+autostart = false
+
 [connection signal="pressed" from="button_continue" to="." method="_on_button_continue_pressed"]
 
 [connection signal="pressed" from="button_forward" to="." method="_on_button_forward_pressed"]
 
 [connection signal="pressed" from="button_backward" to="." method="_on_button_backward_pressed"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 

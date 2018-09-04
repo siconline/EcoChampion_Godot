@@ -3,6 +3,8 @@ extends Node
 onready var player = get_node("../../../../Player")
 onready var clock = get_node("../../../../Player/Node2D/Hud/Clock/Clock_Timer")
 onready var tutorial = get_node("../tutorial")
+onready var npcAnimThink = get_node("../../../../Npc/thinkbubble/anim_thinkbubble")
+onready var timer = $Timer
 
 
 
@@ -41,8 +43,13 @@ func _on_button_backward_pressed():
 
 func _on_button_continue_pressed():
 	get_tree().set_pause(false)
+	tutorial.visible = false
+	npcAnimThink.play("think_animation")
+	timer.start()
+
+
+func _on_Timer_timeout():
 	player.speed = player.maxSpeed
 	player.animPlayer.stop(true)
 	clock.start()
-	tutorial.visible = false
 	player.playerControll = true

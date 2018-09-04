@@ -4,6 +4,8 @@ onready var pickUps = [$PickUp1, $PickUp2, $PickUp3, $PickUp4, $PickUp5, $PickUp
 onready var pickUpsCollision = [$PickUp1/CollisionShape2D, $PickUp2/CollisionShape2D, $PickUp3/CollisionShape2D, $PickUp4/CollisionShape2D, $PickUp5/CollisionShape2D, $PickUp6/CollisionShape2D, $PickUp7/CollisionShape2D, $PickUp8/CollisionShape2D, $PickUp9/CollisionShape2D, $PickUp10/CollisionShape2D, $PickUp11/CollisionShape2D, $PickUp12/CollisionShape2D, $PickUp13/CollisionShape2D, $PickUp14/CollisionShape2D, $PickUp15/CollisionShape2D]
 onready var pickUpsSprite = [$PickUp1/Sprite, $PickUp2/Sprite, $PickUp3/Sprite, $PickUp4/Sprite, $PickUp5/Sprite, $PickUp6/Sprite, $PickUp7/Sprite, $PickUp8/Sprite, $PickUp9/Sprite, $PickUp10/Sprite, $PickUp11/Sprite, $PickUp12/Sprite, $PickUp13/Sprite, $PickUp14/Sprite, $PickUp15/Sprite]
 onready var player = get_node("../Player")
+onready var animPlayerPickup = get_node("../Player/PickUps/animPlayer_pickup")
+onready var animSpritePickup = get_node("../Player/PickUps/animSprite_pickup")
 #Position Pickups are possible
 var positions = [350, 175, 0, -175, -350]
 #Texture Pickups are possible
@@ -80,6 +82,12 @@ func _controllItemsBarrow(index):
 				pickUps[index].visible = false
 				pickUpsCollision[index].disabled = true
 				pickUpTypBarrow.append(pickUpTyp[index])
+		
+		animSpritePickup.texture = pickUpsSprite[index].texture
+		if player.speed > 0:
+			animPlayerPickup.play("pickUpRightIN")
+		else:
+			animPlayerPickup.play("pickUpLeftIN")
 		counterPickUps += 1
 
 

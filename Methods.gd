@@ -55,12 +55,14 @@ func pressedMouseForDirection(left, right):
 #CONTROLL THE SPEED BY OVERLAP OBSTACLES#
 #START#############################START#
 func collideObstacleSpeedSlowly():
+	_player.playerControll = false
 	var player = _player
 	if player.speed > 0:
 		player.speed = player.slowSpeed
 	else:
 		player.speed = -player.slowSpeed
 func collideObstacleSpeedNormal():
+	_player.playerControll = true
 	var player = _player
 	if player.speed > 0:
 		player.speed = player.maxSpeed
