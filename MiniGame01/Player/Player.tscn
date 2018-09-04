@@ -18,7 +18,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 75.4472, 54.8973 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 z_index = -2
 input_pickable = false
@@ -57,21 +57,21 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="PowerUps" type="Node2D" parent="." index="3"]
 
-editor/display_folded = true
-position = Vector2( 111.519, -14.7707 )
+position = Vector2( 100, -15.4756 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="PowerUp1" type="Sprite" parent="PowerUps" index="0"]
 
-position = Vector2( -16.2478, 20.679 )
+position = Vector2( 0, 20 )
 rotation = -0.261799
 scale = Vector2( 0.1, 0.1 )
 z_index = -1
 texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
 [node name="PowerUp2" type="Sprite" parent="PowerUps" index="1"]
 
-position = Vector2( 2.21564, 28.0644 )
+position = Vector2( 0, 28 )
 scale = Vector2( 0.1, 0.1 )
 z_index = -1
 texture = ExtResource( 6 )

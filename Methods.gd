@@ -20,15 +20,18 @@ func pressedMouseForDirection(left, right):
 	var offset
 	var speed
 	var posPickUp
+	var posPowerUps
 	if left:
 		lOr = true
 		offset = -10
 		posPickUp = -20
+		posPowerUps = -100
 		player.speed = -player.maxSpeed
 	else:
 		lOr = false
 		offset = 10
 		posPickUp = 20
+		posPowerUps = 100
 		player.speed = player.maxSpeed
 	#Set player position out of collision facility
 	if player.facilityCollControll == false:
@@ -39,6 +42,10 @@ func pressedMouseForDirection(left, right):
 	player.get_node("Barrow_Front_Normal").flip_h = lOr
 	player.get_node("Barrow_Front_Upgrade").flip_h = lOr
 	player.posPickUps = posPickUp
+	
+	player.get_node("PowerUps/PowerUp1").flip_h = lOr
+	player.get_node("PowerUps/PowerUp2").flip_h = lOr
+	player.get_node("PowerUps").position.x = posPowerUps
 	#give pickUps 1-6 position.x
 	for i in range(1, 7):
 		var obj = str("PickUps/PickUp" , i)
