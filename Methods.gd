@@ -73,7 +73,7 @@ func collideObstacleSpeedNormal():
 	var player = _player
 	if player.speed > 0:
 		player.speed = player.maxSpeed
-	else:
+	if player.speed < 0:
 		player.speed = -player.maxSpeed
 #END#################################END#
 #CONTROLL THE SPEED BY OVERLAP OBSTACLES#
@@ -83,12 +83,16 @@ func collideObstacleSpeedNormal():
 #CONTROLL THE PICKUPS AT BARROW BY OVERLAP OBSTACLE AND FACILITY#
 #START#####################################################START#
 func collideObstacleDamage(pickUpIndex, pickUpName):
-	var player  = _player
-	var plastic = get_node("../MiniGame01/Facilities/Plastic/DropPlayer")
-	var paper   = get_node("../MiniGame01/Facilities/Paper/DropPlayer")
-	var metal   = get_node("../MiniGame01/Facilities/Metal/DropPlayer")
-	var pickUps = get_node("../MiniGame01/PickUps")
-	var hud     = get_node("../MiniGame01/Player/Node2D/Hud")
+	var player  		= _player
+	var plastic 		= get_node("../MiniGame01/Facilities/Plastic/DropPlayer")
+	var paper   		= get_node("../MiniGame01/Facilities/Paper/DropPlayer")
+	var metal  	    	= get_node("../MiniGame01/Facilities/Metal/DropPlayer")
+	var pickUps 		= get_node("../MiniGame01/PickUps")
+	var hud     		= get_node("../MiniGame01/Player/Node2D/Hud")
+	var timer_ItemLost  = $timer_ItemLost
+	var animPlayer 		= get_node("../MiniGame01/Player/AnimationPlayer")
+	var animPlayer_collide_obstacle = get_node("../MiniGame01/Player/anim_ItemLose")
+	var spriteItemLose 	= get_node("../MiniGame01/Player/ItemLose")
 	if pickUps.counterPickUps > 0:
 		var obj = str("../MiniGame01/Player/PickUps/PickUp", pickUps.counterPickUps)
 		get_node(obj).visible = false
@@ -115,9 +119,30 @@ func collideObstacleDamage(pickUpIndex, pickUpName):
 				elif player.position.y == 350:
 					metal.play("Waste_OUT")
 				print('Wrong Item')
+		
+		#spriteItemLose.texture = pickUps.textures[pickUps.pickUpTypBarrow[pickUps.pickUpTypBarrow.size()-1]]
 		#----remove the last pickup----#
 		pickUps.counterPickUps -= 1
 		pickUps.pickUpTypBarrow.remove(pickUps.pickUpTypBarrow.size()-1)
+	if pickUpIndex == 9 && pickUpName == "Value":
+		animPlayer.play("Idle")
+		player.playerControll = false
+		if player.speed > 0:
+			player.position.x = player.position.x - 50
+			#start Animation
+			animPlayer_collide_obstacle.play("blink_R")
+		if player.speed < 0:
+			player.position.x = player.position.x + 50
+			#start Animation
+			#animPlayer_collide_obstacle.play("blink_L")
+		player.speed = 0
+		
+		timer_ItemLost.start()
+	
+func _on_timer_ItemLost_timeout():
+	var player  = _player
+	player.playerControll = true
+	
 #END#########################################################END#
 #CONTROLL THE PICKUPS AT BARROW BY OVERLAP OBSTACLE AND FACILITY#
 #END#########################################################END#
@@ -137,3 +162,5 @@ func stopRunAndSetSpeed():
 #END##################################################END#
 #CONTROLL THE ANIMATION AND SPEED BY PARTNER AND FACILITY#
 #END##################################################END#
+
+

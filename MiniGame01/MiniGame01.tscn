@@ -255,7 +255,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.1, 0.1 ), Vector2( 0.1, 0.1 ), Vector2( 0.2, 0.2 ), Vector2( 0.07, 0.07 ), Vector2( 0.1, 0.1 ) ]
 }
 
-[node name="MiniGame01" type="Node2D" index="0"]
+[node name="MiniGame01" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
@@ -787,6 +787,7 @@ script = ExtResource( 10 )
 
 [node name="Obstacle1" type="Area2D" parent="Obstacles" index="0"]
 
+editor/display_folded = true
 position = Vector2( 950, 0 )
 z_index = -2
 input_pickable = true
@@ -796,7 +797,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-_sections_unfolded = [ "Z Index" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle1" index="0"]
 
@@ -1151,7 +1152,6 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 editor/display_folded = true
 z_index = -1
-_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="3"]
 
@@ -1191,6 +1191,7 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Pause", "Re
 
 [node name="Facilities" type="Node2D" parent="." index="5"]
 
+editor/display_folded = true
 script = ExtResource( 16 )
 
 [node name="Plastic" type="StaticBody2D" parent="Facilities" index="0"]
