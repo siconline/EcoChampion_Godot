@@ -27,6 +27,10 @@ func _ready():
 	#pickups random Texture
 	_randomPickUpTexture()
 
+func _process(delta):
+	pass
+
+
 #----AREAS2D------------------------#
 func _on_PickUp1_body_entered(body):
 	_controllItemsBarrow(0)

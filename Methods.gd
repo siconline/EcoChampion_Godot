@@ -3,6 +3,7 @@ extends Node
 #M002#CONTROLL THE SPEED BY OVERLAP OBSTACLES#
 #M003#CONTROLL THE PICKUPS AT BARROW BY OVERLAP OBSTACLE AND FACILITY#
 #M004#CONTROLL THE ANIMATION AND SPEED BY PARTNER AND FACILITY#
+#M005#CONTROLL ANIMATION LOST PICKUP COLLISION OBSTACLES#
 #START####START#
 #MAIN VARIABLES#
 #START####START#
@@ -122,8 +123,7 @@ func collideObstacleDamage(pickUpIndex, pickUpName):
 		
 		#spriteItemLose.texture = pickUps.textures[pickUps.pickUpTypBarrow[pickUps.pickUpTypBarrow.size()-1]]
 		#----remove the last pickup----#
-		pickUps.counterPickUps -= 1
-		pickUps.pickUpTypBarrow.remove(pickUps.pickUpTypBarrow.size()-1)
+		
 	if pickUpIndex == 9 && pickUpName == "Value":
 		animPlayer.play("Idle")
 		player.playerControll = false
@@ -136,12 +136,16 @@ func collideObstacleDamage(pickUpIndex, pickUpName):
 			#start Animation
 			animPlayer_collide_obstacle.play("blink_L")
 		player.speed = 0
-		
+		player.playerControll = false
 		timer_ItemLost.start()
 	
 func _on_timer_ItemLost_timeout():
+	var pickUps = get_node("../MiniGame01/PickUps")
 	var player  = _player
 	player.playerControll = true
+	if pickUps.counterPickUps > 0:
+		pickUps.counterPickUps -= 1
+		pickUps.pickUpTypBarrow.remove(pickUps.pickUpTypBarrow.size()-1)
 	
 #END#########################################################END#
 #CONTROLL THE PICKUPS AT BARROW BY OVERLAP OBSTACLE AND FACILITY#
@@ -162,5 +166,20 @@ func stopRunAndSetSpeed():
 #END##################################################END#
 #CONTROLL THE ANIMATION AND SPEED BY PARTNER AND FACILITY#
 #END##################################################END#
+#M005_____________________________________________________________________________M005
+#START########################################START#
+#CONTROLL ANIMATION LOST PICKUP COLLISION OBSTACLES#
+#START########################################START#
+func lostItemColliObstacle():
+	var lostItem_animPlayer = get_node("../MiniGame01/Obstacles/Obstacle1/LostItem/AnimationPlayer")
+	var lostItem_Sprite = get_node("../MiniGame01/Obstacles/Obstacle1/LostItem")
+	var pickUps = get_node("../MiniGame01/PickUps")
+	if pickUps.counterPickUps > 0:
+		if pickUps.pickUpTypBarrow.size() > 0:
+			lostItem_Sprite.texture = pickUps.textures[pickUps.pickUpTypBarrow[pickUps.pickUpTypBarrow.size()-1]]
+		lostItem_animPlayer.play("lostItem_R")
+#END############################################END#
+#CONTROLL ANIMATION LOST PICKUP COLLISION OBSTACLES#
+#END############################################END#
 
 
