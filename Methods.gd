@@ -103,12 +103,18 @@ func collideObstacleDamage(pickUpIndex, pickUpName):
 			if pickUpName == "Plastic":
 				plastic.play("Waste_IN")
 				hud.scoreCount += 100
+				pickUps.counterPickUps -= 1
+				pickUps.pickUpTypBarrow.remove(pickUps.pickUpTypBarrow.size()-1)
 			elif pickUpName == "Metal":
 				metal.play("Waste_IN")
 				hud.scoreCount += 50
+				pickUps.counterPickUps -= 1
+				pickUps.pickUpTypBarrow.remove(pickUps.pickUpTypBarrow.size()-1)
 			else:
 				paper.play("Waste_IN")
 				hud.scoreCount += 25
+				pickUps.counterPickUps -= 1
+				pickUps.pickUpTypBarrow.remove(pickUps.pickUpTypBarrow.size()-1)
 		else:
 			if pickUpIndex == 9 && pickUpName == "Value":
 				pass
@@ -120,9 +126,6 @@ func collideObstacleDamage(pickUpIndex, pickUpName):
 				elif player.position.y == 350:
 					metal.play("Waste_OUT")
 				print('Wrong Item')
-		
-		#spriteItemLose.texture = pickUps.textures[pickUps.pickUpTypBarrow[pickUps.pickUpTypBarrow.size()-1]]
-		#----remove the last pickup----#
 		
 	if pickUpIndex == 9 && pickUpName == "Value":
 		animPlayer.play("Idle")
