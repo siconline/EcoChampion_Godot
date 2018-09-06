@@ -134,7 +134,7 @@ func collideObstacleDamage(pickUpIndex, pickUpName):
 		if player.speed < 0:
 			player.position.x = player.position.x + 50
 			#start Animation
-			#animPlayer_collide_obstacle.play("blink_L")
+			animPlayer_collide_obstacle.play("blink_L")
 		player.speed = 0
 		
 		timer_ItemLost.start()

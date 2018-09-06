@@ -37,7 +37,6 @@ func _ready():
 	
 
 func _physics_process(delta):
-	print(speed)
 	
 	if speed == maxSpeed || speed == -maxSpeed || speed == slowSpeed || speed == -slowSpeed:
 		if animPlayer.get_current_animation() == "Run":
