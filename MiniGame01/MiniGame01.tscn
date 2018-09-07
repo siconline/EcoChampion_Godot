@@ -1996,13 +1996,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PowerUps" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
-position = Vector2( 800, 0 )
 script = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="PowerUp1" type="Area2D" parent="PowerUps" index="0"]
 
-position = Vector2( -290.064, 1.80205 )
+editor/display_folded = true
+position = Vector2( 1320, 1.80205 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -2010,12 +2010,289 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PowerUps/PowerUp1" index="0"]
 
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="PowerUps/PowerUp1" index="1"]
+
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PowerUp2" type="Area2D" parent="PowerUps" index="1"]
+
+editor/display_folded = true
+position = Vector2( 1820, 1.80205 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PowerUps/PowerUp2" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="PowerUps/PowerUp2" index="1"]
+
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PowerUp3" type="Area2D" parent="PowerUps" index="2"]
+
+editor/display_folded = true
+position = Vector2( 2320, 1.80205 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PowerUps/PowerUp3" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="PowerUps/PowerUp3" index="1"]
+
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PowerUp4" type="Area2D" parent="PowerUps" index="3"]
+
+editor/display_folded = true
+position = Vector2( 2820, 1.80205 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PowerUps/PowerUp4" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="PowerUps/PowerUp4" index="1"]
+
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PowerUp5" type="Area2D" parent="PowerUps" index="4"]
+
+editor/display_folded = true
+position = Vector2( 3320, 1.80205 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PowerUps/PowerUp5" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="PowerUps/PowerUp5" index="1"]
+
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PowerUp6" type="Area2D" parent="PowerUps" index="5"]
+
+editor/display_folded = true
+position = Vector2( 3820, 1.80205 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PowerUps/PowerUp6" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="PowerUps/PowerUp6" index="1"]
+
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PowerUp7" type="Area2D" parent="PowerUps" index="6"]
+
+editor/display_folded = true
+position = Vector2( 4320, 1.80205 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PowerUps/PowerUp7" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="PowerUps/PowerUp7" index="1"]
+
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PowerUp8" type="Area2D" parent="PowerUps" index="7"]
+
+editor/display_folded = true
+position = Vector2( 4820, 1.80205 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PowerUps/PowerUp8" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="PowerUps/PowerUp8" index="1"]
+
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PowerUp9" type="Area2D" parent="PowerUps" index="8"]
+
+editor/display_folded = true
+position = Vector2( 5320, 1.80205 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PowerUps/PowerUp9" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="PowerUps/PowerUp9" index="1"]
+
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PowerUp10" type="Area2D" parent="PowerUps" index="9"]
+
+editor/display_folded = true
+position = Vector2( 5820, 1.80205 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PowerUps/PowerUp10" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="PowerUps/PowerUp10" index="1"]
+
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PowerUp11" type="Area2D" parent="PowerUps" index="10"]
+
+editor/display_folded = true
+position = Vector2( 6320, 1.80205 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PowerUps/PowerUp11" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="PowerUps/PowerUp11" index="1"]
+
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PowerUp12" type="Area2D" parent="PowerUps" index="11"]
+
+editor/display_folded = true
+position = Vector2( 6820, 1.80205 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PowerUps/PowerUp12" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="PowerUps/PowerUp12" index="1"]
+
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PowerUp13" type="Area2D" parent="PowerUps" index="12"]
+
+editor/display_folded = true
+position = Vector2( 7320, 1.80205 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PowerUps/PowerUp13" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="PowerUps/PowerUp13" index="1"]
 
 scale = Vector2( 0.15, 0.15 )
 texture = ExtResource( 7 )

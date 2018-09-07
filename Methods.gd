@@ -140,13 +140,8 @@ func collideObstacleDamage(pickUpIndex, pickUpName):
 		timer_ItemLost.start()
 	
 func _on_timer_ItemLost_timeout():
-	var pickUps = get_node("../MiniGame01/PickUps")
 	var player  = _player
 	player.playerControll = true
-	if pickUps.counterPickUps > 0:
-		pickUps.counterPickUps -= 1
-		pickUps.pickUpTypBarrow.remove(pickUps.pickUpTypBarrow.size()-1)
-	
 #END#########################################################END#
 #CONTROLL THE PICKUPS AT BARROW BY OVERLAP OBSTACLE AND FACILITY#
 #END#########################################################END#
