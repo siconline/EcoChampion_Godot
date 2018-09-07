@@ -173,14 +173,19 @@ func stopRunAndSetSpeed():
 #START########################################START#
 #CONTROLL ANIMATION LOST PICKUP COLLISION OBSTACLES#
 #START########################################START#
-func lostItemColliObstacle():
-	var lostItem_animPlayer = get_node("../MiniGame01/Obstacles/Obstacle1/LostItem/AnimationPlayer")
-	var lostItem_Sprite = get_node("../MiniGame01/Obstacles/Obstacle1/LostItem")
+func lostItemColliObstacle(index):
+	var player = _player
 	var pickUps = get_node("../MiniGame01/PickUps")
+	var obstacles = get_node("../MiniGame01/Obstacles")
+	#var lostItem_animPlayer = get_node("../MiniGame01/Obstacles/Obstacle1/LostItem/AnimationPlayer")
+	#var lostItem_Sprite = get_node("../MiniGame01/Obstacles/Obstacle1/LostItem")
 	if pickUps.counterPickUps > 0:
 		if pickUps.pickUpTypBarrow.size() > 0:
-			lostItem_Sprite.texture = pickUps.textures[pickUps.pickUpTypBarrow[pickUps.pickUpTypBarrow.size()-1]]
-		lostItem_animPlayer.play("lostItem_R")
+			obstacles.arr_lostItem_Sprites[index].texture = pickUps.textures[pickUps.pickUpTypBarrow[pickUps.pickUpTypBarrow.size()-1]]
+		if player.speed > 0:
+			obstacles.arr_lostItem_animPlayers[index].play("lostItem_R")
+		if player.speed < 0:
+			obstacles.arr_lostItem_animPlayers[index].play("lostItem_L")
 #END############################################END#
 #CONTROLL ANIMATION LOST PICKUP COLLISION OBSTACLES#
 #END############################################END#

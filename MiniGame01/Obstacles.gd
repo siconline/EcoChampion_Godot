@@ -34,10 +34,21 @@ var setValue = false
 #Obstacle Typ 0 = lower Speed 1 = Damage
 var obstacleTyp = []
 
+#for method #M005
+var arr_lostItem_animPlayers = []
+var arr_lostItem_Sprites = []
+	
+
 func _ready():
 	randomize()
 	_randomObstaclesPos()
 	
+	#Fill Array with animation Player and Sprite lost item objects# -- for method #M005
+	for i in range(1, 15):
+		var lIP = str("Obstacle" , i ,"/LostItem/AnimationPlayer")
+		arr_lostItem_animPlayers.append(get_node(lIP))
+		var lIS = str("Obstacle" , i ,"/LostItem")
+		arr_lostItem_Sprites.append(get_node(lIS))
 	
 
 func _process(delta):
@@ -53,15 +64,17 @@ func _on_Obstacle1_body_entered(body):
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
+		#M005
+		methods.lostItemColliObstacle(0)
 		#M003
 		methods.collideObstacleDamage(9, "Value")
-		#M005
-		methods.lostItemColliObstacle()
 func _on_Obstacle2_body_entered(body):
 	if obstacleTyp[1] == 0:
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
+		#M005
+		methods.lostItemColliObstacle(1)
 		#M003
 		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle3_body_entered(body):
@@ -69,6 +82,8 @@ func _on_Obstacle3_body_entered(body):
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
+		#M005
+		methods.lostItemColliObstacle(2)
 		#M003
 		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle4_body_entered(body):
@@ -76,6 +91,8 @@ func _on_Obstacle4_body_entered(body):
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
+		#M005
+		methods.lostItemColliObstacle(3)
 		#M003
 		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle5_body_entered(body):
@@ -83,6 +100,8 @@ func _on_Obstacle5_body_entered(body):
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
+		#M005
+		methods.lostItemColliObstacle(4)
 		#M003
 		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle6_body_entered(body):
@@ -90,6 +109,8 @@ func _on_Obstacle6_body_entered(body):
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
+		#M005
+		methods.lostItemColliObstacle(5)
 		#M003
 		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle7_body_entered(body):
@@ -97,6 +118,8 @@ func _on_Obstacle7_body_entered(body):
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
+		#M005
+		methods.lostItemColliObstacle(6)
 		#M003
 		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle8_body_entered(body):
@@ -104,6 +127,8 @@ func _on_Obstacle8_body_entered(body):
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
+		#M005
+		methods.lostItemColliObstacle(7)
 		#M003
 		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle9_body_entered(body):
@@ -111,6 +136,8 @@ func _on_Obstacle9_body_entered(body):
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
+		#M005
+		methods.lostItemColliObstacle(8)
 		#M003
 		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle10_body_entered(body):
@@ -118,6 +145,8 @@ func _on_Obstacle10_body_entered(body):
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
+		#M005
+		methods.lostItemColliObstacle(9)
 		#M003
 		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle11_body_entered(body):
@@ -125,6 +154,8 @@ func _on_Obstacle11_body_entered(body):
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
+		#M005
+		methods.lostItemColliObstacle(10)
 		#M003
 		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle12_body_entered(body):
@@ -132,6 +163,8 @@ func _on_Obstacle12_body_entered(body):
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
+		#M005
+		methods.lostItemColliObstacle(11)
 		#M003
 		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle13_body_entered(body):
@@ -139,6 +172,8 @@ func _on_Obstacle13_body_entered(body):
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
+		#M005
+		methods.lostItemColliObstacle(12)
 		#M003
 		methods.collideObstacleDamage(9, "Value")
 func _on_Obstacle14_body_entered(body):
@@ -146,6 +181,8 @@ func _on_Obstacle14_body_entered(body):
 		#M002
 		methods.collideObstacleSpeedSlowly()
 	else:
+		#M005
+		methods.lostItemColliObstacle(13)
 		#M003
 		methods.collideObstacleDamage(9, "Value")
 #----AREAS2D--------------EXITED----------#
