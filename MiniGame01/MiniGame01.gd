@@ -8,6 +8,8 @@ onready var hud = $Player/Node2D/Hud
 
 var checkLevelPressedButton = false
 
+var levelLength = 4
+
 func _ready():
 	pass
 
@@ -32,10 +34,10 @@ func _hudControll():
 	#limt right left for hud
 	if player.position.x < 0:
 		hud.rect_position.x += player.speed * 0.001 - (player.position.x + hud.rect_position.x)
-	elif player.position.x > 0 && player.position.x < 1920*3:
+	elif player.position.x > 0 && player.position.x < 1920*levelLength:
 		hud.rect_position.x = 0
-	elif player.position.x > 1920*3:
-		hud.rect_position.x -= player.speed * 0.001 + (hud.rect_position.x + (player.position.x) - 1920*3)
+	elif player.position.x > 1920*levelLength:
+		hud.rect_position.x -= player.speed * 0.001 + (hud.rect_position.x + (player.position.x) - 1920*levelLength)
 	#set hud y position by player step
 	if player.position.y == -175 * 2:
 		hud.rect_position.y = 175 * 2

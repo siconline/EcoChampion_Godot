@@ -1,8 +1,8 @@
 extends Node2D
 
-onready var pickUps = [$PickUp1, $PickUp2, $PickUp3, $PickUp4, $PickUp5, $PickUp6, $PickUp7, $PickUp8, $PickUp9, $PickUp10, $PickUp11, $PickUp12, $PickUp13, $PickUp14, $PickUp15]
-onready var pickUpsCollision = [$PickUp1/CollisionShape2D, $PickUp2/CollisionShape2D, $PickUp3/CollisionShape2D, $PickUp4/CollisionShape2D, $PickUp5/CollisionShape2D, $PickUp6/CollisionShape2D, $PickUp7/CollisionShape2D, $PickUp8/CollisionShape2D, $PickUp9/CollisionShape2D, $PickUp10/CollisionShape2D, $PickUp11/CollisionShape2D, $PickUp12/CollisionShape2D, $PickUp13/CollisionShape2D, $PickUp14/CollisionShape2D, $PickUp15/CollisionShape2D]
-onready var pickUpsSprite = [$PickUp1/Sprite, $PickUp2/Sprite, $PickUp3/Sprite, $PickUp4/Sprite, $PickUp5/Sprite, $PickUp6/Sprite, $PickUp7/Sprite, $PickUp8/Sprite, $PickUp9/Sprite, $PickUp10/Sprite, $PickUp11/Sprite, $PickUp12/Sprite, $PickUp13/Sprite, $PickUp14/Sprite, $PickUp15/Sprite]
+onready var pickUps = [$PickUp1, $PickUp2, $PickUp3, $PickUp4, $PickUp5, $PickUp6, $PickUp7, $PickUp8, $PickUp9, $PickUp10, $PickUp11, $PickUp12, $PickUp13, $PickUp14, $PickUp15, $PickUp16, $PickUp17, $PickUp18, $PickUp19, $PickUp20, $PickUp21, $PickUp22, $PickUp23, $PickUp24, $PickUp25, $PickUp26]
+onready var pickUpsCollision = [$PickUp1/CollisionShape2D, $PickUp2/CollisionShape2D, $PickUp3/CollisionShape2D, $PickUp4/CollisionShape2D, $PickUp5/CollisionShape2D, $PickUp6/CollisionShape2D, $PickUp7/CollisionShape2D, $PickUp8/CollisionShape2D, $PickUp9/CollisionShape2D, $PickUp10/CollisionShape2D, $PickUp11/CollisionShape2D, $PickUp12/CollisionShape2D, $PickUp13/CollisionShape2D, $PickUp14/CollisionShape2D, $PickUp15/CollisionShape2D, $PickUp16/CollisionShape2D, $PickUp17/CollisionShape2D, $PickUp18/CollisionShape2D, $PickUp19/CollisionShape2D, $PickUp20/CollisionShape2D, $PickUp21/CollisionShape2D, $PickUp22/CollisionShape2D, $PickUp23/CollisionShape2D, $PickUp24/CollisionShape2D, $PickUp25/CollisionShape2D, $PickUp26/CollisionShape2D]
+onready var pickUpsSprite = [$PickUp1/Sprite, $PickUp2/Sprite, $PickUp3/Sprite, $PickUp4/Sprite, $PickUp5/Sprite, $PickUp6/Sprite, $PickUp7/Sprite, $PickUp8/Sprite, $PickUp9/Sprite, $PickUp10/Sprite, $PickUp11/Sprite, $PickUp12/Sprite, $PickUp13/Sprite, $PickUp14/Sprite, $PickUp15/Sprite, $PickUp16/Sprite, $PickUp17/Sprite, $PickUp18/Sprite, $PickUp19/Sprite, $PickUp20/Sprite, $PickUp21/Sprite, $PickUp22/Sprite, $PickUp23/Sprite, $PickUp24/Sprite, $PickUp25/Sprite, $PickUp26/Sprite]
 onready var player = get_node("../Player")
 onready var animPlayerPickup = get_node("../Player/PickUps/animPlayer_pickup")
 onready var animSpritePickup = get_node("../Player/PickUps/animSprite_pickup")
@@ -62,6 +62,28 @@ func _on_PickUp14_body_entered(body):
 	_controllItemsBarrow(13)
 func _on_PickUp15_body_entered(body):
 	_controllItemsBarrow(14)
+func _on_PickUp16_body_entered(body):
+	_controllItemsBarrow(15)
+func _on_PickUp17_body_entered(body):
+	_controllItemsBarrow(16)
+func _on_PickUp18_body_entered(body):
+	_controllItemsBarrow(17)
+func _on_PickUp19_body_entered(body):
+	_controllItemsBarrow(18)
+func _on_PickUp20_body_entered(body):
+	_controllItemsBarrow(19)
+func _on_PickUp21_body_entered(body):
+	_controllItemsBarrow(20)
+func _on_PickUp22_body_entered(body):
+	_controllItemsBarrow(21)
+func _on_PickUp23_body_entered(body):
+	_controllItemsBarrow(22)
+func _on_PickUp24_body_entered(body):
+	_controllItemsBarrow(23)
+func _on_PickUp25_body_entered(body):
+	_controllItemsBarrow(24)
+func _on_PickUp26_body_entered(body):
+	_controllItemsBarrow(25)
 
 
 #----Own Methods----#
