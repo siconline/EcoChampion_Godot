@@ -31,7 +31,6 @@ onready var metalWasteSprite = get_node("../Facilities/Metal/WasteAnim")
 
 
 
-
 func _ready():
 	pass
 	

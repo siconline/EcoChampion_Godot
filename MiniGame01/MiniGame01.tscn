@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://MiniGame01/MiniGame01.gd" type="Script" id=1]
 [ext_resource path="res://MiniGame01/Grounds.gd" type="Script" id=2]
@@ -16,16 +16,17 @@
 [ext_resource path="res://MiniGame01/Textures/Obstacles/T_Schlagloch.png" type="Texture" id=14]
 [ext_resource path="res://MiniGame01/Player/Player.tscn" type="PackedScene" id=15]
 [ext_resource path="res://MiniGame01/Hud/Hud.tscn" type="PackedScene" id=16]
-[ext_resource path="res://MiniGame01/Facilities.gd" type="Script" id=17]
-[ext_resource path="res://MiniGame01/Animations/Waste_IN.tres" type="Animation" id=18]
-[ext_resource path="res://MiniGame01/Animations/Waste_OUT.tres" type="Animation" id=19]
-[ext_resource path="res://MiniGame01/Textures/Facilities/t3_hinten_d.png" type="Texture" id=20]
-[ext_resource path="res://MiniGame01/Textures/Facilities/t3_vorne.png" type="Texture" id=21]
-[ext_resource path="res://MiniGame01/Textures/Facilities/t1_hinten_d.png" type="Texture" id=22]
-[ext_resource path="res://MiniGame01/Textures/Facilities/t1_vorne.png" type="Texture" id=23]
-[ext_resource path="res://MiniGame01/Textures/Facilities/t2_hinten_d.png" type="Texture" id=24]
-[ext_resource path="res://MiniGame01/Textures/Facilities/t2_vorne.png" type="Texture" id=25]
-[ext_resource path="res://MiniGame01/NPC/Npc.tscn" type="PackedScene" id=26]
+[ext_resource path="res://MiniGame01/Hud/Score.tscn" type="PackedScene" id=17]
+[ext_resource path="res://MiniGame01/Facilities.gd" type="Script" id=18]
+[ext_resource path="res://MiniGame01/Animations/Waste_IN.tres" type="Animation" id=19]
+[ext_resource path="res://MiniGame01/Animations/Waste_OUT.tres" type="Animation" id=20]
+[ext_resource path="res://MiniGame01/Textures/Facilities/t3_hinten_d.png" type="Texture" id=21]
+[ext_resource path="res://MiniGame01/Textures/Facilities/t3_vorne.png" type="Texture" id=22]
+[ext_resource path="res://MiniGame01/Textures/Facilities/t1_hinten_d.png" type="Texture" id=23]
+[ext_resource path="res://MiniGame01/Textures/Facilities/t1_vorne.png" type="Texture" id=24]
+[ext_resource path="res://MiniGame01/Textures/Facilities/t2_hinten_d.png" type="Texture" id=25]
+[ext_resource path="res://MiniGame01/Textures/Facilities/t2_vorne.png" type="Texture" id=26]
+[ext_resource path="res://MiniGame01/NPC/Npc.tscn" type="PackedScene" id=27]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -1886,7 +1887,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.1, 0.1 ), Vector2( 0.1, 0.1 ), Vector2( 0.2, 0.2 ), Vector2( 0.07, 0.07 ), Vector2( 0.1, 0.1 ) ]
 }
 
-[node name="MiniGame01" type="Node2D" index="0"]
+[node name="MiniGame01" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
@@ -1996,6 +1997,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PowerUps" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
 script = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
@@ -2300,6 +2302,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="PickUps" type="Node2D" parent="." index="2"]
 
+editor/display_folded = true
 z_index = -2
 script = ExtResource( 8 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -3722,18 +3725,20 @@ _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Transform" ]
 [node name="Node2D" type="Node2D" parent="Player" index="7"]
 
 z_index = 1
-_sections_unfolded = [ "Z Index" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Hud" parent="Player/Node2D" index="0" instance=ExtResource( 16 )]
 
 pause_mode = 2
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Pause", "Rect" ]
 
+[node name="Score" parent="Player/Node2D/Hud" index="7" instance=ExtResource( 17 )]
+
 [node name="Facilities" type="Node2D" parent="." index="5"]
 
 editor/display_folded = true
 position = Vector2( 1920, 0 )
-script = ExtResource( 17 )
+script = ExtResource( 18 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Plastic" type="StaticBody2D" parent="Facilities" index="0"]
@@ -3756,8 +3761,8 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Waste_IN = ExtResource( 18 )
-anims/Waste_OUT = ExtResource( 19 )
+anims/Waste_IN = ExtResource( 19 )
+anims/Waste_OUT = ExtResource( 20 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
@@ -3771,7 +3776,7 @@ shape = SubResource( 36 )
 position = Vector2( 34.0376, 13.9717 )
 scale = Vector2( 0.35, 0.35 )
 z_index = -3
-texture = ExtResource( 20 )
+texture = ExtResource( 21 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="WasteAnim" type="Sprite" parent="Facilities/Plastic" index="3"]
@@ -3788,7 +3793,7 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 position = Vector2( 0, 50 )
 scale = Vector2( 0.35, 0.35 )
 z_index = -1
-texture = ExtResource( 21 )
+texture = ExtResource( 22 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Paper" type="StaticBody2D" parent="Facilities" index="1"]
@@ -3825,7 +3830,7 @@ shape = SubResource( 36 )
 position = Vector2( 34.0376, 13.9717 )
 scale = Vector2( 0.35, 0.35 )
 z_index = -3
-texture = ExtResource( 22 )
+texture = ExtResource( 23 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="WasteAnim" type="Sprite" parent="Facilities/Paper" index="3"]
@@ -3843,7 +3848,7 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 position = Vector2( 0, 50 )
 scale = Vector2( 0.35, 0.35 )
 z_index = -1
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Metal" type="StaticBody2D" parent="Facilities" index="2"]
@@ -3880,7 +3885,7 @@ shape = SubResource( 36 )
 position = Vector2( 34.0376, 13.9717 )
 scale = Vector2( 0.35, 0.35 )
 z_index = -3
-texture = ExtResource( 24 )
+texture = ExtResource( 25 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="WasteAnim" type="Sprite" parent="Facilities/Metal" index="3"]
@@ -3897,10 +3902,10 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 position = Vector2( 0, 50 )
 scale = Vector2( 0.35, 0.35 )
 z_index = -1
-texture = ExtResource( 25 )
+texture = ExtResource( 26 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Npc" parent="." index="6" instance=ExtResource( 26 )]
+[node name="Npc" parent="." index="6" instance=ExtResource( 27 )]
 
 position = Vector2( -350, 0 )
 _sections_unfolded = [ "Transform" ]
