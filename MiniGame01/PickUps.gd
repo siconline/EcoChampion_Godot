@@ -105,7 +105,8 @@ func _controllItemsBarrow(index):
 			if counterPickUps == i:
 				player.get(obj).visible = true
 				player.get(obj).texture = pickUpsSprite[index].texture
-				pickUps[index].visible = false
+				pickUps[index].collisionShape.visible = false
+				pickUps[index].sprite.visible = false
 				pickUpsCollision[index].disabled = true
 				pickUpTypBarrow.append(pickUpTyp[index])
 		

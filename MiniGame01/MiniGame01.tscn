@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://MiniGame01/MiniGame01.gd" type="Script" id=1]
 [ext_resource path="res://MiniGame01/Grounds.gd" type="Script" id=2]
@@ -8,7 +8,7 @@
 [ext_resource path="res://MiniGame01/PowerUps.gd" type="Script" id=6]
 [ext_resource path="res://MiniGame01/Textures/PickUps/item_boost.png" type="Texture" id=7]
 [ext_resource path="res://MiniGame01/PickUps.gd" type="Script" id=8]
-[ext_resource path="res://MiniGame01/Textures/PickUps/T_Plastic_Bottle.png" type="Texture" id=9]
+[ext_resource path="res://MiniGame01/PickUp/PickUp.tscn" type="PackedScene" id=9]
 [ext_resource path="res://MiniGame01/Obstacles.gd" type="Script" id=10]
 [ext_resource path="res://MiniGame01/Textures/PickUps/T_Paper_Newspaper.png" type="Texture" id=11]
 [ext_resource path="res://MiniGame01/Textures/Obstacles/T_fels1_a.png" type="Texture" id=12]
@@ -32,11 +32,6 @@
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
-
-[sub_resource type="RectangleShape2D" id=2]
-
-custom_solver_bias = 0.0
-extents = Vector2( 117.149, 296.078 )
 
 [sub_resource type="Animation" id=3]
 
@@ -1887,7 +1882,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.1, 0.1 ), Vector2( 0.1, 0.1 ), Vector2( 0.2, 0.2 ), Vector2( 0.07, 0.07 ), Vector2( 0.1, 0.1 ) ]
 }
 
-[node name="MiniGame01" type="Node2D"]
+[node name="MiniGame01" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
@@ -1997,7 +1992,6 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PowerUps" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
 script = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
@@ -2307,707 +2301,135 @@ z_index = -2
 script = ExtResource( 8 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="PickUp1" type="Area2D" parent="PickUps" index="0"]
+[node name="PickUp1" parent="PickUps" index="0" instance=ExtResource( 9 )]
 
-editor/display_folded = true
 position = Vector2( 1220, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp1" index="0"]
+[node name="PickUp2" parent="PickUps" index="1" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp1" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp2" type="Area2D" parent="PickUps" index="1"]
-
-editor/display_folded = true
 position = Vector2( 1420, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp2" index="0"]
+[node name="PickUp3" parent="PickUps" index="2" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp2" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp3" type="Area2D" parent="PickUps" index="2"]
-
-editor/display_folded = true
 position = Vector2( 1720, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp3" index="0"]
+[node name="PickUp4" parent="PickUps" index="3" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp3" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp4" type="Area2D" parent="PickUps" index="3"]
-
-editor/display_folded = true
 position = Vector2( 1920, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp4" index="0"]
+[node name="PickUp5" parent="PickUps" index="4" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp4" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp5" type="Area2D" parent="PickUps" index="4"]
-
-editor/display_folded = true
 position = Vector2( 2220, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp5" index="0"]
+[node name="PickUp6" parent="PickUps" index="5" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp5" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp6" type="Area2D" parent="PickUps" index="5"]
-
-editor/display_folded = true
 position = Vector2( 2420, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp6" index="0"]
+[node name="PickUp7" parent="PickUps" index="6" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp6" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp7" type="Area2D" parent="PickUps" index="6"]
-
-editor/display_folded = true
 position = Vector2( 2720, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp7" index="0"]
+[node name="PickUp8" parent="PickUps" index="7" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp7" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp8" type="Area2D" parent="PickUps" index="7"]
-
-editor/display_folded = true
 position = Vector2( 2920, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp8" index="0"]
+[node name="PickUp9" parent="PickUps" index="8" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp8" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp9" type="Area2D" parent="PickUps" index="8"]
-
-editor/display_folded = true
 position = Vector2( 3220, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp9" index="0"]
+[node name="PickUp10" parent="PickUps" index="9" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp9" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp10" type="Area2D" parent="PickUps" index="9"]
-
-editor/display_folded = true
 position = Vector2( 3420, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp10" index="0"]
+[node name="PickUp11" parent="PickUps" index="10" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp10" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp11" type="Area2D" parent="PickUps" index="10"]
-
-editor/display_folded = true
 position = Vector2( 3720, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp11" index="0"]
+[node name="PickUp12" parent="PickUps" index="11" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp11" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp12" type="Area2D" parent="PickUps" index="11"]
-
-editor/display_folded = true
 position = Vector2( 3920, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp12" index="0"]
+[node name="PickUp13" parent="PickUps" index="12" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp12" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp13" type="Area2D" parent="PickUps" index="12"]
-
-editor/display_folded = true
 position = Vector2( 4220, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp13" index="0"]
+[node name="PickUp14" parent="PickUps" index="13" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp13" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp14" type="Area2D" parent="PickUps" index="13"]
-
-editor/display_folded = true
 position = Vector2( 4420, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp14" index="0"]
+[node name="PickUp15" parent="PickUps" index="14" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp14" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp15" type="Area2D" parent="PickUps" index="14"]
-
-editor/display_folded = true
 position = Vector2( 4720, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp15" index="0"]
+[node name="PickUp16" parent="PickUps" index="15" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp15" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp16" type="Area2D" parent="PickUps" index="15"]
-
-editor/display_folded = true
 position = Vector2( 4920, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp16" index="0"]
+[node name="PickUp17" parent="PickUps" index="16" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp16" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp17" type="Area2D" parent="PickUps" index="16"]
-
-editor/display_folded = true
 position = Vector2( 5220, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp17" index="0"]
+[node name="PickUp18" parent="PickUps" index="17" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp17" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp18" type="Area2D" parent="PickUps" index="17"]
-
-editor/display_folded = true
 position = Vector2( 5420, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp18" index="0"]
+[node name="PickUp19" parent="PickUps" index="18" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp18" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp19" type="Area2D" parent="PickUps" index="18"]
-
-editor/display_folded = true
 position = Vector2( 5720, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp19" index="0"]
+[node name="PickUp20" parent="PickUps" index="19" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp19" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp20" type="Area2D" parent="PickUps" index="19"]
-
-editor/display_folded = true
 position = Vector2( 5920, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp20" index="0"]
+[node name="PickUp21" parent="PickUps" index="20" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp20" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp21" type="Area2D" parent="PickUps" index="20"]
-
-editor/display_folded = true
 position = Vector2( 6220, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp21" index="0"]
+[node name="PickUp22" parent="PickUps" index="21" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp21" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp22" type="Area2D" parent="PickUps" index="21"]
-
-editor/display_folded = true
 position = Vector2( 6420, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp22" index="0"]
+[node name="PickUp23" parent="PickUps" index="22" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp22" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp23" type="Area2D" parent="PickUps" index="22"]
-
-editor/display_folded = true
 position = Vector2( 6720, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp23" index="0"]
+[node name="PickUp24" parent="PickUps" index="23" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp23" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp24" type="Area2D" parent="PickUps" index="23"]
-
-editor/display_folded = true
 position = Vector2( 6920, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp24" index="0"]
+[node name="PickUp25" parent="PickUps" index="24" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp24" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp25" type="Area2D" parent="PickUps" index="24"]
-
-editor/display_folded = true
 position = Vector2( 7220, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp25" index="0"]
+[node name="PickUp26" parent="PickUps" index="25" instance=ExtResource( 9 )]
 
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp25" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="PickUp26" type="Area2D" parent="PickUps" index="25"]
-
-editor/display_folded = true
 position = Vector2( 7420, 0 )
-z_index = -1
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUps/PickUp26" index="0"]
-
-scale = Vector2( 0.15, 0.15 )
-z_index = -1
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Sprite" type="Sprite" parent="PickUps/PickUp26" index="1"]
-
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 
 [node name="Obstacles" type="Node2D" parent="." index="3"]
 
@@ -3694,6 +3116,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Player" parent="." index="4" instance=ExtResource( 15 )]
 
+editor/display_folded = true
 z_index = -1
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="3"]
