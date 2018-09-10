@@ -68,7 +68,7 @@ flatness = 0.0
 gravity = Vector3( 0, -2, 0 )
 initial_velocity = 2.0
 initial_velocity_random = 0.0
-angular_velocity = 4.58337e-41
+angular_velocity = 4.58337e-041
 angular_velocity_random = 0.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
@@ -94,7 +94,7 @@ anim_offset_random = 0.0
 anim_loop = true
 _sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Emission Shape", "Scale", "Spread" ]
 
-[node name="PickUp" type="Area2D" index="0"]
+[node name="PickUp" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -114,22 +114,25 @@ _sections_unfolded = [ "Visibility" ]
 
 position = Vector2( -5, 40 )
 scale = Vector2( 0.8, 0.8 )
+z_index = -2
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Flower2" type="Sprite" parent="." index="2"]
 
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -5, 40 )
 scale = Vector2( 0.8, 0.8 )
+z_index = -2
 texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="." index="3"]
 
 scale = Vector2( 0.15, 0.15 )
+z_index = -2
 texture = ExtResource( 4 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
 
