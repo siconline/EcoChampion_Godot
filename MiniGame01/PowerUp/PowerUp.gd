@@ -7,19 +7,18 @@ var textures = [preload('res://MiniGame01/Textures/PickUps/item_boost.png'), pre
 var texture_index
 
 
-
 func _ready():
-	pass
+	visible = false
+	collisionShape.disabled = true
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func _process(delta):
+	pass
 
 
 func _on_PowerUp_body_entered(body):
-	sprite.visible = false
-	collisionShape.visible = false
+	#sprite.visible = false
+	position.y = 1500
+	#queue_free()
 	if texture_index == 0:
 		player.speedUp = true
 	else:

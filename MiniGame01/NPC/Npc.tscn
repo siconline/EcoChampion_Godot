@@ -17,14 +17,13 @@
 custom_solver_bias = 0.0
 extents = Vector2( 106.711, 905.029 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 116.342, 120.948 )
+extents = Vector2( 116.342, 75.0001 )
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource_name = "think_animation"
 length = 8.0
 loop = true
 step = 0.1
@@ -89,9 +88,8 @@ tracks/4/keys = {
 "values": [ false, true, false ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
-resource_name = "dropItems"
 length = 1.5
 loop = false
 step = 0.1
@@ -208,7 +206,6 @@ shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="." index="6"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -219,7 +216,7 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="thinkbubble" type="Node2D" parent="." index="7"]
 
@@ -235,7 +232,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/think_animation = SubResource( 2 )
+anims/think_animation = SubResource( 3 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
@@ -281,7 +278,7 @@ autoplay = "dropItems"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/dropItems = SubResource( 3 )
+anims/dropItems = SubResource( 4 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
