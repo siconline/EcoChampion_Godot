@@ -7,6 +7,9 @@ var slowSpeed = 150
 var facilityCollControll = true
 # pickUp positions
 var posPickUps = 20
+#POWERUP CONTROLL
+var speedUp = false
+var toolbox = false
 var playerControll = false
 
 onready var methods = get_node("../../Methods")
@@ -28,6 +31,9 @@ onready var metalPlayer = get_node("../Facilities/Metal/DropPlayer")
 onready var plasticWasteSprite = get_node("../Facilities/Plastic/WasteAnim")
 onready var paperWasteSprite = get_node("../Facilities/Paper/WasteAnim")
 onready var metalWasteSprite = get_node("../Facilities/Metal/WasteAnim")
+onready var toolboxPUP = $PowerUps/PowerUp1
+onready var speedPUP = $PowerUps/PowerUp2
+onready var npc = get_node("../Npc")
 
 
 
@@ -158,3 +164,15 @@ func _physics_process(delta):
 						if position.y == 350:
 							#M003
 							methods.collideObstacleDamage(2, collision_info.collider.name)
+
+	#CONTROLL VISIBILITY POWERUPS AT BARROW#
+	if speedUp == true:
+		speedPUP.visible = true
+		npc.playerSpeedUp = true
+	else:
+		speedPUP.visible = false
+	if toolbox == true:
+		toolboxPUP.visible = true
+		npc.playerToolbox = true
+	else:
+		toolboxPUP.visible = false

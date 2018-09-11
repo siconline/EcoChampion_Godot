@@ -1987,6 +1987,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PowerUps" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
 script = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 

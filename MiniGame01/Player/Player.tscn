@@ -284,6 +284,7 @@ _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
 [node name="PickUps" type="Node2D" parent="." index="4"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="animPlayer_pickup" type="AnimationPlayer" parent="PickUps" index="0"]
@@ -300,7 +301,7 @@ blend_times = [  ]
 [node name="animSprite_pickup" type="Sprite" parent="PickUps" index="1"]
 
 position = Vector2( -30, 20 )
-scale = Vector2( 1e-05, 1e-05 )
+scale = Vector2( 1e-005, 1e-005 )
 texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
