@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://MiniGame01/NPC/Npc.gd" type="Script" id=1]
 [ext_resource path="res://MiniGame01/NPC/Animations/Idle.tres" type="Animation" id=2]
@@ -16,6 +16,11 @@
 
 custom_solver_bias = 0.0
 extents = Vector2( 106.711, 905.029 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 116.342, 120.948 )
 
 [sub_resource type="Animation" id=2]
 
@@ -88,7 +93,7 @@ tracks/4/keys = {
 
 resource_name = "dropItems"
 length = 1.5
-loop = true
+loop = false
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Toolbox:position")
@@ -139,7 +144,7 @@ tracks/3/keys = {
 "values": [ false ]
 }
 
-[node name="Npc" type="Node2D" index="0"]
+[node name="Npc" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -201,7 +206,22 @@ bounce = 0.0
 
 shape = SubResource( 1 )
 
-[node name="thinkbubble" type="Node2D" parent="." index="6"]
+[node name="Area2D" type="Area2D" parent="." index="6"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+shape = SubResource( 4 )
+
+[node name="thinkbubble" type="Node2D" parent="." index="7"]
 
 editor/display_folded = true
 scale = Vector2( 0.25, 0.25 )
@@ -252,7 +272,7 @@ scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 11 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="animPickups" type="Node2D" parent="." index="7"]
+[node name="animPickups" type="Node2D" parent="." index="8"]
 
 [node name="animPickUps" type="AnimationPlayer" parent="animPickups" index="0"]
 
@@ -283,6 +303,8 @@ z_index = -1
 texture = ExtResource( 11 )
 _sections_unfolded = [ "Offset", "Region", "Transform", "Visibility", "Z Index" ]
 
-[connection signal="tree_entered" from="StaticBody2D/CollisionShape2D" to="." method="_on_CollisionShape2D_tree_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+
+[connection signal="animation_finished" from="animPickups/animPickUps" to="." method="_on_animPickUps_animation_finished"]
 
 

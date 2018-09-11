@@ -15,6 +15,9 @@ var playerControll = false
 onready var methods = get_node("../../Methods")
 
 onready var sprite = $Sprite
+var spritetexture = preload('res://MiniGame01/Player/Textures/T_CharacterRun8_b_verkl.png')
+onready var barrow_front_normal = $Barrow_Front_Normal
+onready var barrow_front_upgrade = $Barrow_Front_Upgrade
 onready var pickUps = get_node("../PickUps")
 onready var pickUp1 = $PickUps/PickUp1
 onready var pickUp2 = $PickUps/PickUp2
