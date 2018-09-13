@@ -30,7 +30,6 @@ func _ready():
 	
 
 func _process(delta):
-
 	powerupSUP[counterSUP].visible = true
 	powerupTOL[counterTOL].visible = true
 	powerupSUP[counterSUP].collisionShape.disabled = false

@@ -247,7 +247,7 @@ tracks/8/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 z_index = -2
 input_pickable = false
@@ -413,5 +413,14 @@ playback_speed = 1.0
 anims/blink_L = SubResource( 2 )
 anims/blink_R = SubResource( 3 )
 blend_times = [  ]
+
+[node name="TimerBoost" type="Timer" parent="." index="8"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = true
+autostart = false
+
+[connection signal="timeout" from="TimerBoost" to="." method="_on_TimerBoost_timeout"]
 
 

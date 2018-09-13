@@ -11,6 +11,9 @@ var posPickUps = 20
 var speedUp = false
 var toolbox = false
 var playerControll = false
+#BOOST VALUES
+var boost = true
+var boostload = 0
 
 onready var methods = get_node("../../Methods")
 
@@ -61,6 +64,17 @@ func _physics_process(delta):
 			animPlayer.play("Idle")
 	movement = Vector2(speed, 0)
 	if playerControll == true:
+		#BOOST CONTROLL
+		if hud.boostCounter > 1:
+			if Input.is_action_just_pressed("ui_boost"):
+				if boost == true:
+					speed = speed * 2
+					hud.boostCounter -= 1
+					boost = false
+					$TimerBoost.start()
+			elif Input.is_action_just_released("ui_boost"):
+				#speed = maxSpeed
+				pass
 		#RIGHT INPUT
 		if Input.is_action_just_pressed("ui_mouse"):
 			if get_global_mouse_position().x > (position.x + 100):
@@ -179,3 +193,13 @@ func _physics_process(delta):
 		npc.playerToolbox = true
 	else:
 		toolboxPUP.visible = false
+
+
+func _on_TimerBoost_timeout():
+	boost = true
+	if speed > 0:
+		if speed > 0:
+			speed = maxSpeed
+		if speed < 0:
+			speed = -maxSpeed
+	print("timout")

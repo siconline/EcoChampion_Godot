@@ -8,6 +8,7 @@ onready var speedUp = $animPickups/SpeedUp
 onready var toolbox = $animPickups/Toolbox
 
 onready var player = get_node("../Player")
+onready var hud = get_node("../Player/Node2D/Hud")
 onready var pickUps = get_node("../PickUps")
 
 onready var powerups = get_node("../PowerUps")
@@ -34,6 +35,7 @@ func _on_Area2D_body_entered(body):
 		player.speedUp = false
 		if powerups.counterSUP < 7:
 			powerups.counterSUP += 1
+			hud.boostCounter = 4
 	if playerToolbox == true:
 		playerToolbox = false
 		toolbox.visible = true
