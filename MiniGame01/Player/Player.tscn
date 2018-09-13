@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://MiniGame01/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://MiniGame01/Player/Textures/T_CharacterRun8_verkl.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://MiniGame01/Textures/PickUps/T_Plastic_Bottle.png" type="Texture" id=10]
 [ext_resource path="res://MiniGame01/Player/Textures/T_barrow_front.png" type="Texture" id=11]
 [ext_resource path="res://MiniGame01/Player/Textures/T_barrow_front_upgrade_space.png" type="Texture" id=12]
+[ext_resource path="res://MiniGame01/Player/Textures/T_Stars.png" type="Texture" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -247,6 +248,86 @@ tracks/8/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="ParticlesMaterial" id=4]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 1, 300, 1 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 0.0
+flatness = 0.0
+gravity = Vector3( -5000, 0, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 1.0
+scale_random = 0.0
+color = Color( 1, 1, 1, 1 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 6.0
+anim_speed_random = 1.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = true
+_sections_unfolded = [ "Angular Velocity", "Animation", "Emission Shape", "Gravity", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Spread" ]
+
+[sub_resource type="ParticlesMaterial" id=5]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 1, 300, 1 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 0.0
+flatness = 0.0
+gravity = Vector3( 5000, 0, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.0
+angular_velocity = 0.2
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 1.0
+scale_random = 0.0
+color = Color( 1, 1, 1, 1 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 6.0
+anim_speed_random = 1.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = true
+_sections_unfolded = [ "Animation", "Damping", "Emission Shape", "Flags", "Gravity", "Linear Accel", "Radial Accel", "Spread", "Tangential Accel" ]
+
 [node name="Player" type="KinematicBody2D" index="0"]
 
 z_index = -2
@@ -420,6 +501,56 @@ process_mode = 1
 wait_time = 2.0
 one_shot = true
 autostart = false
+
+[node name="Particles2DR" type="Particles2D" parent="." index="9"]
+
+modulate = Color( 1, 0.820312, 0, 1 )
+position = Vector2( -20, 43.8543 )
+scale = Vector2( 0.2, 0.2 )
+emitting = false
+amount = 16
+lifetime = 1.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 4 )
+texture = ExtResource( 13 )
+normal_map = null
+h_frames = 3
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Transform", "Visibility" ]
+
+[node name="Particles2DL" type="Particles2D" parent="." index="10"]
+
+modulate = Color( 1, 0.84375, 0, 1 )
+position = Vector2( 20, 43.8543 )
+scale = Vector2( 0.2, 0.2 )
+emitting = false
+amount = 16
+lifetime = 1.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 5 )
+texture = ExtResource( 13 )
+normal_map = null
+h_frames = 3
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Transform", "Visibility" ]
 
 [connection signal="timeout" from="TimerBoost" to="." method="_on_TimerBoost_timeout"]
 

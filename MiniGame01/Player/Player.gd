@@ -70,6 +70,10 @@ func _physics_process(delta):
 				if boost == true:
 					speed = speed * 2
 					hud.boostCounter -= 1
+					if speed > 0:
+						$Particles2DR.emitting = true
+					if speed < 0:
+						$Particles2DL.emitting = true
 					boost = false
 					$TimerBoost.start()
 			elif Input.is_action_just_released("ui_boost"):
@@ -83,6 +87,9 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_right"):
 			#M001
 			methods.pressedMouseForDirection(false, true)
+			#STOP ANIMATION SPEEDUP
+			$Particles2DR.emitting = false
+			$Particles2DL.emitting = false
 		#LEFT INPUT
 		if Input.is_action_just_pressed("ui_mouse"):
 			if get_global_mouse_position().x < (position.x - 100):
@@ -91,6 +98,9 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_left"):
 			#M001
 			methods.pressedMouseForDirection(true, false)
+			#STOP ANIMATION SPEEDUP
+			$Particles2DR.emitting = false
+			$Particles2DL.emitting = false
 			
 		if Input.is_action_just_pressed("ui_up"):
 			if position.y > -175*2:
@@ -197,6 +207,8 @@ func _physics_process(delta):
 
 func _on_TimerBoost_timeout():
 	boost = true
+	$Particles2DR.emitting = false
+	$Particles2DL.emitting = false
 	if speed > 0:
 		if speed > 0:
 			speed = maxSpeed
