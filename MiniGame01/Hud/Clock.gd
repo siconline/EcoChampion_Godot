@@ -3,8 +3,8 @@ extends Node2D
 onready var clockMinute = $Clock_Minute
 onready var clockSecond = $Clock_Second
 
-var minute = 2
-var second = 0
+var minute = 0
+var second = 20
 
 var timeout = false
 
@@ -33,3 +33,4 @@ func _process(delta):
 func _on_Clock_Timer_timeout():
 	if timeout == false:
 		second -= 1
+	

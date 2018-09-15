@@ -17,6 +17,7 @@ func _ready():
 	pass
 
 func _process(delta):
+	
 	if clock.timeout == true:
 		if scrollDown == true:
 			scoreLabel.text = scoreHud.text
@@ -30,6 +31,7 @@ func _process(delta):
 func _on_TextureButton_pressed():
 	animPlayer.play("scroll_Score_up")
 	scrollUp = true
+	$saveScore._on_LineEdit_text_entered($Background/currentHighScore/namen_papier/LineEdit.text)
 
 
 func _on_AnimationPlayer_animation_finished(scroll_Score_up):

@@ -209,7 +209,7 @@ func _on_TimerBoost_timeout():
 	boost = true
 	$Particles2DR.emitting = false
 	$Particles2DL.emitting = false
-	if speed > 0:
+	if speed > 100 || speed < 0:
 		if speed > 0:
 			speed = maxSpeed
 		if speed < 0:

@@ -1,19 +1,20 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://MiniGame01/Hud/Score.gd" type="Script" id=1]
-[ext_resource path="res://MiniGame01/Textures/Backgrounds/Argentina/BackgroundEnd_a.png" type="Texture" id=2]
-[ext_resource path="res://MiniGame01/Hud/Textures/Score_Backgrounds/highscore_menu.png" type="Texture" id=3]
-[ext_resource path="res://Fonts/LoveYaLikeASister.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://MiniGame01/Hud/Textures/Button/Score/namen_papier.png" type="Texture" id=5]
-[ext_resource path="res://MiniGame01/Hud/Textures/Button/Score/button_ungeklickt.png" type="Texture" id=6]
-[ext_resource path="res://MiniGame01/Hud/Textures/Button/Score/button_geklickt.png" type="Texture" id=7]
+[ext_resource path="res://MiniGame01/Hud/saveScore.gd" type="Script" id=2]
+[ext_resource path="res://MiniGame01/Textures/Backgrounds/Argentina/BackgroundEnd_a.png" type="Texture" id=3]
+[ext_resource path="res://MiniGame01/Hud/Textures/Score_Backgrounds/highscore_menu.png" type="Texture" id=4]
+[ext_resource path="res://Fonts/LoveYaLikeASister.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://MiniGame01/Hud/Textures/Button/Score/namen_papier.png" type="Texture" id=6]
+[ext_resource path="res://MiniGame01/Hud/Textures/Button/Score/button_ungeklickt.png" type="Texture" id=7]
+[ext_resource path="res://MiniGame01/Hud/Textures/Button/Score/button_geklickt.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 50
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=2]
@@ -21,15 +22,15 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 100
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=3]
 
 size = 60
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=4]
@@ -37,28 +38,27 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 95
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=5]
 
 size = 70
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=6]
 
 size = 55
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 
-resource_name = "scroll_Score_down"
 length = 1.5
 loop = false
 step = 0.1
@@ -75,9 +75,8 @@ tracks/0/keys = {
 "values": [ Vector2( 0, -1200 ), Vector2( 0, -200 ), Vector2( 0, -80 ), Vector2( 0, -100 ), Vector2( 0, -100 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 
-resource_name = "scroll_Score_up"
 length = 1.0
 loop = false
 step = 0.1
@@ -110,7 +109,23 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
 
-[node name="Camera2D" type="Camera2D" parent="." index="0"]
+[node name="saveScore" type="Control" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="1"]
 
 anchor_mode = 1
 rotating = false
@@ -135,15 +150,15 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 
-[node name="testWindowSize" type="Sprite" parent="." index="1"]
+[node name="testWindowSize" type="Sprite" parent="." index="2"]
 
 visible = false
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
-[node name="Background" type="Sprite" parent="." index="2"]
+[node name="Background" type="Sprite" parent="." index="3"]
 
 position = Vector2( 0, -1200 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Highscore_Label" type="Label" parent="Background" index="0"]
@@ -173,7 +188,6 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="currentHighScore" type="Control" parent="Background" index="1"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -216,9 +230,8 @@ _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="namen_papier" type="Sprite" parent="Background/currentHighScore" index="1"]
 
-editor/display_folded = true
 position = Vector2( -5.552, 220.909 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="LineEdit" type="LineEdit" parent="Background/currentHighScore/namen_papier" index="0"]
@@ -238,7 +251,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/selection_color = Color( 1, 1, 1, 1 )
 custom_colors/cursor_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_selected = Color( 0.105316, 0.929688, 0.234124, 1 )
@@ -300,9 +313,9 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
-texture_hover = ExtResource( 7 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 8 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="currentScoreList" type="Control" parent="Background" index="2"]
@@ -323,7 +336,6 @@ size_flags_vertical = 1
 
 [node name="ScoreList" type="HBoxContainer" parent="Background/currentScoreList" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -374,7 +386,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 5 )
 text = "Rank  "
 percent_visible = 1.0
 lines_skipped = 0
@@ -396,7 +408,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "1ST"
 percent_visible = 1.0
 lines_skipped = 0
@@ -418,7 +430,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "2ND"
 percent_visible = 1.0
 lines_skipped = 0
@@ -440,7 +452,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "3RD"
 percent_visible = 1.0
 lines_skipped = 0
@@ -462,7 +474,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "4TH"
 percent_visible = 1.0
 lines_skipped = 0
@@ -484,7 +496,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "5TH"
 percent_visible = 1.0
 lines_skipped = 0
@@ -506,7 +518,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "6TH"
 percent_visible = 1.0
 lines_skipped = 0
@@ -546,7 +558,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 5 )
 text = "Name          "
 percent_visible = 1.0
 lines_skipped = 0
@@ -568,7 +580,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "xxx"
 percent_visible = 1.0
 lines_skipped = 0
@@ -590,7 +602,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "xxx"
 percent_visible = 1.0
 lines_skipped = 0
@@ -612,7 +624,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "xxx"
 percent_visible = 1.0
 lines_skipped = 0
@@ -634,7 +646,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "xxx"
 percent_visible = 1.0
 lines_skipped = 0
@@ -656,7 +668,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "xxx"
 percent_visible = 1.0
 lines_skipped = 0
@@ -678,7 +690,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "xxx"
 percent_visible = 1.0
 lines_skipped = 0
@@ -717,7 +729,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 5 )
 text = "Score"
 percent_visible = 1.0
 lines_skipped = 0
@@ -739,7 +751,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "xxx"
 percent_visible = 1.0
 lines_skipped = 0
@@ -761,7 +773,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "xxx"
 percent_visible = 1.0
 lines_skipped = 0
@@ -783,7 +795,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "xxx"
 percent_visible = 1.0
 lines_skipped = 0
@@ -805,7 +817,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "xxx"
 percent_visible = 1.0
 lines_skipped = 0
@@ -827,7 +839,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "xxx"
 percent_visible = 1.0
 lines_skipped = 0
@@ -849,7 +861,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "xxx"
 percent_visible = 1.0
 lines_skipped = 0
@@ -877,20 +889,20 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 7 )
-texture_hover = ExtResource( 7 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 8 )
 _sections_unfolded = [ "Textures" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
 
 root_node = NodePath("..")
 autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/scroll_Score_down = SubResource( 6 )
-anims/scroll_Score_up = SubResource( 7 )
+anims/scroll_Score_down = SubResource( 7 )
+anims/scroll_Score_up = SubResource( 8 )
 blend_times = [  ]
 
 [connection signal="pressed" from="Background/currentHighScore/TextureButton" to="." method="_on_TextureButton_pressed"]
