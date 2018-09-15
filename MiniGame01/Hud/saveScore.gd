@@ -28,26 +28,44 @@ func _ready():
 		load_bestscore()
 
 func _process(delta):
-	if arrScore.size() > 0:
-		name1.text = arrScore[0]
-		score1.text = arrScore[1]
-	if arrScore.size() > 3:
-		name2.text = arrScore[2]
-		score2.text = arrScore[3]
-	if arrScore.size() > 5:
-		name3.text = arrScore[4]
-		score3.text = arrScore[5]
-	if arrScore.size() > 7:
-		name4.text = arrScore[6]
-		score4.text = arrScore[7]
-	if arrScore.size() > 9:
-		name5.text = arrScore[8]
-		score5.text = arrScore[9]
-	if arrScore.size() > 11:
-		name6.text = arrScore[10]
-		score6.text = arrScore[11]
-	pass
+	var file = File.new()
+	if file.file_exists(SAVE_PATH):
+		if arrScore.size() > 0:
+			name1.text = arrScore[0]
+			score1.text = arrScore[1]
+		if arrScore.size() > 3:
+			name2.text = arrScore[2]
+			score2.text = arrScore[3]
+		if arrScore.size() > 5:
+			name3.text = arrScore[4]
+			score3.text = arrScore[5]
+		if arrScore.size() > 7:
+			name4.text = arrScore[6]
+			score4.text = arrScore[7]
+		if arrScore.size() > 9:
+			name5.text = arrScore[8]
+			score5.text = arrScore[9]
+		if arrScore.size() > 11:
+			name6.text = arrScore[10]
+			score6.text = arrScore[11]
+			
+	var names = []
+	var scores = []
+	var countName = 0
+	var countScore = 1
+	
+	for i in range(0, arrScore.size()):
+		if i < arrScore.size()/2:
+			names.append(arrScore[i+countName])
+			countName += 1
+		if i < arrScore.size()/2:
+			scores.append(arrScore[i+countScore])
+			countScore +=1
+		
+	print('NAMEN: ', names)
+	print('SCORE: ', scores)
 
+	
 func load_bestscore():
 	var file = File.new()
 	if not file.file_exists(SAVE_PATH): 
