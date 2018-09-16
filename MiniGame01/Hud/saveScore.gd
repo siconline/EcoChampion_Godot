@@ -22,6 +22,10 @@ var bestname
 var scoreTemp
 var arrScore = []
 
+var arrscoreSort = [0,0,0,0,0,0]
+var arrnameSort = ["___","___","___","___","___","___"]
+var loc
+
 func _ready():
 	var file = File.new()
 	if file.file_exists(SAVE_PATH):
@@ -31,42 +35,31 @@ func _process(delta):
 	var file = File.new()
 	if file.file_exists(SAVE_PATH):
 		if arrScore.size() > 0:
-			name1.text = arrScore[0]
-			score1.text = arrScore[1]
+			name1.text = arrnameSort[0]
+			score1.text = str(arrscoreSort[0])
 		if arrScore.size() > 3:
-			name2.text = arrScore[2]
-			score2.text = arrScore[3]
+			name2.text = arrnameSort[1]
+			score2.text = str(arrscoreSort[1])
 		if arrScore.size() > 5:
-			name3.text = arrScore[4]
-			score3.text = arrScore[5]
+			name3.text = arrnameSort[2]
+			score3.text = str(arrscoreSort[2])
 		if arrScore.size() > 7:
-			name4.text = arrScore[6]
-			score4.text = arrScore[7]
+			name4.text = arrnameSort[3]
+			score4.text = str(arrscoreSort[3])
 		if arrScore.size() > 9:
-			name5.text = arrScore[8]
-			score5.text = arrScore[9]
+			name5.text = arrnameSort[4]
+			score5.text = str(arrscoreSort[4])
 		if arrScore.size() > 11:
-			name6.text = arrScore[10]
-			score6.text = arrScore[11]
+			name6.text = arrnameSort[5]
+			score6.text = str(arrscoreSort[5])
 			
-	var names = []
-	var scores = []
+func load_bestscore():
+	arrscoreSort = [0,0,0,0,0,0]
+	arrnameSort = ["___","___","___","___","___","___"]
 	var countName = 0
 	var countScore = 1
-	
-	for i in range(0, arrScore.size()):
-		if i < arrScore.size()/2:
-			names.append(arrScore[i+countName])
-			countName += 1
-		if i < arrScore.size()/2:
-			scores.append(arrScore[i+countScore])
-			countScore +=1
-		
-	print('NAMEN: ', names)
-	print('SCORE: ', scores)
-
-	
-func load_bestscore():
+	var names = []
+	var scores = []
 	var file = File.new()
 	if not file.file_exists(SAVE_PATH): 
 		return
@@ -74,6 +67,26 @@ func load_bestscore():
 	scoreTemp = file.get_var()
 	file.close()
 	arrScore = scoreTemp.split(",")
+	for i in range(0, arrScore.size()/2):
+		if i < arrScore.size()/2:
+			names.append(arrScore[i+countName])
+			countName += 1
+			scores.append(arrScore[i+countScore])
+			countScore +=1
+	#print(names)
+	#print(scores)
+#ARRAY SORT
+	for i in range(0, scores.size()):
+		for j in range(0, arrscoreSort.size()):
+			if int(scores[i]) >= arrscoreSort[arrscoreSort.size()-1-j]:
+				loc = arrscoreSort.size()-1-j
+		for k in range(0, arrscoreSort.size()-(loc+1)):
+			arrscoreSort[arrscoreSort.size()-1-k] = arrscoreSort[arrscoreSort.size()-2-k]
+			arrnameSort[arrscoreSort.size()-1-k] = arrnameSort[arrscoreSort.size()-2-k]
+		arrscoreSort[loc] = int(scores[i])
+		arrnameSort[loc] = names[i]
+	#print(arrscoreSort)
+	#print(arrnameSort)
 
 func save_bestscore():
 	var file = File.new()
@@ -85,7 +98,6 @@ func set_bestscore(new_value, new_name):
 	bestscore = new_value
 	bestname = new_name
 	save_bestscore() 
-
 
 func _on_LineEdit_text_entered(new_text):
 	bestname = new_text
