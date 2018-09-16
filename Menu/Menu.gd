@@ -15,6 +15,7 @@ onready var textureButton_BackLM = $TextureButton_BackLevelMenu
 onready var background = $Background
 onready var middleground = $Middleground
 onready var foreground = $Foreground
+onready var saveScore = get_node("../MiniGame01/Player/Node2D/Hud/Score/saveScore")
 
 
 func _ready():
@@ -34,7 +35,7 @@ func _on_Button_LevelMenu_pressed():
 
 
 func _on_Button_Score_pressed():
-	pass # replace with function body
+	_loadScoreMenu()
 
 
 func _on_Button_QuitGame_pressed():
@@ -86,6 +87,18 @@ func _loadLevelMenu():
 	textureButton_BackMM.visible = true
 	textureButton_BackLM.visible = false
 
+func _loadScoreMenu():
+	$Button_LevelMenu.visible = false
+	$Button_Score.visible = false
+	$Button_QuitGame.visible = false
+	$Middleground.visible = false
+	$currentScoreList/ScoreList.modulate = "000000"
+	$currentScoreList.visible = true
+	$TextureButton_BackMainMenu.visible = true
+	saveScore.load_bestscore()
+	
+
+
 func _loadMainMenu():
 	background.texture = preload('res://Menu/Textures/Background/game_menu_bg.png')
 	middleground.texture = preload('res://Menu/Textures/Background/T_GameMenu_MG.png')
@@ -101,3 +114,6 @@ func _loadMainMenu():
 	
 	textureButton_BackMM.visible = false
 	textureButton_BackLM.visible = false
+	
+	$currentScoreList.visible = false
+	$Middleground.visible = true

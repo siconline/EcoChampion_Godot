@@ -6,6 +6,7 @@ onready var scoreHud = get_node("../../Hud/Score_Count")
 onready var animPlayer = $AnimationPlayer
 onready var currentHighScore = $Background/currentHighScore
 onready var currentScoreList = $Background/currentScoreList
+onready var mainMenuButton = $Background/MainMenuButton
 onready var scoreLabel = $Background/currentHighScore/Score
 
 var scrollDown = true
@@ -38,6 +39,7 @@ func _on_AnimationPlayer_animation_finished(scroll_Score_up):
 	if scrollUp == true:
 		currentHighScore.visible = false
 		currentScoreList.visible = true
+		mainMenuButton.visible = true
 		animPlayer.play("scroll_Score_down")
 		scrollUp = false
 
