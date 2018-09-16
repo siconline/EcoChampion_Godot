@@ -29,6 +29,11 @@ func _on_Area2D_body_entered(body):
 		animPickUps.play("dropItems")
 		check = true
 		player.playerControll = false
+		$Sprite.visible = false
+		$winNPC.visible = true
+		$thinkbubble.visible = false
+		$winNPC_timer.start()
+		
 	if playerSpeedUp == true:
 		playerSpeedUp = false
 		speedUp.visible = true
@@ -52,3 +57,9 @@ func _on_animPickUps_animation_finished(dropItems):
 	if check == true:
 		player.playerControll = true
 		check = false
+
+
+func _on_winNPC_timer_timeout():
+	$Sprite.visible = true
+	$winNPC.visible = false
+	$thinkbubble.visible = true

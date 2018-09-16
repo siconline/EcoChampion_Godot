@@ -49,6 +49,11 @@ func _ready():
 
 func _physics_process(delta):
 	
+	if speed > 100:
+		$CollisionShape2D.position.x = 60
+	if speed < -100:
+		$CollisionShape2D.position.x = -60
+	
 	if speed == maxSpeed || speed == -maxSpeed || speed == slowSpeed || speed == -slowSpeed:
 		if animPlayer.get_current_animation() == "Run":
 			pass
@@ -204,6 +209,19 @@ func _physics_process(delta):
 	else:
 		toolboxPUP.visible = false
 
+func boost_Button_activate():
+	if playerControll == true:
+		#BOOST CONTROLL
+		if hud.boostCounter > 1:
+			if boost == true:
+				speed = speed * 2
+				hud.boostCounter -= 1
+				if speed > 0:
+					$Particles2DR.emitting = true
+				if speed < 0:
+					$Particles2DL.emitting = true
+				boost = false
+				$TimerBoost.start()
 
 func _on_TimerBoost_timeout():
 	boost = true
@@ -215,3 +233,5 @@ func _on_TimerBoost_timeout():
 		if speed < 0:
 			speed = -maxSpeed
 	print("timout")
+	
+

@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://MiniGame01/MiniGame01.gd" type="Script" id=1]
 [ext_resource path="res://MiniGame01/Grounds.gd" type="Script" id=2]
@@ -22,11 +22,12 @@
 [ext_resource path="res://MiniGame01/Animations/Waste_OUT.tres" type="Animation" id=20]
 [ext_resource path="res://MiniGame01/Textures/Facilities/t3_hinten_d.png" type="Texture" id=21]
 [ext_resource path="res://MiniGame01/Textures/Facilities/t3_vorne.png" type="Texture" id=22]
-[ext_resource path="res://MiniGame01/Textures/Facilities/t1_hinten_d.png" type="Texture" id=23]
-[ext_resource path="res://MiniGame01/Textures/Facilities/t1_vorne.png" type="Texture" id=24]
-[ext_resource path="res://MiniGame01/Textures/Facilities/t2_hinten_d.png" type="Texture" id=25]
-[ext_resource path="res://MiniGame01/Textures/Facilities/t2_vorne.png" type="Texture" id=26]
-[ext_resource path="res://MiniGame01/NPC/Npc.tscn" type="PackedScene" id=27]
+[ext_resource path="res://MiniGame01/Textures/Coins/eco_coins_anim.png" type="Texture" id=23]
+[ext_resource path="res://MiniGame01/Textures/Facilities/t1_hinten_d.png" type="Texture" id=24]
+[ext_resource path="res://MiniGame01/Textures/Facilities/t1_vorne.png" type="Texture" id=25]
+[ext_resource path="res://MiniGame01/Textures/Facilities/t2_hinten_d.png" type="Texture" id=26]
+[ext_resource path="res://MiniGame01/Textures/Facilities/t2_vorne.png" type="Texture" id=27]
+[ext_resource path="res://MiniGame01/NPC/Npc.tscn" type="PackedScene" id=28]
 
 [sub_resource type="Animation" id=1]
 
@@ -140,7 +141,7 @@ tracks/3/keys = {
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 111, 47 )
+extents = Vector2( 73.9624, 40.5857 )
 _sections_unfolded = [ "Resource" ]
 
 [sub_resource type="Animation" id=4]
@@ -255,7 +256,7 @@ tracks/3/keys = {
 [sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
-extents = Vector2( 22, 81 )
+extents = Vector2( 63.9778, 46.3403 )
 
 [sub_resource type="Animation" id=7]
 
@@ -1683,9 +1684,49 @@ tracks/3/keys = {
 [sub_resource type="RectangleShape2D" id=34]
 
 custom_solver_bias = 0.0
-extents = Vector2( 78.0835, 167.739 )
+extents = Vector2( 76.584, 167.739 )
 
-[sub_resource type="Animation" id=35]
+[sub_resource type="ParticlesMaterial" id=35]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 20, 1, 1 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 45.0
+flatness = 0.0
+gravity = Vector3( 0, -700, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 1.0
+scale_random = 0.0
+color = Color( 1, 1, 1, 1 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 1.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = true
+_sections_unfolded = [ "Angular Velocity", "Animation", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Trail" ]
+
+[sub_resource type="Animation" id=36]
 
 length = 1.0
 loop = false
@@ -1721,60 +1762,6 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.3, 0.5, 0.7, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0.1, 0.1 ), Vector2( 0.1, 0.1 ), Vector2( 0.2, 0.2 ), Vector2( 0.07, 0.07 ), Vector2( 0.1, 0.1 ) ]
-}
-
-[sub_resource type="Animation" id=36]
-
-length = 3.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("WasteAnim:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6, 1, 1.4, 1.6, 1.7, 2, 3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 0, 0 ),
-"update": 0,
-"values": [ Vector2( -131.582, 48.5298 ), Vector2( -83.0562, -105.975 ), Vector2( -17.6367, -122.404 ), Vector2( 0, 50 ), Vector2( 0, 72.9349 ), Vector2( -115.042, -217.868 ), Vector2( -296.42, -230.226 ), Vector2( -560.876, 107.337 ), Vector2( -560.876, 107.337 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("WasteAnim:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.5, 1, 1.4, 2, 3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0, 180.0, 360.0, 360.0, -360.0, -360.0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("WasteAnim:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 2, 2.2, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("WasteAnim:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
 "times": PoolRealArray( 0, 0.3, 0.5, 0.7, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
@@ -1783,6 +1770,60 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id=37]
 
+length = 3.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("WasteAnim:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 1, 1.4, 1.6, 1.7, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 0, 0 ),
+"update": 0,
+"values": [ Vector2( -131.582, 48.5298 ), Vector2( -83.0562, -105.975 ), Vector2( -17.6367, -122.404 ), Vector2( 0, 50 ), Vector2( 0, 72.9349 ), Vector2( -115.042, -217.868 ), Vector2( -296.42, -230.226 ), Vector2( -560.876, 107.337 ), Vector2( -560.876, 107.337 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("WasteAnim:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5, 1, 1.4, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 180.0, 360.0, 360.0, -360.0, -360.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("WasteAnim:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2, 2.2, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("WasteAnim:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 0.1, 0.1 ), Vector2( 0.2, 0.2 ), Vector2( 0.07, 0.07 ), Vector2( 0.1, 0.1 ) ]
+}
+
+[sub_resource type="Animation" id=38]
+
 length = 1.0
 loop = false
 step = 0.1
@@ -1823,7 +1864,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0.1, 0.1 ), Vector2( 0.1, 0.1 ), Vector2( 0.2, 0.2 ), Vector2( 0.07, 0.07 ), Vector2( 0.1, 0.1 ) ]
 }
 
-[sub_resource type="Animation" id=38]
+[sub_resource type="Animation" id=39]
 
 length = 3.0
 loop = false
@@ -1877,7 +1918,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.1, 0.1 ), Vector2( 0.1, 0.1 ), Vector2( 0.2, 0.2 ), Vector2( 0.07, 0.07 ), Vector2( 0.1, 0.1 ) ]
 }
 
-[node name="MiniGame01" type="Node2D"]
+[node name="MiniGame01" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
@@ -2182,12 +2223,10 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Obstacles" type="Node2D" parent="." index="3"]
 
-editor/display_folded = true
 script = ExtResource( 10 )
 
 [node name="Obstacle1" type="Area2D" parent="Obstacles" index="0"]
 
-editor/display_folded = true
 position = Vector2( 1070, 0 )
 z_index = -2
 input_pickable = true
@@ -2222,7 +2261,7 @@ blend_times = [  ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle1" index="1"]
 
-position = Vector2( 1.5, 56 )
+position = Vector2( 1.5, 23 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
@@ -2233,7 +2272,6 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Obstacle2" type="Area2D" parent="Obstacles" index="1"]
 
-editor/display_folded = true
 position = Vector2( 1570, 0 )
 z_index = -2
 input_pickable = true
@@ -2268,7 +2306,7 @@ blend_times = [  ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Obstacle2" index="1"]
 
-position = Vector2( -8.5, 25 )
+position = Vector2( -8.5, 18.3842 )
 shape = SubResource( 6 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
@@ -2280,7 +2318,6 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Obstacle3" type="Area2D" parent="Obstacles" index="2"]
 
-editor/display_folded = true
 position = Vector2( 2070, 0 )
 z_index = -2
 input_pickable = true
@@ -2901,20 +2938,18 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="Hud" parent="Player/Node2D" index="0" instance=ExtResource( 16 )]
 
 pause_mode = 2
-_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Pause", "Rect" ]
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Material", "Pause", "Rect", "Visibility" ]
 
 [node name="Score" parent="Player/Node2D/Hud" index="7" instance=ExtResource( 17 )]
 
 [node name="Facilities" type="Node2D" parent="." index="5"]
 
-editor/display_folded = true
 position = Vector2( 1920, 0 )
 script = ExtResource( 18 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Plastic" type="StaticBody2D" parent="Facilities" index="0"]
 
-editor/display_folded = true
 position = Vector2( 6500, -350 )
 input_pickable = false
 collision_layer = 1
@@ -2967,6 +3002,31 @@ z_index = -1
 texture = ExtResource( 22 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
+[node name="scoreCoins_Plastic" type="Particles2D" parent="Facilities/Plastic" index="5"]
+
+position = Vector2( 2.85059, 23.2988 )
+scale = Vector2( 0.7, 0.7 )
+z_index = -2
+emitting = false
+amount = 5
+lifetime = 1.0
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 35 )
+texture = ExtResource( 23 )
+normal_map = null
+h_frames = 26
+v_frames = 1
+_sections_unfolded = [ "Material", "Process Material", "Textures", "Time", "Transform", "Z Index" ]
+
 [node name="Paper" type="StaticBody2D" parent="Facilities" index="1"]
 
 position = Vector2( 6500, 0 )
@@ -2986,8 +3046,8 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Waste_IN = SubResource( 35 )
-anims/Waste_OUT = SubResource( 36 )
+anims/Waste_IN = SubResource( 36 )
+anims/Waste_OUT = SubResource( 37 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
@@ -3001,7 +3061,7 @@ shape = SubResource( 34 )
 position = Vector2( 34.0376, 13.9717 )
 scale = Vector2( 0.35, 0.35 )
 z_index = -3
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="WasteAnim" type="Sprite" parent="Facilities/Paper" index="3"]
@@ -3018,9 +3078,33 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 position = Vector2( 0, 50 )
 scale = Vector2( 0.35, 0.35 )
-z_index = -1
-texture = ExtResource( 24 )
+texture = ExtResource( 25 )
 _sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="scoreCoins_Paper" type="Particles2D" parent="Facilities/Paper" index="5"]
+
+position = Vector2( -0.227539, 26.9056 )
+scale = Vector2( 0.7, 0.7 )
+z_index = -1
+emitting = false
+amount = 1
+lifetime = 1.0
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 35 )
+texture = ExtResource( 23 )
+normal_map = null
+h_frames = 26
+v_frames = 1
+_sections_unfolded = [ "Material", "Process Material", "Textures", "Time", "Transform", "Z Index" ]
 
 [node name="Metal" type="StaticBody2D" parent="Facilities" index="2"]
 
@@ -3041,8 +3125,8 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Waste_IN = SubResource( 37 )
-anims/Waste_OUT = SubResource( 38 )
+anims/Waste_IN = SubResource( 38 )
+anims/Waste_OUT = SubResource( 39 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
@@ -3056,7 +3140,7 @@ shape = SubResource( 34 )
 position = Vector2( 34.0376, 13.9717 )
 scale = Vector2( 0.35, 0.35 )
 z_index = -3
-texture = ExtResource( 25 )
+texture = ExtResource( 26 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="WasteAnim" type="Sprite" parent="Facilities/Metal" index="3"]
@@ -3072,11 +3156,35 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 position = Vector2( 0, 50 )
 scale = Vector2( 0.35, 0.35 )
-z_index = -1
-texture = ExtResource( 26 )
+z_index = 1
+texture = ExtResource( 27 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Npc" parent="." index="6" instance=ExtResource( 27 )]
+[node name="scoreCoins_Metal" type="Particles2D" parent="Facilities/Metal" index="5"]
+
+position = Vector2( 7.1748, 18.5222 )
+scale = Vector2( 0.7, 0.7 )
+emitting = false
+amount = 3
+lifetime = 1.0
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 35 )
+texture = ExtResource( 23 )
+normal_map = null
+h_frames = 26
+v_frames = 1
+_sections_unfolded = [ "Material", "Process Material", "Textures", "Time", "Transform", "Z Index" ]
+
+[node name="Npc" parent="." index="6" instance=ExtResource( 28 )]
 
 position = Vector2( -350, 0 )
 _sections_unfolded = [ "Transform" ]

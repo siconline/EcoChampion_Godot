@@ -1,26 +1,27 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://MiniGame01/NPC/Npc.gd" type="Script" id=1]
 [ext_resource path="res://MiniGame01/NPC/Animations/Idle.tres" type="Animation" id=2]
 [ext_resource path="res://MiniGame01/NPC/Textures/T_NPC_Idle_Animation_verkl.png" type="Texture" id=3]
-[ext_resource path="res://MiniGame01/NPC/Textures/T_barrow3.png" type="Texture" id=4]
-[ext_resource path="res://MiniGame01/NPC/Textures/T_part2.png" type="Texture" id=5]
-[ext_resource path="res://MiniGame01/NPC/Textures/T_part1.png" type="Texture" id=6]
-[ext_resource path="res://MiniGame01/NPC/Textures/think_bubble_1.png" type="Texture" id=7]
-[ext_resource path="res://MiniGame01/NPC/Textures/think_bubble_2.png" type="Texture" id=8]
-[ext_resource path="res://MiniGame01/NPC/Textures/think_bubble_3.png" type="Texture" id=9]
-[ext_resource path="res://MiniGame01/Textures/PickUps/item_toolbox.png" type="Texture" id=10]
-[ext_resource path="res://MiniGame01/Textures/PickUps/item_boost.png" type="Texture" id=11]
+[ext_resource path="res://MiniGame01/NPC/Textures/T_NPC_win_Animation.png" type="Texture" id=4]
+[ext_resource path="res://MiniGame01/NPC/Textures/T_barrow3.png" type="Texture" id=5]
+[ext_resource path="res://MiniGame01/NPC/Textures/T_part2.png" type="Texture" id=6]
+[ext_resource path="res://MiniGame01/NPC/Textures/T_part1.png" type="Texture" id=7]
+[ext_resource path="res://MiniGame01/NPC/Textures/think_bubble_1.png" type="Texture" id=8]
+[ext_resource path="res://MiniGame01/NPC/Textures/think_bubble_2.png" type="Texture" id=9]
+[ext_resource path="res://MiniGame01/NPC/Textures/think_bubble_3.png" type="Texture" id=10]
+[ext_resource path="res://MiniGame01/Textures/PickUps/item_toolbox.png" type="Texture" id=11]
+[ext_resource path="res://MiniGame01/Textures/PickUps/item_boost.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 106.711, 905.029 )
+extents = Vector2( 141.586, 905.029 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 116.342, 75.0001 )
+extents = Vector2( 177.79, 75.0001 )
 
 [sub_resource type="Animation" id=3]
 
@@ -162,36 +163,51 @@ scale = Vector2( 0.45, 0.45 )
 z_index = -1
 texture = ExtResource( 3 )
 hframes = 9
-frame = 8
 _sections_unfolded = [ "Animation", "Transform", "Z Index" ]
 
-[node name="object" type="Sprite" parent="." index="2"]
+[node name="winNPC" type="Sprite" parent="." index="2"]
+
+visible = false
+position = Vector2( -5.00001, 3.00001 )
+scale = Vector2( 0.225, 0.225 )
+texture = ExtResource( 4 )
+hframes = 2
+frame = 1
+_sections_unfolded = [ "Animation", "Transform" ]
+
+[node name="winNPC_timer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = true
+autostart = false
+
+[node name="object" type="Sprite" parent="." index="4"]
 
 position = Vector2( -195.941, -173.945 )
-scale = Vector2( 0.25, 0.25 )
-z_index = -1
-texture = ExtResource( 4 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="object2" type="Sprite" parent="." index="3"]
-
-position = Vector2( -155.935, 52.0887 )
 scale = Vector2( 0.25, 0.25 )
 z_index = -1
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="object3" type="Sprite" parent="." index="4"]
+[node name="object2" type="Sprite" parent="." index="5"]
 
-position = Vector2( -249.949, 160.105 )
+position = Vector2( -155.935, 52.0887 )
 scale = Vector2( 0.25, 0.25 )
 z_index = -1
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="5"]
+[node name="object3" type="Sprite" parent="." index="6"]
 
-editor/display_folded = true
+position = Vector2( -249.949, 160.105 )
+scale = Vector2( 0.25, 0.25 )
+z_index = -1
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="7"]
+
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -204,7 +220,7 @@ bounce = 0.0
 
 shape = SubResource( 1 )
 
-[node name="Area2D" type="Area2D" parent="." index="6"]
+[node name="Area2D" type="Area2D" parent="." index="8"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -218,9 +234,8 @@ audio_bus_name = "Master"
 
 shape = SubResource( 2 )
 
-[node name="thinkbubble" type="Node2D" parent="." index="7"]
+[node name="thinkbubble" type="Node2D" parent="." index="9"]
 
-editor/display_folded = true
 scale = Vector2( 0.25, 0.25 )
 z_index = -1
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -239,19 +254,19 @@ _sections_unfolded = [ "Playback Options" ]
 [node name="bubble1" type="Sprite" parent="thinkbubble" index="1"]
 
 position = Vector2( 500.831, -784.488 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="bubble2" type="Sprite" parent="thinkbubble" index="2"]
 
 position = Vector2( 500.831, -784.488 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="bubble3" type="Sprite" parent="thinkbubble" index="3"]
 
-position = Vector2( 500.831, -784.488 )
-texture = ExtResource( 9 )
+position = Vector2( 504.441, -784.488 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="item1" type="Sprite" parent="thinkbubble" index="4"]
@@ -259,17 +274,17 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 visible = false
 position = Vector2( 520.831, -880.488 )
 scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="item2" type="Sprite" parent="thinkbubble" index="5"]
 
 position = Vector2( 600.831, -992.488 )
 scale = Vector2( 0.8, 0.8 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="animPickups" type="Node2D" parent="." index="8"]
+[node name="animPickups" type="Node2D" parent="." index="10"]
 
 [node name="animPickUps" type="AnimationPlayer" parent="animPickups" index="0"]
 
@@ -288,7 +303,7 @@ visible = false
 position = Vector2( 141.224, -36.9418 )
 scale = Vector2( 0.1, 0.1 )
 z_index = -1
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
 
 [node name="SpeedUp" type="Sprite" parent="animPickups" index="2"]
@@ -297,8 +312,10 @@ visible = false
 position = Vector2( 165.721, -2.80328 )
 scale = Vector2( 0.1, 0.1 )
 z_index = -1
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 _sections_unfolded = [ "Offset", "Region", "Transform", "Visibility", "Z Index" ]
+
+[connection signal="timeout" from="winNPC_timer" to="." method="_on_winNPC_timer_timeout"]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 

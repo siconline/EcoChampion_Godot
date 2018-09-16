@@ -44,3 +44,7 @@ func _on_Button_MainMenu_pressed():
 func _on_Button_Quit_pressed():
 	# Exit Game / Close Application
 	get_tree().quit()
+
+
+func _on_Button_pressed():
+	get_node("../../../Player").boost_Button_activate()

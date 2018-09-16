@@ -1,8 +1,11 @@
 extends Control
 
 onready var hud_pauseButton = get_node("../../Hud/Button_Pause")
+onready var hud_boost = get_node("../../Hud/boost")
 onready var clock = get_node("../../Hud/Clock")
 onready var scoreHud = get_node("../../Hud/Score_Count")
+onready var hud_score_count = get_node("../../Hud/Score_Count")
+onready var hud_score_texture = get_node("../../Hud/Score_Texture")
 onready var animPlayer = $AnimationPlayer
 onready var currentHighScore = $Background/currentHighScore
 onready var currentScoreList = $Background/currentScoreList
@@ -26,6 +29,10 @@ func _process(delta):
 			animPlayer.play("scroll_Score_down")
 			get_tree().set_pause(true)
 			hud_pauseButton.visible = false
+			hud_boost.visible = false
+			clock.visible = false
+			hud_score_count.visible = false
+			hud_score_texture.visible = false
 			scrollDown = false
 
 

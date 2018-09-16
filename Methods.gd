@@ -88,6 +88,9 @@ func collideObstacleDamage(pickUpIndex, pickUpName):
 	var plastic 		= get_node("../MiniGame01/Facilities/Plastic/DropPlayer")
 	var paper   		= get_node("../MiniGame01/Facilities/Paper/DropPlayer")
 	var metal  	    	= get_node("../MiniGame01/Facilities/Metal/DropPlayer")
+	var coin_anim_plastic = get_node("../MiniGame01/Facilities/Plastic/scoreCoins_Plastic")
+	var coin_anim_paper = get_node("../MiniGame01/Facilities/Paper/scoreCoins_Paper")
+	var coin_anim_metal  = get_node("../MiniGame01/Facilities/Metal/scoreCoins_Metal")
 	var pickUps 		= get_node("../MiniGame01/PickUps")
 	var hud     		= get_node("../MiniGame01/Player/Node2D/Hud")
 	var timer_ItemLost  = $timer_ItemLost
@@ -103,14 +106,17 @@ func collideObstacleDamage(pickUpIndex, pickUpName):
 			if pickUpName == "Plastic":
 				plastic.play("Waste_IN")
 				hud.scoreCount += 100
+				coin_anim_plastic.emitting = true
 				
 			elif pickUpName == "Metal":
 				metal.play("Waste_IN")
 				hud.scoreCount += 50
+				coin_anim_metal.emitting = true
 				
 			else:
 				paper.play("Waste_IN")
 				hud.scoreCount += 25
+				coin_anim_paper.emitting = true
 		else:
 			if pickUpIndex == 9 && pickUpName == "Value":
 				pass
