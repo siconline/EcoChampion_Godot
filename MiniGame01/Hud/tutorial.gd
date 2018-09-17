@@ -5,7 +5,8 @@ onready var clock = get_node("../../../../Player/Node2D/Hud/Clock/Clock_Timer")
 onready var tutorial = get_node("../tutorial")
 onready var npcAnimThink = get_node("../../../../Npc/thinkbubble/anim_thinkbubble")
 onready var timer = $Timer
-
+onready var pause_button = get_node("../../../../Player/Node2D/Hud/Button_Pause")
+onready var boost_button = get_node("../../../../Player/Node2D/Hud/boost")
 
 
 var index = 0
@@ -46,6 +47,8 @@ func _on_button_continue_pressed():
 	tutorial.visible = false
 	npcAnimThink.play("think_animation")
 	timer.start()
+	pause_button.visible = true
+	boost_button.visible = true
 
 
 func _on_Timer_timeout():

@@ -3,7 +3,7 @@ extends Node2D
 onready var clockMinute = $Clock_Minute
 onready var clockSecond = $Clock_Second
 
-var minute = 5
+var minute = 3
 var second = 0
 
 var timeout = false

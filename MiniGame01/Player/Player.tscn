@@ -328,7 +328,7 @@ anim_offset_random = 0.0
 anim_loop = true
 _sections_unfolded = [ "Animation", "Damping", "Emission Shape", "Flags", "Gravity", "Linear Accel", "Radial Accel", "Spread", "Tangential Accel" ]
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 z_index = -2
 input_pickable = false
@@ -344,7 +344,6 @@ scale = Vector2( 0.5, 0.5 )
 z_index = -1
 texture = ExtResource( 2 )
 hframes = 7
-frame = 2
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
