@@ -30,21 +30,45 @@ func _on_Button_Pause_pressed():
 	pausemenu.visible = true
 	get_tree().set_pause(true)
 	clock.set_paused(true)
+	playSoundPressButton()
 
 func _on_Button_Continue_pressed():
 	pausemenu.visible = false
 	get_tree().set_pause(false)
 	clock.set_paused(false)
+	playSoundPressButton()
 
 
 func _on_Button_MainMenu_pressed():
+	playSoundPressButton()
 	get_tree().reload_current_scene()
-
+	
 
 func _on_Button_Quit_pressed():
+	playSoundPressButton()
 	# Exit Game / Close Application
 	get_tree().quit()
+	
 
 
 func _on_Button_pressed():
 	get_node("../../../Player").boost_Button_activate()
+	
+
+#---SOUNDS----------------------------------#
+func _on_Button_Continue_mouse_entered():
+	playSoundHoverButton()
+func _on_Button_MainMenu_mouse_entered():
+	playSoundHoverButton()
+func _on_Button_Quit_mouse_entered():
+	playSoundHoverButton()
+func playSoundHoverButton():
+	var player = AudioStreamPlayer.new()
+	self.add_child(player)
+	player.stream = load("res://Sounds/S_hover.wav")
+	player.play()
+func playSoundPressButton():
+	var player = AudioStreamPlayer.new()
+	self.add_child(player)
+	player.stream = load("res://Sounds/S_click.wav")
+	player.play()

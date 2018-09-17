@@ -1918,7 +1918,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.1, 0.1 ), Vector2( 0.1, 0.1 ), Vector2( 0.2, 0.2 ), Vector2( 0.07, 0.07 ), Vector2( 0.1, 0.1 ) ]
 }
 
-[node name="MiniGame01" type="Node2D" index="0"]
+[node name="MiniGame01" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
@@ -2223,6 +2223,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Obstacles" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
 script = ExtResource( 10 )
 
 [node name="Obstacle1" type="Area2D" parent="Obstacles" index="0"]
@@ -2902,6 +2903,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Player" parent="." index="4" instance=ExtResource( 15 )]
 
+editor/display_folded = true
 z_index = -1
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="3"]
@@ -2944,6 +2946,7 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Material", 
 
 [node name="Facilities" type="Node2D" parent="." index="5"]
 
+editor/display_folded = true
 position = Vector2( 1920, 0 )
 script = ExtResource( 18 )
 _sections_unfolded = [ "Transform" ]

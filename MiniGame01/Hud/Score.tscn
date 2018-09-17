@@ -42,7 +42,7 @@ use_filter = false
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=5]
 
 length = 1.5
 loop = false
@@ -60,7 +60,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, -1200 ), Vector2( 0, -200 ), Vector2( 0, -80 ), Vector2( 0, -100 ), Vector2( 0, -100 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=6]
 
 length = 1.0
 loop = false
@@ -78,7 +78,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, -100 ), Vector2( 0, -1200 ) ]
 }
 
-[node name="Score" type="Control"]
+[node name="Score" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -142,7 +142,6 @@ texture = ExtResource( 3 )
 
 [node name="Background" type="Sprite" parent="." index="3"]
 
-editor/display_folded = true
 position = Vector2( 0, -1200 )
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
@@ -174,7 +173,6 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="currentHighScore" type="Control" parent="Background" index="1"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -344,11 +342,15 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/scroll_Score_down = SubResource( 7 )
-anims/scroll_Score_up = SubResource( 8 )
+anims/scroll_Score_down = SubResource( 5 )
+anims/scroll_Score_up = SubResource( 6 )
 blend_times = [  ]
 
+[connection signal="mouse_entered" from="Background/currentHighScore/TextureButton" to="." method="_on_TextureButton_mouse_entered"]
+
 [connection signal="pressed" from="Background/currentHighScore/TextureButton" to="." method="_on_TextureButton_pressed"]
+
+[connection signal="mouse_entered" from="Background/MainMenuButton" to="." method="_on_MainMenuButton_mouse_entered"]
 
 [connection signal="pressed" from="Background/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
 

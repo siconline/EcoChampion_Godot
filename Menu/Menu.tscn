@@ -31,7 +31,7 @@ use_filter = false
 font_data = ExtResource( 8 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Menu" type="Control" index="0"]
+[node name="Menu" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -514,15 +514,33 @@ texture_pressed = ExtResource( 13 )
 texture_hover = ExtResource( 14 )
 _sections_unfolded = [ "Margin", "Rect", "Textures" ]
 
+[connection signal="mouse_entered" from="Button_LevelMenu" to="." method="_on_Button_LevelMenu_mouse_entered"]
+
 [connection signal="pressed" from="Button_LevelMenu" to="." method="_on_Button_LevelMenu_pressed"]
+
+[connection signal="mouse_entered" from="Button_GarbagePatrol" to="." method="_on_Button_GarbagePatrol_mouse_entered"]
 
 [connection signal="pressed" from="Button_GarbagePatrol" to="." method="_on_Button_GarbagePatrol_pressed"]
 
+[connection signal="mouse_entered" from="Button_Score" to="." method="_on_Button_Score_mouse_entered"]
+
 [connection signal="pressed" from="Button_Score" to="." method="_on_Button_Score_pressed"]
+
+[connection signal="mouse_entered" from="Button_QuitGame" to="." method="_on_Button_QuitGame_mouse_entered"]
 
 [connection signal="pressed" from="Button_QuitGame" to="." method="_on_Button_QuitGame_pressed"]
 
+[connection signal="mouse_entered" from="Button_Germany" to="." method="_on_Button_Germany_mouse_entered"]
+
+[connection signal="mouse_entered" from="Button_Morocco" to="." method="_on_Button_Morocco_mouse_entered"]
+
+[connection signal="mouse_entered" from="Button_Argentina" to="." method="_on_Button_Argentina_mouse_entered"]
+
+[connection signal="mouse_entered" from="TextureButton_BackMainMenu" to="." method="_on_TextureButton_BackMainMenu_mouse_entered"]
+
 [connection signal="pressed" from="TextureButton_BackMainMenu" to="." method="_on_TextureButton_BackMainMenu_pressed"]
+
+[connection signal="mouse_entered" from="TextureButton_BackLevelMenu" to="." method="_on_TextureButton_BackLevelMenu_mouse_entered"]
 
 [connection signal="pressed" from="TextureButton_BackLevelMenu" to="." method="_on_TextureButton_BackLevelMenu_pressed"]
 

@@ -27,7 +27,7 @@ use_filter = true
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Hud" type="Control"]
+[node name="Hud" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -103,7 +103,6 @@ _sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [node name="Pausemenu" type="Sprite" parent="." index="2"]
 
-editor/display_folded = true
 visible = false
 scale = Vector2( 0.85, 0.85 )
 texture = ExtResource( 6 )
@@ -411,9 +410,15 @@ _sections_unfolded = [ "Material", "Visibility" ]
 
 [connection signal="pressed" from="Button_Pause" to="." method="_on_Button_Pause_pressed"]
 
+[connection signal="mouse_entered" from="Pausemenu/Button_Continue" to="." method="_on_Button_Continue_mouse_entered"]
+
 [connection signal="pressed" from="Pausemenu/Button_Continue" to="." method="_on_Button_Continue_pressed"]
 
+[connection signal="mouse_entered" from="Pausemenu/Button_MainMenu" to="." method="_on_Button_MainMenu_mouse_entered"]
+
 [connection signal="pressed" from="Pausemenu/Button_MainMenu" to="." method="_on_Button_MainMenu_pressed"]
+
+[connection signal="mouse_entered" from="Pausemenu/Button_Quit" to="." method="_on_Button_Quit_mouse_entered"]
 
 [connection signal="pressed" from="Pausemenu/Button_Quit" to="." method="_on_Button_Quit_pressed"]
 

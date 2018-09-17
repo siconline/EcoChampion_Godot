@@ -38,9 +38,11 @@ func _changeBackground(index):
 func _on_button_forward_pressed():
 	if index < 4:
 		index += 1
+	playSoundPressButton()
 func _on_button_backward_pressed():
 	if index > 0:
 		index -= 1
+	playSoundPressButton()
 
 func _on_button_continue_pressed():
 	get_tree().set_pause(false)
@@ -49,6 +51,7 @@ func _on_button_continue_pressed():
 	timer.start()
 	pause_button.visible = true
 	boost_button.visible = true
+	playSoundPressButton()
 
 
 func _on_Timer_timeout():
@@ -56,3 +59,23 @@ func _on_Timer_timeout():
 	player.animPlayer.stop(true)
 	clock.start()
 	player.playerControll = true
+	
+#---SOUNDS----------------------------------#
+func _on_button_continue_mouse_entered():
+	playSoundHoverButton()
+func _on_button_forward_mouse_entered():
+	playSoundHoverButton()
+func _on_button_backward_mouse_entered():
+	playSoundHoverButton()
+func playSoundHoverButton():
+	var player = AudioStreamPlayer.new()
+	self.add_child(player)
+	player.stream = load("res://Sounds/S_hover.wav")
+	player.play()
+func playSoundPressButton():
+	var player = AudioStreamPlayer.new()
+	self.add_child(player)
+	player.stream = load("res://Sounds/S_click.wav")
+	player.play()
+
+

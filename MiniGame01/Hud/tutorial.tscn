@@ -181,9 +181,15 @@ wait_time = 4.0
 one_shot = true
 autostart = false
 
+[connection signal="mouse_entered" from="button_continue" to="." method="_on_button_continue_mouse_entered"]
+
 [connection signal="pressed" from="button_continue" to="." method="_on_button_continue_pressed"]
 
+[connection signal="mouse_entered" from="button_forward" to="." method="_on_button_forward_mouse_entered"]
+
 [connection signal="pressed" from="button_forward" to="." method="_on_button_forward_pressed"]
+
+[connection signal="mouse_entered" from="button_backward" to="." method="_on_button_backward_mouse_entered"]
 
 [connection signal="pressed" from="button_backward" to="." method="_on_button_backward_pressed"]
 

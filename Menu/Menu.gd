@@ -32,27 +32,33 @@ func _ready():
 
 func _on_Button_LevelMenu_pressed():
 	_loadLevelMenu()
+	playSoundPressButton()
 
 
 func _on_Button_Score_pressed():
 	_loadScoreMenu()
+	playSoundPressButton()
 
 
 func _on_Button_QuitGame_pressed():
 	# Exit Game / Close Application
 	get_tree().quit()
+	playSoundPressButton()
 
 
 func _on_Button_GarbagePatrol_pressed():
 	_loadGarbagePatrol()
+	playSoundPressButton()
 
 
 func _on_TextureButton_BackMainMenu_pressed():
 	_loadMainMenu()
+	playSoundPressButton()
 
 
 func _on_TextureButton_BackLevelMenu_pressed():
 	_loadLevelMenu()
+	playSoundPressButton()
 
 #----------Own Methods-------------#
 func _loadGarbagePatrol():
@@ -117,3 +123,35 @@ func _loadMainMenu():
 	
 	$currentScoreList.visible = false
 	$Middleground.visible = true
+
+
+
+#---SOUNDS----------------------------------#
+func _on_Button_LevelMenu_mouse_entered():
+	playSoundHoverButton()
+func _on_Button_GarbagePatrol_mouse_entered():
+	playSoundHoverButton()
+func _on_Button_Score_mouse_entered():
+	playSoundHoverButton()
+func _on_Button_QuitGame_mouse_entered():
+	playSoundHoverButton()
+func _on_Button_Germany_mouse_entered():
+	playSoundHoverButton()
+func _on_Button_Morocco_mouse_entered():
+	playSoundHoverButton()
+func _on_Button_Argentina_mouse_entered():
+	playSoundHoverButton()
+func _on_TextureButton_BackMainMenu_mouse_entered():
+	playSoundHoverButton()
+func _on_TextureButton_BackLevelMenu_mouse_entered():
+	playSoundHoverButton()
+func playSoundHoverButton():
+	var player = AudioStreamPlayer.new()
+	self.add_child(player)
+	player.stream = load("res://Sounds/S_hover.wav")
+	player.play()
+func playSoundPressButton():
+	var player = AudioStreamPlayer.new()
+	self.add_child(player)
+	player.stream = load("res://Sounds/S_click.wav")
+	player.play()

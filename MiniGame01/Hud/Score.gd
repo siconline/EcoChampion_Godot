@@ -37,6 +37,7 @@ func _process(delta):
 
 
 func _on_TextureButton_pressed():
+	playSoundPressButton()
 	animPlayer.play("scroll_Score_up")
 	scrollUp = true
 	$saveScore._on_LineEdit_text_entered($Background/currentHighScore/namen_papier/LineEdit.text)
@@ -52,4 +53,22 @@ func _on_AnimationPlayer_animation_finished(scroll_Score_up):
 
 
 func _on_MainMenuButton_pressed():
+	playSoundPressButton()
 	get_tree().reload_current_scene()
+
+
+#---SOUNDS----------------------------------#
+func _on_TextureButton_mouse_entered():
+	playSoundHoverButton()
+func _on_MainMenuButton_mouse_entered():
+	playSoundHoverButton()
+func playSoundHoverButton():
+	var player = AudioStreamPlayer.new()
+	self.add_child(player)
+	player.stream = load("res://Sounds/S_hover.wav")
+	player.play()
+func playSoundPressButton():
+	var player = AudioStreamPlayer.new()
+	self.add_child(player)
+	player.stream = load("res://Sounds/S_click.wav")
+	player.play()
