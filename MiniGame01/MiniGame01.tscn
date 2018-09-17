@@ -370,7 +370,7 @@ tracks/3/keys = {
 [sub_resource type="RectangleShape2D" id=9]
 
 custom_solver_bias = 0.0
-extents = Vector2( 74, 45 )
+extents = Vector2( 62.2419, 45 )
 _sections_unfolded = [ "Resource" ]
 
 [sub_resource type="Animation" id=10]
