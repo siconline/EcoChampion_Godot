@@ -128,11 +128,11 @@ func _controllItemsBarrow(index):
 func playSoundPickUp(index):
 	var player = AudioStreamPlayer.new()
 	self.add_child(player)
-	if str(pickUpsSprite[index].texture) == "[StreamTexture:1142]":
+	if pickUpsSprite[index].texture == textures[0]:
 		player.stream = load("res://Sounds/S_plastic.wav")
-	elif str(pickUpsSprite[index].texture) == "[StreamTexture:1145]":
+	elif pickUpsSprite[index].texture == textures[1]:
 		player.stream = load("res://Sounds/S_paper3.wav")
-	elif str(pickUpsSprite[index].texture) == "[StreamTexture:1148]":
+	elif pickUpsSprite[index].texture == textures[2]:
 		player.stream = load("res://Sounds/S_metal.wav")
 	player.play()
 
