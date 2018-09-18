@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var movement = Vector2(0, 0)
 var speed = 0
-var maxSpeed = 800
+var maxSpeed = 500
 var slowSpeed = 150
 var facilityCollControll = true
 # pickUp positions
@@ -52,9 +52,9 @@ func _ready():
 func _physics_process(delta):
 	
 	if speed > 100:
-		$CollisionShape2D.position.x = 60
+		$CollisionShape2D.position.x = 27
 	if speed < -100:
-		$CollisionShape2D.position.x = -60
+		$CollisionShape2D.position.x = -27
 	
 	if speed == maxSpeed || speed == -maxSpeed || speed == slowSpeed || speed == -slowSpeed || speed == maxSpeed*2 || speed == -maxSpeed*2:
 		if animPlayer.get_current_animation() == "Run":

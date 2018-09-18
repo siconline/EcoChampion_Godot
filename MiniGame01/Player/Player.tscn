@@ -17,7 +17,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 45.7258, 54.8973 )
+extents = Vector2( 47.3189, 54.8973 )
 
 [sub_resource type="Animation" id=2]
 
@@ -348,7 +348,7 @@ _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 8.60986, 44.7931 )
+position = Vector2( 27.3345, 42.8424 )
 z_index = -1
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]

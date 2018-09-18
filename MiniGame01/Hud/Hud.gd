@@ -4,7 +4,8 @@ onready var pausemenu = $Pausemenu
 onready var button_Pause = $Button_Pause
 onready var miniGame01 = get_node("../../../../MiniGame01")
 onready var score = $Score_Count
-onready var clock = $Clock/Clock_Timer
+onready var clock_timer = $Clock/Clock_Timer
+onready var clock = $Clock
 onready var boost = $boost
 onready var player = get_node("../../../Player")
 
@@ -14,7 +15,9 @@ var texturesBoost = [preload('res://MiniGame01/Hud/Textures/Boost/boost_button_d
 var boostCounter = 0
 var scoreCount = 0
 
-
+#BONUS TIME
+var bonus_min = 0
+var bonus_sec = 0
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -22,6 +25,15 @@ func _ready():
 	pass
 
 func _process(delta):
+	
+	#BONUS FOR SCORE BY TIME
+	if clock.timeout == true:
+		bonus_min = 100 * clock.minute
+		if clock.minute > 0:
+			bonus_sec = 5 * clock.minute
+		scoreCount = scoreCount + bonus_min + bonus_sec
+	
+	
 	boost.texture = texturesBoost[boostCounter]
 	score.text = str(scoreCount)
 
@@ -29,13 +41,13 @@ func _process(delta):
 func _on_Button_Pause_pressed():
 	pausemenu.visible = true
 	get_tree().set_pause(true)
-	clock.set_paused(true)
+	clock_timer.set_paused(true)
 	playSoundPressButton()
 
 func _on_Button_Continue_pressed():
 	pausemenu.visible = false
 	get_tree().set_pause(false)
-	clock.set_paused(false)
+	clock_timer.set_paused(false)
 	playSoundPressButton()
 
 
