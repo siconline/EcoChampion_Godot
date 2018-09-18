@@ -103,6 +103,7 @@ func _controllItemsBarrow(index):
 		for i in range(0, pickUps.size()):
 			var obj = str("pickUp" , i+1)
 			if counterPickUps == i:
+				playSoundPickUp(index)
 				player.get(obj).visible = true
 				player.get(obj).texture = pickUpsSprite[index].texture
 				pickUps[index].collisionShape.visible = false
@@ -117,4 +118,15 @@ func _controllItemsBarrow(index):
 			animPlayerPickup.play("pickUpLeftIN")
 		counterPickUps += 1
 
+#SOUNDS--------------------------#
+func playSoundPickUp(index):
+	var player = AudioStreamPlayer.new()
+	self.add_child(player)
+	if str(pickUpsSprite[index].texture) == "[StreamTexture:1142]":
+		player.stream = load("res://Sounds/S_plastic.wav")
+	elif str(pickUpsSprite[index].texture) == "[StreamTexture:1145]":
+		player.stream = load("res://Sounds/S_paper3.wav")
+	elif str(pickUpsSprite[index].texture) == "[StreamTexture:1148]":
+		player.stream = load("res://Sounds/S_metal.wav")
+	player.play()
 

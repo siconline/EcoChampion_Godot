@@ -328,7 +328,7 @@ anim_offset_random = 0.0
 anim_loop = true
 _sections_unfolded = [ "Animation", "Damping", "Emission Shape", "Flags", "Gravity", "Linear Accel", "Radial Accel", "Spread", "Tangential Accel" ]
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 z_index = -2
 input_pickable = false
@@ -367,6 +367,7 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="PowerUps" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
 position = Vector2( 100, -15.4756 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
@@ -406,7 +407,7 @@ blend_times = [  ]
 [node name="animSprite_pickup" type="Sprite" parent="PickUps" index="1"]
 
 position = Vector2( -30, 20 )
-scale = Vector2( 1e-005, 1e-005 )
+scale = Vector2( 1e-05, 1e-05 )
 texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
@@ -552,6 +553,25 @@ h_frames = 3
 v_frames = 1
 _sections_unfolded = [ "Process Material", "Textures", "Transform", "Visibility" ]
 
+[node name="SoundSteps" type="AudioStreamPlayer" parent="." index="11"]
+
+stream = null
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+_sections_unfolded = [ "Pause" ]
+
+[node name="Timer" type="Timer" parent="SoundSteps" index="0"]
+
+process_mode = 1
+wait_time = 0.4
+one_shot = true
+autostart = false
+
 [connection signal="timeout" from="TimerBoost" to="." method="_on_TimerBoost_timeout"]
+
+[connection signal="timeout" from="SoundSteps/Timer" to="." method="_on_Timer_timeout"]
 
 

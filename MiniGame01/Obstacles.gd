@@ -19,7 +19,7 @@ var randomItem
 # 3 = Schlagloch
 # 4 = Wasserloch1
 # 5 = Wasserloch2
-var textures = [preload('res://MiniGame01/Textures/Obstacles/T_Baum.png'), preload('res://MiniGame01/Textures/Obstacles/T_fels1_a.png'), preload('res://MiniGame01/Textures/Obstacles/T_fels2_a.png'), preload('res://MiniGame01/Textures/Obstacles/T_Schlagloch.png'), preload('res://MiniGame01/Textures/Obstacles/T_Wasserloch.png'), preload('res://MiniGame01/Textures/Obstacles/T_wasserloch_2.png')]
+var textures = [preload('res://MiniGame01/Textures/Obstacles/T_Baum.png'), preload('res://MiniGame01/Textures/Obstacles/T_fels1_a.png'), preload('res://MiniGame01/Textures/Obstacles/T_fels2_a.png'), preload('res://MiniGame01/Textures/Obstacles/T_wasserloch_2.png'), preload('res://MiniGame01/Textures/Obstacles/T_Wasserloch.png'), preload('res://MiniGame01/Textures/Obstacles/T_wasserloch_2.png')]
 #Obstacles Parameters
 var objIndex
 # 0 = Baum

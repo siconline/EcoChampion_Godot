@@ -52,6 +52,8 @@ func _on_Button_Quit_pressed():
 
 
 func _on_Button_pressed():
+	if boostCounter > 1 && get_node("../../../Player").boost == true:
+		playSoundSpeedUp()
 	get_node("../../../Player").boost_Button_activate()
 	
 
@@ -71,4 +73,9 @@ func playSoundPressButton():
 	var player = AudioStreamPlayer.new()
 	self.add_child(player)
 	player.stream = load("res://Sounds/S_click.wav")
+	player.play()
+func playSoundSpeedUp():
+	var player = AudioStreamPlayer.new()
+	self.add_child(player)
+	player.stream = load("res://Sounds/S_Boost.wav")
 	player.play()

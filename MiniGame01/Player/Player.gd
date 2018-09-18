@@ -14,6 +14,8 @@ var playerControll = false
 #BOOST VALUES
 var boost = true
 var boostload = 0
+#SOUNDS
+var stepTimer = false
 
 onready var methods = get_node("../../Methods")
 
@@ -44,7 +46,7 @@ onready var npc = get_node("../Npc")
 
 
 func _ready():
-	pass
+	randomize()
 	
 
 func _physics_process(delta):
@@ -54,17 +56,18 @@ func _physics_process(delta):
 	if speed < -100:
 		$CollisionShape2D.position.x = -60
 	
-	if speed == maxSpeed || speed == -maxSpeed || speed == slowSpeed || speed == -slowSpeed:
+	if speed == maxSpeed || speed == -maxSpeed || speed == slowSpeed || speed == -slowSpeed || speed == maxSpeed*2 || speed == -maxSpeed*2:
 		if animPlayer.get_current_animation() == "Run":
+			playSoundSteps()
 			pass
 			#print('is playing run')
 		else:
 			animPlayer.play("Run")
 			#print('run')
 			#pass
-	elif speed == 100 || speed == -100:
+	elif speed == 100 || speed == -100 || speed == 0:
 		if animPlayer.get_current_animation() == "Idle":
-			pass
+			stopSoundSteps()
 		else:
 			animPlayer.play("Idle")
 	movement = Vector2(speed, 0)
@@ -73,6 +76,7 @@ func _physics_process(delta):
 		if hud.boostCounter > 1:
 			if Input.is_action_just_pressed("ui_boost"):
 				if boost == true:
+					playSoundSpeedUp()
 					speed = speed * 2
 					hud.boostCounter -= 1
 					if speed > 0:
@@ -110,18 +114,12 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_up"):
 			if position.y > -175*2:
 				position.y -= 175
-		if Input.is_action_just_pressed("ui_mouse"):
-			if get_global_mouse_position().y < (position.y - 100):
-				if position.y > -175*2:
-					position.y -= 175
-		elif Input.is_action_just_pressed("ui_down"):
+
+		if Input.is_action_just_pressed("ui_down"):
 			if position.y < 175*2:
 				position.y += 175
-		if Input.is_action_just_pressed("ui_mouse"):
-			if get_global_mouse_position().y > (position.y + 100):
-				if position.y < 175*2:
-					position.y += 175
-		elif Input.is_action_just_released("ui_up") || Input.is_action_just_released("ui_down"):
+	
+		if Input.is_action_just_released("ui_up") || Input.is_action_just_released("ui_down"):
 			#movement = Vector2(0, 0)
 			#animPlayer.play("Idle")
 			pass
@@ -234,4 +232,39 @@ func _on_TimerBoost_timeout():
 			speed = -maxSpeed
 	print("timout")
 	
+#SOUNDS----------------------#
+func playSoundSteps():
+	if speed == maxSpeed*2 || speed == -maxSpeed*2:
+		$SoundSteps/Timer.wait_time = 0.2
+	else:
+		$SoundSteps/Timer.wait_time = 0.4
+	if stepTimer == false:
+		$SoundSteps/Timer.start()
+		stepTimer = true
+		
+func stopSoundSteps():
+	$SoundSteps.stop()
 
+func _on_Timer_timeout():
+	var randomSound = randi()%10
+	var steps = [load("res://Sounds/FootSteps/S_Step01.wav"), load("res://Sounds/FootSteps/S_Step02.wav"), load("res://Sounds/FootSteps/S_Step03.wav"), load("res://Sounds/FootSteps/S_Step04.wav"), load("res://Sounds/FootSteps/S_Step05.wav"), load("res://Sounds/FootSteps/S_Step06.wav"), load("res://Sounds/FootSteps/S_Step07.wav"), load("res://Sounds/FootSteps/S_Step08.wav"), load("res://Sounds/FootSteps/S_Step09.wav"), load("res://Sounds/FootSteps/S_Step10.wav")]
+	if $SoundSteps.is_playing() == false:
+		$SoundSteps.stream = steps[randomSound]
+		$SoundSteps.play()
+	stepTimer = false
+
+func playSoundSpeedUp():
+	var player = AudioStreamPlayer.new()
+	self.add_child(player)
+	player.stream = load("res://Sounds/S_Boost.wav")
+	player.play()
+
+
+func _on_Button_Ground_pressed():
+		if playerControll == true:
+			if get_global_mouse_position().y < (position.y - 100):
+				if position.y > -175*2:
+					position.y -= 175
+			if get_global_mouse_position().y > (position.y + 100):
+				if position.y < 175*2:
+					position.y += 175

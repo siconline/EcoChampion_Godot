@@ -1923,7 +1923,33 @@ tracks/3/keys = {
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
 
-[node name="Grounds" type="Node2D" parent="." index="0"]
+[node name="Button_Ground" type="Button" parent="." index="0"]
+
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -965.0
+margin_top = -599.0
+margin_right = 8644.0
+margin_bottom = 636.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+_sections_unfolded = [ "Material", "Visibility" ]
+
+[node name="Grounds" type="Node2D" parent="." index="1"]
 
 editor/display_folded = true
 script = ExtResource( 2 )
@@ -2026,7 +2052,7 @@ position = Vector2( 7680, 0 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="PowerUps" type="Node2D" parent="." index="1"]
+[node name="PowerUps" type="Node2D" parent="." index="2"]
 
 editor/display_folded = true
 script = ExtResource( 6 )
@@ -2084,7 +2110,7 @@ position = Vector2( 6820, 0 )
 
 position = Vector2( 7320, 0 )
 
-[node name="PickUps" type="Node2D" parent="." index="2"]
+[node name="PickUps" type="Node2D" parent="." index="3"]
 
 editor/display_folded = true
 z_index = -2
@@ -2221,7 +2247,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 7420, 0 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Obstacles" type="Node2D" parent="." index="3"]
+[node name="Obstacles" type="Node2D" parent="." index="4"]
 
 editor/display_folded = true
 script = ExtResource( 10 )
@@ -2901,7 +2927,7 @@ position = Vector2( 0, 50 )
 texture = ExtResource( 14 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Player" parent="." index="4" instance=ExtResource( 15 )]
+[node name="Player" parent="." index="5" instance=ExtResource( 15 )]
 
 editor/display_folded = true
 z_index = -1
@@ -2944,7 +2970,7 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Material", 
 
 [node name="Score" parent="Player/Node2D/Hud" index="7" instance=ExtResource( 17 )]
 
-[node name="Facilities" type="Node2D" parent="." index="5"]
+[node name="Facilities" type="Node2D" parent="." index="6"]
 
 editor/display_folded = true
 position = Vector2( 1920, 0 )
@@ -3187,10 +3213,12 @@ h_frames = 26
 v_frames = 1
 _sections_unfolded = [ "Material", "Process Material", "Textures", "Time", "Transform", "Z Index" ]
 
-[node name="Npc" parent="." index="6" instance=ExtResource( 28 )]
+[node name="Npc" parent="." index="7" instance=ExtResource( 28 )]
 
 position = Vector2( -350, 0 )
 _sections_unfolded = [ "Transform" ]
+
+[connection signal="pressed" from="Button_Ground" to="Player" method="_on_Button_Ground_pressed"]
 
 [connection signal="body_entered" from="PickUps/PickUp1" to="PickUps" method="_on_PickUp1_body_entered"]
 

@@ -63,6 +63,12 @@ func pressedMouseForDirection(left, right):
 #CONTROLL THE SPEED BY OVERLAP OBSTACLES#
 #START#############################START#
 func collideObstacleSpeedSlowly():
+	#SOUNDPLAY
+	var streamPlayer = AudioStreamPlayer.new()
+	self.add_child(streamPlayer)
+	streamPlayer.stream = load("res://Sounds/S_mud.wav")
+	streamPlayer.play()
+	
 	_player.playerControll = false
 	var player = _player
 	if player.speed > 0:
@@ -104,17 +110,20 @@ func collideObstacleDamage(pickUpIndex, pickUpName):
 		if pickUps.pickUpTypBarrow[pickUps.pickUpTypBarrow.size()-1] == pickUpIndex:
 			print(pickUpName)
 			if pickUpName == "Plastic":
+				playSoundScore()
 				plastic.play("Waste_IN")
 				hud.scoreCount += 100
 				coin_anim_plastic.emitting = true
 				
 			elif pickUpName == "Metal":
+				playSoundScore()
 				metal.play("Waste_IN")
 				hud.scoreCount += 50
 				coin_anim_metal.emitting = true
 				
 			else:
 				paper.play("Waste_IN")
+				playSoundScore()
 				hud.scoreCount += 25
 				coin_anim_paper.emitting = true
 		else:
@@ -131,6 +140,8 @@ func collideObstacleDamage(pickUpIndex, pickUpName):
 		pickUps.counterPickUps -= 1
 		pickUps.pickUpTypBarrow.remove(pickUps.pickUpTypBarrow.size()-1)
 	if pickUpIndex == 9 && pickUpName == "Value":
+		#SOUND
+		playSoundObstacle()
 		animPlayer.play("Idle")
 		player.playerControll = false
 		if player.speed > 0:
@@ -188,4 +199,22 @@ func lostItemColliObstacle(index):
 #CONTROLL ANIMATION LOST PICKUP COLLISION OBSTACLES#
 #END############################################END#
 
-
+#SOUNDS----------------------#
+func playSoundScore():
+	var timer = Timer.new()
+	timer.connect("timeout",self,"_on_timer_timeout")
+	self.add_child(timer)
+	timer.one_shot = true
+	timer.wait_time = 1
+	timer.start()
+func _on_timer_timeout():
+	var player = AudioStreamPlayer.new()
+	self.add_child(player)
+	player.stream = load("res://Sounds/S_bing_fast.wav")
+	player.play()
+#SOUNDS--------------------------#
+func playSoundObstacle():
+	var player = AudioStreamPlayer.new()
+	self.add_child(player)
+	player.stream = load("res://Sounds/S_obstacle.wav")
+	player.play()
