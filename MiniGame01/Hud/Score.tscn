@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://MiniGame01/Hud/Score.gd" type="Script" id=1]
 [ext_resource path="res://MiniGame01/Hud/saveScore.gd" type="Script" id=2]
@@ -26,7 +26,36 @@ use_filter = false
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="StyleBoxFlat" id=3]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 1, 1, 1, 1 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.8, 0.8, 0.8, 0 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+_sections_unfolded = [ "Anti Aliasing", "Border", "Border Width", "Corner Radius", "Expand Margin", "Shadow" ]
+
+[sub_resource type="DynamicFont" id=4]
 
 size = 60
 use_mipmaps = false
@@ -34,7 +63,7 @@ use_filter = false
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 
 size = 95
 use_mipmaps = false
@@ -42,7 +71,7 @@ use_filter = false
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 
 length = 1.5
 loop = false
@@ -60,7 +89,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, -1200 ), Vector2( 0, -200 ), Vector2( 0, -80 ), Vector2( 0, -100 ), Vector2( 0, -100 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 
 length = 1.0
 loop = false
@@ -78,7 +107,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, -100 ), Vector2( 0, -1200 ) ]
 }
 
-[node name="Score" type="Control"]
+[node name="Score" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -217,7 +246,7 @@ _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
 position = Vector2( -5.552, 220.909 )
 texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="LineEdit" type="LineEdit" parent="Background/currentHighScore/namen_papier" index="0"]
 
@@ -236,17 +265,18 @@ mouse_filter = 0
 mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 3 )
-custom_colors/selection_color = Color( 1, 1, 1, 1 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
 custom_colors/cursor_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_selected = Color( 0.105316, 0.929688, 0.234124, 1 )
+custom_colors/font_color_selected = Color( 0.428661, 0.957031, 0.100937, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
 max_length = 16
 focus_mode = 2
 context_menu_enabled = true
 placeholder_text = "Enter your name"
-placeholder_alpha = 0.6
+placeholder_alpha = 1.0
 caret_blink = true
 caret_blink_speed = 0.65
 caret_position = 0
@@ -268,7 +298,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Your Score"
 align = 1
 valign = 1
@@ -342,8 +372,8 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/scroll_Score_down = SubResource( 5 )
-anims/scroll_Score_up = SubResource( 6 )
+anims/scroll_Score_down = SubResource( 6 )
+anims/scroll_Score_up = SubResource( 7 )
 blend_times = [  ]
 
 [connection signal="mouse_entered" from="Background/currentHighScore/TextureButton" to="." method="_on_TextureButton_mouse_entered"]
