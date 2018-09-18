@@ -19,6 +19,9 @@ var maxItems = 3
 #PickUp Typ 0 = Plastic 1 = Paper 2 = Metal
 var pickUpTyp = []
 var pickUpTypBarrow = []
+#PICKUP COUNTER FOR TIMEOUT
+onready var timeout = get_node("../Player/Node2D/Hud/Clock")
+var pickUpCounter = 0
 
 func _ready():
 	randomize()
@@ -28,7 +31,9 @@ func _ready():
 	_randomPickUpTexture()
 
 func _process(delta):
-	pass
+	print(pickUpCounter)
+	if pickUpCounter == 26:
+		timeout.timeout = true
 
 
 #----AREAS2D------------------------#
@@ -100,6 +105,7 @@ func _randomPickUpTexture():
 
 func _controllItemsBarrow(index):
 	if counterPickUps < maxItems:
+		print(pickUpCounter)
 		for i in range(0, pickUps.size()):
 			var obj = str("pickUp" , i+1)
 			if counterPickUps == i:

@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var movement = Vector2(0, 0)
 var speed = 0
-var maxSpeed = 500
+var maxSpeed = 800
 var slowSpeed = 150
 var facilityCollControll = true
 # pickUp positions

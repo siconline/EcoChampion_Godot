@@ -260,7 +260,6 @@ _sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [node name="Clock" type="Node2D" parent="." index="3"]
 
-editor/display_folded = true
 position = Vector2( 0, -549 )
 script = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]

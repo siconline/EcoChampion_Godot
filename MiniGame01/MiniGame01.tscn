@@ -2929,7 +2929,6 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Player" parent="." index="5" instance=ExtResource( 15 )]
 
-editor/display_folded = true
 z_index = -1
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="3"]

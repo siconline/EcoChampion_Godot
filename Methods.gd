@@ -106,6 +106,8 @@ func collideObstacleDamage(pickUpIndex, pickUpName):
 	if pickUps.counterPickUps > 0:
 		var obj = str("../MiniGame01/Player/PickUps/PickUp", pickUps.counterPickUps)
 		get_node(obj).visible = false
+		#FOR TIMEOUT COUNTER
+		get_node("../MiniGame01/PickUps").pickUpCounter += 1
 		#----check the item on weelbarrow----#
 		if pickUps.pickUpTypBarrow[pickUps.pickUpTypBarrow.size()-1] == pickUpIndex:
 			print(pickUpName)
