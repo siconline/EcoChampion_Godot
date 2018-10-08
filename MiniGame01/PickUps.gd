@@ -31,7 +31,7 @@ func _ready():
 	_randomPickUpTexture()
 
 func _process(delta):
-	print(pickUpCounter)
+	#print(pickUpCounter)
 	if pickUpCounter == 26:
 		timeout.timeout = true
 
@@ -105,7 +105,7 @@ func _randomPickUpTexture():
 
 func _controllItemsBarrow(index):
 	if counterPickUps < maxItems:
-		print(pickUpCounter)
+		#print(pickUpCounter)
 		for i in range(0, pickUps.size()):
 			var obj = str("pickUp" , i+1)
 			if counterPickUps == i:

@@ -27,7 +27,7 @@ use_filter = true
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Hud" type="Control"]
+[node name="Hud" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -58,9 +58,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -950.0
-margin_top = 430.0
+margin_top = 390.0
 margin_right = 867.0
-margin_bottom = 1215.0
+margin_bottom = 1175.0
 rect_scale = Vector2( 0.2, 0.2 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -261,7 +261,6 @@ _sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [node name="Clock" type="Node2D" parent="." index="3"]
 
-editor/display_folded = true
 position = Vector2( 0, -549 )
 script = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
@@ -280,8 +279,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -43.0
+margin_top = 40.0
 margin_right = -15.0
-margin_bottom = 63.0
+margin_bottom = 103.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -294,7 +294,7 @@ align = 2
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Margin", "custom_fonts" ]
+_sections_unfolded = [ "Margin", "Rect", "custom_fonts" ]
 
 [node name="Clock_" type="Label" parent="Clock" index="2"]
 
@@ -303,8 +303,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -13.0
+margin_top = 40.0
 margin_right = 15.0
-margin_bottom = 63.0
+margin_bottom = 103.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -317,7 +318,7 @@ align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Margin", "custom_fonts" ]
+_sections_unfolded = [ "Margin", "Rect", "custom_fonts" ]
 
 [node name="Clock_Second" type="Label" parent="Clock" index="3"]
 
@@ -326,8 +327,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 16.0
+margin_top = 40.0
 margin_right = 44.0
-margin_bottom = 63.0
+margin_bottom = 103.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -339,7 +341,7 @@ text = "0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Margin", "custom_fonts" ]
+_sections_unfolded = [ "Margin", "Rect", "custom_fonts" ]
 
 [node name="Score_Count" type="Label" parent="." index="4"]
 
@@ -348,9 +350,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 757.0
-margin_top = -550.0
+margin_top = -510.0
 margin_right = 869.0
-margin_bottom = -487.0
+margin_bottom = -447.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -362,11 +364,11 @@ text = "0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Margin", "custom_fonts" ]
+_sections_unfolded = [ "Margin", "Rect", "custom_fonts" ]
 
 [node name="Score_Texture" type="Sprite" parent="." index="5"]
 
-position = Vector2( 706.135, -520 )
+position = Vector2( 706.135, -480 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 8 )
 _sections_unfolded = [ "Transform" ]
@@ -377,7 +379,7 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 visible = false
-position = Vector2( 597.482, 505 )
+position = Vector2( 597.482, 465 )
 scale = Vector2( 0.65, 0.65 )
 z_index = 2
 texture = ExtResource( 10 )

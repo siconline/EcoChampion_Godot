@@ -102,7 +102,7 @@ func collideObstacleDamage(pickUpIndex, pickUpName):
 	var timer_ItemLost  = $timer_ItemLost
 	var animPlayer 		= get_node("../MiniGame01/Player/AnimationPlayer")
 	var animPlayer_collide_obstacle = get_node("../MiniGame01/Player/anim_ItemLose")
-	var spriteItemLose 	= get_node("../MiniGame01/Player/ItemLose")
+	#var spriteItemLose 	= get_node("../MiniGame01/Player/ItemLose")
 	if pickUps.counterPickUps > 0:
 		var obj = str("../MiniGame01/Player/PickUps/PickUp", pickUps.counterPickUps)
 		get_node(obj).visible = false
@@ -110,7 +110,7 @@ func collideObstacleDamage(pickUpIndex, pickUpName):
 		get_node("../MiniGame01/PickUps").pickUpCounter += 1
 		#----check the item on weelbarrow----#
 		if pickUps.pickUpTypBarrow[pickUps.pickUpTypBarrow.size()-1] == pickUpIndex:
-			print(pickUpName)
+			#print(pickUpName)
 			if pickUpName == "Plastic":
 				playSoundScore()
 				plastic.play("Waste_IN")
@@ -138,7 +138,7 @@ func collideObstacleDamage(pickUpIndex, pickUpName):
 					paper.play("Waste_OUT")
 				elif player.position.y == 350:
 					metal.play("Waste_OUT")
-				print('Wrong Item')
+				#print('Wrong Item')
 		pickUps.counterPickUps -= 1
 		pickUps.pickUpTypBarrow.remove(pickUps.pickUpTypBarrow.size()-1)
 	if pickUpIndex == 9 && pickUpName == "Value":

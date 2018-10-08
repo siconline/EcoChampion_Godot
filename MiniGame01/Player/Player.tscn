@@ -407,7 +407,7 @@ blend_times = [  ]
 [node name="animSprite_pickup" type="Sprite" parent="PickUps" index="1"]
 
 position = Vector2( -30, 20 )
-scale = Vector2( 1e-05, 1e-05 )
+scale = Vector2( 1e-005, 1e-005 )
 texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 

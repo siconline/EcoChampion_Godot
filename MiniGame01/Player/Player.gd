@@ -230,7 +230,7 @@ func _on_TimerBoost_timeout():
 			speed = maxSpeed
 		if speed < 0:
 			speed = -maxSpeed
-	print("timout")
+	#print("timout")
 	
 #SOUNDS----------------------#
 func playSoundSteps():
