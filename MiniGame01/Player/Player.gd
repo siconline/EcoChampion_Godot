@@ -16,6 +16,8 @@ var boost = true
 var boostload = 0
 #SOUNDS
 var stepTimer = false
+#MousePressed variable
+var mousePressed = false
 
 onready var methods = get_node("../../Methods")
 
@@ -194,6 +196,11 @@ func _physics_process(delta):
 						if position.y == 350:
 							#M003
 							methods.collideObstacleDamage(2, collision_info.collider.name)
+	
+	if Input.is_action_just_pressed("ui_mouse"):
+		mousePressed = true
+	if Input.is_action_just_released("ui_mouse"):
+		mousePressed = false
 
 	#CONTROLL VISIBILITY POWERUPS AT BARROW#
 	if speedUp == true:
@@ -262,9 +269,10 @@ func playSoundSpeedUp():
 
 func _on_Button_Ground_pressed():
 		if playerControll == true:
-			if get_global_mouse_position().y < (position.y - 100):
-				if position.y > -175*2:
-					position.y -= 175
-			if get_global_mouse_position().y > (position.y + 100):
-				if position.y < 175*2:
-					position.y += 175
+			if mousePressed == true:
+				if get_global_mouse_position().y < (position.y - 100):
+					if position.y > -175*2:
+						position.y -= 175
+				if get_global_mouse_position().y > (position.y + 100):
+					if position.y < 175*2:
+						position.y += 175
