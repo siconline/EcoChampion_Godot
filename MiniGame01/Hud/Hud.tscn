@@ -51,17 +51,15 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Button_Pause" type="TextureButton" parent="." index="1"]
 
-editor/display_folded = true
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -950.0
-margin_top = 390.0
+margin_top = 423.0
 margin_right = 867.0
-margin_bottom = 1175.0
-rect_scale = Vector2( 0.2, 0.2 )
+margin_bottom = 1208.0
+rect_scale = Vector2( 0.15, 0.15 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -377,10 +375,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="boost" type="Sprite" parent="." index="7"]
 
-editor/display_folded = true
-visible = false
-position = Vector2( 597.482, 465 )
-scale = Vector2( 0.65, 0.65 )
+position = Vector2( 617.482, 476 )
+scale = Vector2( 0.5, 0.5 )
 z_index = 2
 texture = ExtResource( 10 )
 _sections_unfolded = [ "Transform", "Z Index" ]
